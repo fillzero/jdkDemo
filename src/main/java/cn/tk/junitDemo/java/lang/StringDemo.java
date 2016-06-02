@@ -17,4 +17,10 @@ public class StringDemo {
 		assertThat(20, equalTo(lastIndexOfDot));
 		assertThat("school.class.student", equalTo(str.substring(0, lastIndexOfDot)));
 	}
+	@Test
+	public void testLstIndexOf()
+	{
+		String str = "woshinibabadebaba";
+		assertThat(str.substring(0, str.length()-6), equalTo("woshinibaba"));
+	}
 }
