@@ -1,10 +1,15 @@
 package cn.tk.java.util.collections;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.RandomUtils;
 import org.junit.Test;
+
+import com.google.common.base.Preconditions;
 
 /**
  * @Description:Collections 集合类
@@ -94,5 +99,75 @@ public class CollectionsDemo {
 		for (int i = 0; i < list1.size(); i++) {
 			System.out.println("list1[" + i + "]=" + list1.get(i));
 		}
+	}
+	
+	public static List<Integer> bonusGenerator(int min,int max,int size,int amount) {
+		Preconditions.checkArgument((size * min <= amount) && (size * max >= amount));
+		int aveCeil = (int) Math.ceil((double)amount / size);
+		int aveFloor = (int) Math.floor((double)amount / size);
+		int[] res;
+		if(aveFloor != aveCeil) {
+			int x,y;
+			y = aveCeil * size - amount;
+			x = amount - aveFloor * size;
+			int[] floors = new int[y];
+			Arrays.fill(floors, aveFloor);
+			int[] ceils = new int[x];
+			Arrays.fill(ceils, aveCeil);
+			res = ArrayUtils.addAll(shuffle(floors,min,max), shuffle(ceils,min,max));
+		}
+		else {
+			int[] aves = new int[size];
+			Arrays.fill(aves, aveCeil);
+			res = shuffle(aves, min, max);
+		}
+		List<Integer>list = new ArrayList<>();
+		for(int m:res) {
+			list.add(m);
+		}
+		Collections.shuffle(list);
+		return list;
+	}
+	
+	public static int[] shuffle(int[] datas,int min, int max) {
+		int sample = datas[0];
+		if(sample == min || sample == max) return datas;
+		if((double)sample / min <= 1.2) return sideShuffle(datas,min,max);
+		if((double)sample / max >= 0.8) return sideShuffle(datas,min,max);
+		return strictShuffle(datas,min,max);
+	}
+	
+	public static int[] strictShuffle(int[] datas, int min, int max) {
+		int i = 0;
+		while(i < datas.length - 2) {
+			int l0 = datas[i];
+			int l1 = datas[i+1];
+			int p = (RandomUtils.nextInt(min, max) * 2 - l0 - l1) / 2;
+			if((min <= l0 + p) &&(l0 + p <= max) && (min <= l1 - p) && (l1 - p <= max)) {
+				datas[i] = l0 + p;
+				datas[i+1] = l1 - p;
+			}
+			i+=2;
+		}
+		return datas;
+	}
+	
+	public static int[] sideShuffle(int[] datas, int min, int max) {
+		int i = 0;
+		while(i < datas.length) {
+			int currentValue = datas[i];
+			int interval = (int) Math.floor((double)(max - min) / 13);
+			if(interval == 0) interval = 1;
+			int p = (RandomUtils.nextInt(min, max)-currentValue) / interval;
+			if(Math.abs(p) > (datas.length - i - 2)) break;
+			datas[i] = currentValue + p * interval;
+			int signnum = Integer.signum(p);
+			for(int j = 1;j<=Math.abs(p);j++) {
+				int value = datas[++i];
+				datas[i] = value - signnum * interval;
+			}
+			i++;
+		}
+		return strictShuffle(datas,min,max);
 	}
 }
