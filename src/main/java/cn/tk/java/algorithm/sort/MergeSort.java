@@ -1,4 +1,4 @@
-package cn.tk.java.algorithm;
+package cn.tk.java.algorithm.sort;
 
 import org.junit.Test;
 
