@@ -1,22 +1,63 @@
 package cn.tk.java.algorithm;
 
+import java.util.Arrays;
+
 /**
  * @Description: 求解最大非空连续子数组的和
+ * 1. 暴力求解
+ * 2. 递归求解
+ * 3. 动态规划
  */
 public class MaxSubarray {
 	
 	/**
-	 * @Description: 递归算法
+	 * @Description:1. 暴力求解, O(n^3) 的时间复杂度
 	 */
-	public Subarray maxSubArray(int[] data, int left, int right, Subarray currentSubarray)
+	public Subarray findMaxSubArray(int[] data, int left, int right)
+	{
+		Subarray maxSubarray = new Subarray();
+		int maxSum = Integer.MIN_VALUE;
+		for (int i=0; i<data.length; i++) {
+			for(int j=i+1; j<data.length; j++)
+			{
+				int[] currentArray = Arrays.copyOfRange(data, i, j);
+				if (getArraySum(currentArray) > maxSum) {
+					maxSum = getArraySum(currentArray);
+					maxSubarray.setLeft(i);
+					maxSubarray.setRight(j);
+				}
+			}
+		}
+		maxSubarray.setSum(maxSum);
+		return maxSubarray;
+	}
+	
+	/**
+	 * @Description:求子数组的和
+	 */
+	public int getArraySum(int[] array) {
+		if(array==null || array.length==0)
+			throw new IllegalArgumentException();
+		int sum = 0;
+		for(int i : array)
+		{
+			sum += i;
+		}
+		return sum;
+	}
+	
+	/**
+	 * @Description:2. 递归算法：  O(n*logn) 的时间复杂度
+	 */
+	public Subarray maxSubArray_recursion(int[] data, int left, int right, Subarray currentSubarray)
 	{
 		if (left == right) {
 			return currentSubarray;//记录当前最大非空连续子数组的下标
 		}else {
 			int mid = (left + right) / 2;
 			Subarray maxCross = maxCross(data, left, mid, right);
-			Subarray maxLeft = maxSubArray(data, left, mid, currentSubarray);
-			Subarray maxRight = maxSubArray(data, mid+1, right, currentSubarray);
+			Subarray maxLeft = maxSubArray_recursion(data, left, mid, currentSubarray);
+			Subarray maxRight = maxSubArray_recursion(data, mid+1, right, currentSubarray);
 			currentSubarray = getMax3(maxCross, maxLeft, maxRight); 
 			return currentSubarray;
 		}
@@ -73,8 +114,9 @@ public class MaxSubarray {
 	}
 	
 	/**
-	 * @Description:线性时间求解最大非空连续子数组的和
+	 * @Description:3. 线性时间求解最大非空连续子数组的和
 	 * curSum <= 0： 从当前值重新开始计算，如果负数为最大值， 只可能是单一一个负数， 所以只需要记住一个最大的
+	 * O(n) 的时间复杂度
 	 */
 	public Integer findMaxSum(int[] nums)
 	{	// 参数校验

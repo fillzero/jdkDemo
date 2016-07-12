@@ -6,7 +6,7 @@ import cn.tk.java.algorithm.MaxSubarray;
 import cn.tk.java.algorithm.Subarray;
 
 public class MaxSubarrayTest {
-	private static int[] data = {3, -4, 5, 10, -100, 27, 2, -12};
+	private static int[] data = {3, -4, 5, 10, -10, 27, 2, -12};
 //	private static int[] data = {3, -4, 5};
 	Subarray currentSubarray = new Subarray(0, data.length, Integer.MIN_VALUE);
 	private MaxSubarray maxSubarrayService = new MaxSubarray();
@@ -14,7 +14,7 @@ public class MaxSubarrayTest {
 	@Test
 	public void testMaxSubarray()
 	{
-		Subarray maxSubArray = maxSubarrayService.maxSubArray(data, 0, data.length-1, currentSubarray);
+		Subarray maxSubArray = maxSubarrayService.maxSubArray_recursion(data, 0, data.length-1, currentSubarray);
 		System.out.println(maxSubArray.toString());
 	}
 	
@@ -40,5 +40,11 @@ public class MaxSubarrayTest {
 	public void testFindMaxSum()
 	{
 		System.out.println(maxSubarrayService.findMaxSum(data));
+	}
+	
+	@Test
+	public void testFindMaxSubArray()
+	{
+		System.out.println(maxSubarrayService.findMaxSubArray(data, 0, data.length));
 	}
 }
