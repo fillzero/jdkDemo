@@ -8,16 +8,17 @@ public class MaxSubarray {
 	/**
 	 * @Description: 递归算法
 	 */
-	public Subarray maxSubArray(int[] data, int left, int right)
+	public Subarray maxSubArray(int[] data, int left, int right, Subarray currentSubarray)
 	{
 		if (left == right) {
-			return new Subarray(0, 1, 1);
+			return currentSubarray;//记录当前最大非空连续子数组的下标
 		}else {
 			int mid = (left + right) / 2;
 			Subarray maxCross = maxCross(data, left, mid, right);
-			Subarray maxLeft = maxSubArray(data, left, mid);
-			Subarray maxRight = maxSubArray(data, mid+1, right);
-			return getMax3(maxCross, maxLeft, maxRight);
+			Subarray maxLeft = maxSubArray(data, left, mid, currentSubarray);
+			Subarray maxRight = maxSubArray(data, mid+1, right, currentSubarray);
+			currentSubarray = getMax3(maxCross, maxLeft, maxRight); 
+			return currentSubarray;
 		}
 	}
 	
@@ -59,7 +60,7 @@ public class MaxSubarray {
 			}
 		}
 		curSum = 0;
-		for(int i=mid+1; i<right; i++)
+		for(int i=mid+1; i<=right; i++)
 		{
 			curSum += data[i];
 			if (curSum > rightMax)

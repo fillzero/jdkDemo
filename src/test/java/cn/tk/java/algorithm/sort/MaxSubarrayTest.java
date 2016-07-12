@@ -6,13 +6,15 @@ import cn.tk.java.algorithm.MaxSubarray;
 import cn.tk.java.algorithm.Subarray;
 
 public class MaxSubarrayTest {
-	private static int[] data = {3, -4, 5, 10, -10, 27, 2, -12};
+	private static int[] data = {3, -4, 5, 10, -100, 27, 2, -12};
+//	private static int[] data = {3, -4, 5};
+	Subarray currentSubarray = new Subarray(0, data.length, Integer.MIN_VALUE);
 	private MaxSubarray maxSubarrayService = new MaxSubarray();
 	
 	@Test
 	public void testMaxSubarray()
 	{
-		Subarray maxSubArray = maxSubarrayService.maxSubArray(data, 0, data.length);
+		Subarray maxSubArray = maxSubarrayService.maxSubArray(data, 0, data.length-1, currentSubarray);
 		System.out.println(maxSubArray.toString());
 	}
 	
@@ -30,7 +32,7 @@ public class MaxSubarrayTest {
 	public void testMaxCrossSubarray()
 	{
 		int mid = data.length / 2;
-		Subarray maxCrossSubarray = maxSubarrayService.maxCross(data, 0, mid, data.length);
+		Subarray maxCrossSubarray = maxSubarrayService.maxCross(data, 0, mid, data.length-1);
 		System.out.println(maxCrossSubarray.toString());
 	}
 	
