@@ -21,37 +21,87 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+	<properties>
+		<junit.version>4.12</junit.version>
+		<commons-lang3.version>3.4</commons-lang3.version>
+		<guava.version>19.0</guava.version>
+		<fastjson.version>1.2.13</fastjson.version>
+		<lombok.version>1.16.8</lombok.version>
+		<commons-lang.version>2.6</commons-lang.version>
+		<dom4j.version>1.6.1</dom4j.version>
+		<slf4j.version>1.7.12</slf4j.version>
+        <jcloverslf4j.version>1.7.12</jcloverslf4j.version>
+        <joda-time.version>2.8.2</joda-time.version>
+	</properties>
+	
 
 	<dependencies>
+		<!-- junit -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.12</version>
+			<version>${junit.version}</version>
 		</dependency>
+		<!-- commons-lang3 -->
 		<dependency>
     		<groupId>org.apache.commons</groupId>
 		    <artifactId>commons-lang3</artifactId>
-		    <version>3.4</version>
+		    <version>${commons-lang3.version}</version>
 		</dependency>
+		<!-- google guava -->
 		<dependency>
 		    <groupId>com.google.guava</groupId>
 		    <artifactId>guava</artifactId>
-		    <version>19.0</version>
+		    <version>${guava.version}</version>
 		</dependency>
+		<!-- fastjson -->
 		<dependency>
-		    <groupId>com.alibaba</groupId>
-		    <artifactId>fastjson</artifactId>
-		    <version>1.2.12</version>
-		</dependency>
-		<dependency>
-		    <groupId>com.alibaba</groupId>
-		    <artifactId>fastjson</artifactId>
-		    <version>1.2.13</version>
-		</dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+		<!-- lombok -->
 		<dependency>
 		    <groupId>org.projectlombok</groupId>
 		    <artifactId>lombok</artifactId>
-		    <version>1.16.8</version>
+		    <version>${lombok.version}</version>
 		</dependency>
+		 <!-- commons-lang-->
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>${commons-lang.version}</version>
+        </dependency>
+        <!-- dom4j -->
+        <dependency>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>${dom4j.version}</version>
+            <!-- 排除相关 jar 模块依赖 -->
+            <exclusions>
+                <exclusion>
+                    <groupId>xml-apis</groupId>
+                    <artifactId>xml-apis</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- slf4j -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${jcloverslf4j.version}</version>
+        </dependency>
+        <!-- joda-time -->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>${joda-time.version}</version>
+        </dependency>
 	</dependencies>
 </project>
