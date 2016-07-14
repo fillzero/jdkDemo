@@ -146,7 +146,7 @@ public class StringUtil {
      * @param symbol
      * @return
      */
-    public static String joinString(List array, String symbol) {
+    public static String joinString(List<String> array, String symbol) {
         String result = "";
         if (array != null) {
             for (int i = 0; i < array.size(); i++) {
@@ -394,7 +394,7 @@ public class StringUtil {
     public static String linkedHashMapToString(LinkedHashMap<String, String> map) {
         if (map != null && map.size() > 0) {
             String result = "";
-            Iterator it = map.keySet().iterator();
+            Iterator<String> it = map.keySet().iterator();
             while (it.hasNext()) {
                 String name = (String) it.next();
                 String value = (String) map.get(name);
@@ -413,7 +413,7 @@ public class StringUtil {
      */
     public static LinkedHashMap<String, String> toLinkedHashMap(String str) {
         if (str != null && !str.equals("") && str.indexOf("=") > 0) {
-            LinkedHashMap result = new LinkedHashMap();
+            LinkedHashMap<String, String> result = new LinkedHashMap<String, String>();
 
             String name = null;
             String value = null;
@@ -551,10 +551,11 @@ public class StringUtil {
      * @param xml
      * @return
      */
+    @SuppressWarnings("resource")
     public static Object xmlToObject(String xml) {
         try {
             ByteArrayInputStream in = new ByteArrayInputStream(xml.getBytes("UTF8"));
-            XMLDecoder decoder = new XMLDecoder(new BufferedInputStream(in));
+			XMLDecoder decoder = new XMLDecoder(new BufferedInputStream(in));
             return decoder.readObject();
         } catch (Exception e) {
             e.printStackTrace();
@@ -1248,7 +1249,7 @@ public class StringUtil {
      */
     public static Map<String, String> parseQuery(String query, char split1, char split2, String dupLink) {
         if (!isEmpty(query) && query.indexOf(split2) > 0) {
-            Map<String, String> result = new HashMap();
+            Map<String, String> result = new HashMap<String, String>();
             String name = null;
             String value = null;
             String tempValue = "";
@@ -1295,7 +1296,7 @@ public class StringUtil {
      * @param slipStr
      * @return String
      */
-    public static String listToStringSlipStr(List list, String slipStr) {
+    public static String listToStringSlipStr(List<String> list, String slipStr) {
         StringBuffer returnStr = new StringBuffer();
         if (list != null && list.size() > 0) {
             for (int i = 0; i < list.size(); i++) {
@@ -1622,7 +1623,7 @@ public class StringUtil {
      */
     public static String toHexString(String str) throws UnsupportedEncodingException {
         // 根据默认编码获取字节数组
-        String hexString = "0123456789ABCDEF";
+//        String hexString = "0123456789ABCDEF";
         byte[] bytes = str.getBytes("GB2312");
         StringBuilder sb = new StringBuilder(bytes.length * 2);
         // 将字节数组中每个字节拆解成2位16进制整数
