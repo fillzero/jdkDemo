@@ -13,7 +13,25 @@ public class Ask implements ICallback{
 	 */
 	public Integer askQuestion(char operator, Integer a, Integer b) throws InstantiationException, IllegalAccessException
 	{
-		return answer.calculate(this,operator, a, b);
+		return answer.calculate(this, operator, a, b);
+	}
+	
+	/**
+	 * @Author: 李晋龙
+	 * @Description:回调方法
+	 */
+	@Override
+	public Integer solve(char operator, Integer a, Integer b) {
+		switch (operator) {
+		case '+':
+			return add(a, b);
+		case '-':
+			return  sub(a, b);
+		case '*':
+			return mul(a, b);
+		default:
+			return div(a, b);
+		}
 	}
 	
 	public Integer add(Integer a, Integer b) {
@@ -33,23 +51,5 @@ public class Ask implements ICallback{
 			return 0;
 		}
 		return a / b;
-	}
-
-	/**
-	 * @Author: 李晋龙
-	 * @Description:回调方法
-	 */
-	@Override
-	public Integer solve(char operator, Integer a, Integer b) {
-		switch (operator) {
-		case '+':
-			return add(a, b);
-		case '-':
-			return  sub(a, b);
-		case '*':
-			return mul(a, b);
-		default:
-			return div(a, b);
-		}
 	}
 }
