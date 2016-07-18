@@ -73,4 +73,24 @@ public class StringDemo {
 		System.out.println(parseSeconds("123", 12));
 		System.out.println(parseSeconds("123.3", 12));
 	}
+	
+	public String emailEncrypt(String email)
+	{
+		String star = "";
+		int indexOfAt = email.indexOf("@");
+		int length = email.substring(2, indexOfAt).length();
+		for (int i = 0; i < length; i++) {
+			star += "*";
+		}
+		return email.substring(0, 2) + star + email.substring(indexOfAt);
+	}
+	
+	@Test
+	public void testEmailEncrypt()
+	{
+		String qqemail = "1205557282@qq.com";
+		String hotemail = "chengdianxiaocai@hotmail.com";
+		System.out.println(emailEncrypt(qqemail));
+		System.out.println(emailEncrypt(hotemail));
+	}
 }
