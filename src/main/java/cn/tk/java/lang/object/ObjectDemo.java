@@ -13,4 +13,30 @@ public class ObjectDemo {
 		Object object = new Object();
 		System.out.println(object.hashCode());
 	}
+	
+	@Test
+	public void testEquals()
+	{
+		Object object = new Object();
+		System.out.println(this == object);
+	}
+	
+	public boolean equals(Object object)
+	{
+		if (this == object) {
+			return true;
+		}
+		if(!(object instanceof ObjectDemo))
+		{
+			return false;
+		}
+		ObjectDemo objectDemo = (ObjectDemo) object;
+		return true;
+	}
+
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return super.hashCode();
+	}
 }
