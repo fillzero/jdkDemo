@@ -36,4 +36,29 @@ public class PersonTest {
 			System.out.println(new Person("zhangsan").hashCode());
 		}
 	}
+	
+	/**
+	 * @Description:equals 方法必须满足的四个特性
+	 */
+	@Test
+	public void testEqualsFeatures()
+	{
+		Person student1 = new Person("Jack");
+		Person student2 = new Person("Jack");
+		Person student3 = new Person("Jack");
+		System.out.println("1. 对称性");
+		System.out.println(student1.equals(student2) + "," + student2.equals(student1));
+		System.out.println("2. 自反性");
+		System.out.println(student1.equals(student1));
+		System.out.println("3. 传递性");
+		System.out.println(student1.equals(student2));
+		System.out.println(student2.equals(student3));
+		System.out.println(student1.equals(student3));
+		System.out.println("4. 一致性");
+		for (int i = 0; i < 10; i++) {
+			System.out.println(student1.equals(student2));
+		}
+		System.out.println("5. 与 Null 比较");
+		System.out.println(student1.equals(null));
+	}
 }

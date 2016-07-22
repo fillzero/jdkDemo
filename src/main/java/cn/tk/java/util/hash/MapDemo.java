@@ -1,4 +1,4 @@
-package cn.tk.java.util.map;
+package cn.tk.java.util.hash;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,5 +21,24 @@ public class MapDemo {
 		System.out.println(map.get(" "));
 		System.out.println(map.get("abc"));
 		System.out.println(map.get("adf"));
+	}
+	
+	 /**
+	 * @Description: HashMap 中的 hash 实现
+	 */
+	static final int hash(Object key) {
+		 int h;
+		 return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
+	 }
+	
+	/**
+	 * @Description:测试 HashMap 的 hash 特性， 与 hashCode 和 equals 方法建立关联
+	 */
+	@Test
+	public void testHashMap()
+	{
+		System.out.println(hash(null));//null 的 hashCode 为 0
+		System.out.println(8 >>> 16);//右移一位相当于处以 2
+		System.out.println(1 << 64);
 	}
 }
