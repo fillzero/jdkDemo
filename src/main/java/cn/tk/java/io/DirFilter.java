@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.FilenameFilter;
 import java.util.regex.Pattern;
 
+/**
+ * @Description:目录名称过滤器
+ */
 public class DirFilter implements FilenameFilter {
 	
 	private Pattern pattern;

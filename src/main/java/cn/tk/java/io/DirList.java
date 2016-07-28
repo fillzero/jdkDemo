@@ -5,6 +5,9 @@ import java.io.FilenameFilter;
 import java.util.Arrays;
 import java.util.regex.Pattern;
 
+/**
+ * @Description: 目录列表器代码
+ */
 public class DirList {
 	
 	/**
@@ -52,11 +55,32 @@ public class DirList {
 	}
 	
 	/**
-	 * @Description:使用匿名内部类实现
+	 * @Description:使用匿名内部类实现过滤器
 	 */
 	public void printDirsWithFilter2(String regex, String directoryPath) {
 		File directory = new File(directoryPath);
 		String[] files = directory.list(filter(regex));
+		Arrays.sort(files, String.CASE_INSENSITIVE_ORDER);
+		for (String fileName : files) {
+			System.out.print(fileName+", ");
+		}
+		System.out.println();
+	}
+	
+	/**
+	 * @Description:使用匿名内部类实现过滤器, 进一步简化代码
+	 * directory.list()， 参数是一个指向 FilenameFilter 或其实现类的引用
+	 */
+	public void printDirsWithFilter3(String regex, String directoryPath)
+	{
+		File directory = new File(directoryPath);
+		String[] files = directory.list(new FilenameFilter() {
+			private Pattern pattern = Pattern.compile(regex);
+			@Override
+			public boolean accept(File dir, String name) {
+				return pattern.matcher(name).matches();
+			}
+		});
 		Arrays.sort(files, String.CASE_INSENSITIVE_ORDER);
 		for (String fileName : files) {
 			System.out.print(fileName+", ");
