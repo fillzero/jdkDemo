@@ -33,6 +33,7 @@
 		<slf4j.version>1.7.12</slf4j.version>
         <jcloverslf4j.version>1.7.12</jcloverslf4j.version>
         <joda-time.version>2.8.2</joda-time.version>
+        <commons-codec.version>1.10</commons-codec.version>
 	</properties>
 	
 
@@ -103,5 +104,10 @@
             <artifactId>joda-time</artifactId>
             <version>${joda-time.version}</version>
         </dependency>
+        <dependency>
+    		<groupId>commons-codec</groupId>
+    		<artifactId>commons-codec</artifactId>
+    	<version>${commons-codec.version}</version>
+</dependency>
 	</dependencies>
 </project>
