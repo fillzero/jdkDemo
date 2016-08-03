@@ -62,6 +62,8 @@ public class OauthGenerater
     @Test
     public void testOauth()
     {
-    	System.out.println(makeOauthUrl("www.baidu.com"));
+    	String taiHealthurl = "wechat.wei.taikang.com";
+    	
+    	System.out.println(makeOauthUrl(taiHealthurl));
     }
 }
