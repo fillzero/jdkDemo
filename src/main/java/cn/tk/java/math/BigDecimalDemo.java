@@ -39,4 +39,24 @@ public class BigDecimalDemo {
 		System.out.println(mulDouble);
 		System.out.println(divDouble);
 	}
+	
+	/**
+	 * @Description:保费以元为单位，算利息可能会有问题， 所以要转化成分为单位， 这时候使用 double 的构造函数会有问题
+	 * 要使用 String 的构造函数
+	 */
+	@Test
+	public void testApply()
+	{
+	    BigDecimal bigDecimal = new BigDecimal(1.23);
+	    System.out.println("保费(单位/元): " + bigDecimal);
+	    bigDecimal = bigDecimal.multiply(new BigDecimal(100));
+	    long lPremium = bigDecimal.longValue();
+	    System.out.println("保费(单位/分): " + lPremium);
+	    
+	    BigDecimal bigDecimal2 = new BigDecimal(Double.toString(1.23));
+	    System.out.println("保费(单位/元): " + bigDecimal2);
+	    bigDecimal2 = bigDecimal2.multiply(new BigDecimal(100));
+	    long lPremium2 = bigDecimal2.longValue();
+	    System.out.println("保费(单位/分): " + lPremium2);
+	}
 }
