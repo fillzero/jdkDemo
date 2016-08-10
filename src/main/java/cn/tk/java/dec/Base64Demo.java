@@ -13,7 +13,7 @@ public class Base64Demo {
 	public String decode(String encode)
 	{
 		byte[] url = Base64.decodeBase64(encode);
-		return String.valueOf(url);
+		return new String(url);
 	}
 	
 	@Test
@@ -21,6 +21,9 @@ public class Base64Demo {
 	{
 		String encode = encode("weit.taikang.com?openid=1234&timestamp=123412341&sign=QD1231KLSJDF");
 		System.out.println(encode);
+		
+		String decode = decode(encode);
+		System.out.println(decode);
 	}
 	
 	
