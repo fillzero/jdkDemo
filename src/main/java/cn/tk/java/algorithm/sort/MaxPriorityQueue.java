@@ -1,5 +1,7 @@
 package cn.tk.java.algorithm.sort;
 
+import org.junit.Test;
+
 /**
  * @Author: lijl85
  * @Title: MaxPriorityQueue.java
@@ -13,6 +15,9 @@ package cn.tk.java.algorithm.sort;
  * 4. 提升优先级
  */
 public class MaxPriorityQueue {
+	
+	private static int[] input = new int[] {16, 4, 10, 14, 7, 9, 3, 2, 8, 1 };
+	
 	/**
 	 * @Description:取出优先级高的作业（关键字大）
 	 */
@@ -33,7 +38,7 @@ public class MaxPriorityQueue {
 		}
 		BuildMaxHeap.buildMaxHeap(heap);
 		int max = heap[0];
-		heap[0] = heap[heap.length];
+		heap[0] = heap[length-1];
 		length --;
 		MaxHeapify.maxHeapifyRecursion(heap, 1, length);
 		return max;
@@ -52,10 +57,49 @@ public class MaxPriorityQueue {
 			MaxHeapify.exchange(heap, parent(i), i);
 			i = parent(i);
 		}
+		BuildMaxHeap.buildMaxHeap(heap);
+	}
+	
+	/**
+	 * @Description:将 key 插入 heap 中，
+	 */
+	public void heapInsert(int[] heap, int key)
+	{
+		
 	}
 	
 	public int parent(int child)
 	{
 		return child/2;
+	}
+	
+	public void print()
+	{
+		for (int i : input) {
+			System.out.print(i + " ");
+		}
+		System.out.println();
+	}
+	
+	@Test
+	public void testHeapMaxMum()
+	{
+		System.out.println("max mum: " + heapMaxMum(input));
+		print();
+	}
+	
+	@Test
+	public void testHeapExtractMax()
+	{
+		System.out.println("extract max: " + heapExtractMax(input));
+		print();
+	}
+	
+	@Test
+	public void testHeapIncreaseKey()
+	{
+		print();
+		heapIncreaseKey(input, 2, 18);
+		print();
 	}
 }
