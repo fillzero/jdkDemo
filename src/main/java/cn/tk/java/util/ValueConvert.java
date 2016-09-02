@@ -91,7 +91,7 @@ public class ValueConvert {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(moneySmall2Big("12345609"));
+		System.out.println(moneySmall2Big("209280.00"));
 	}
 	
 	@Test
