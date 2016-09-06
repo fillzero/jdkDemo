@@ -5,59 +5,53 @@ import java.math.BigDecimal;
 import org.junit.Test;
 
 public class ValueConvert {
-	// 人民币小写转大写
-	public static String moneySmall2Big(String cash) {
-		String sUnit = "分角元拾佰仟万拾佰仟亿拾佰仟万";
-		String sNumber = "零壹贰叁肆伍陆柒捌玖";
 
-		String outstr = "";
-		boolean bError = false;
-		int ascii;
+	private static final String UNIT = "万千佰拾亿千佰拾万千佰拾元角分";
+	private static final String DIGIT = "零壹贰叁肆伍陆柒捌玖";
+	private static final double MAX_VALUE = 9999999999999.99D;
 
-		for (int i = 1; i <= cash.length(); i++) {
-			ascii = cash.toCharArray()[i - 1];
-			if (((ascii < 48) || (ascii > 57)) && (ascii != 46)) {
-				bError = true;
-				break;
-			}
+	/**
+	 * @Description:
+	 * @param v： 金额
+	 * @return 人民币小写转大写
+	 */
+	public static String change(double v) {
+		if (v < 0 || v > MAX_VALUE) {
+			return "参数非法!";
 		}
-
-		if (!bError) {
-			// change by cg 大小写转换中魔幻数字的问题。
-			BigDecimal b1 = new BigDecimal(cash);
-			BigDecimal b2 = new BigDecimal("100");
-			String temps = b1.multiply(b2).intValue() + "";
-			// add end
-
-			System.out.println("temps=" + temps);
-			for (int i = temps.length(); i >= 1; i--) {
-				String ss = temps.substring(i - 1, i);
-				System.out.println("ss=" + ss + " i=" + i);
-				if (ss.equals("0")) {
-					if (temps.length() - i <= 1) {
-						outstr = "零"
-								+ sUnit.substring(temps.length() - i,
-										temps.length() - i + 1) + outstr;
-					} else if ((temps.length() - i) == 2) {
-						outstr = "元" + outstr;
-					} else {
-						if (!temps.substring(i, i + 1).equals("0")) {
-							outstr = "零" + outstr;
-						}
-					}
-				} else {
-					outstr = sNumber.substring(Integer.parseInt(ss),
-							Integer.parseInt(ss) + 1)
-							+ sUnit.substring(temps.length() - i,
-									temps.length() - i + 1) + outstr;
+		long l = Math.round(v * 100);
+		if (l == 0) {
+			return "零元整";
+		}
+		String strValue = l + "";
+		// i用来控制数
+		int i = 0;
+		// j用来控制单位
+		int j = UNIT.length() - strValue.length();
+		String rs = "";
+		boolean isZero = false;
+		for (; i < strValue.length(); i++, j++) {
+			char ch = strValue.charAt(i);
+			if (ch == '0') {
+				isZero = true;
+				if (UNIT.charAt(j) == '亿' || UNIT.charAt(j) == '万'
+						|| UNIT.charAt(j) == '元') {
+					rs = rs + UNIT.charAt(j);
+					isZero = false;
 				}
+			} else {
+				if (isZero) {
+					rs = rs + "零";
+					isZero = false;
+				}
+				rs = rs + DIGIT.charAt(ch - '0') + UNIT.charAt(j);
 			}
 		}
-		if (bError) {
-			return "格式错误";
-		} else {
-			return outstr;
+		if (!rs.endsWith("分")) {
+			rs = rs + "整";
 		}
+		rs = rs.replaceAll("亿万", "亿");
+		return rs;
 	}
 
 	/**
@@ -90,20 +84,21 @@ public class ValueConvert {
 		return res;
 	}
 
-	public static void main(String[] args) {
-		System.out.println(moneySmall2Big("209280.00"));
-	}
-	
 	@Test
-	public void testFormatUserDefNew()
-	{
+	public void testChange() {
+		System.out.println(change(209280.00));
+		System.out.println(change(412815.50));
+	}
+
+	@Test
+	public void testFormatUserDefNew() {
 		System.out.println(formatUserDefNew(173.4341, 2));
 		System.out.println(formatUserDefNew(173.4351, 2));
-		
-		System.out.println(formatUserDefNew(173.4341, 2)*100/10);
-		System.out.println(formatUserDefNew(173.4351, 2)*100/10);
-		
+
+		System.out.println(formatUserDefNew(173.4341, 2) * 100 / 10);
+		System.out.println(formatUserDefNew(173.4351, 2) * 100 / 10);
+
 		System.out.println(formatUserDefNew(17.515, 2));
-		System.out.println(formatUserDefNew(17.515, 2)*100/10);
+		System.out.println(formatUserDefNew(17.515, 2) * 100 / 10);
 	}
 }
