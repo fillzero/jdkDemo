@@ -24,6 +24,7 @@
 	
 	<properties>
 		<junit.version>4.12</junit.version>
+		<spring.version>4.2.5.RELEASE</spring.version>
 		<commons-lang3.version>3.4</commons-lang3.version>
 		<guava.version>19.0</guava.version>
 		<fastjson.version>1.2.13</fastjson.version>
@@ -46,6 +47,12 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
+		</dependency>
+		<!-- Spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
 		</dependency>
 		<!-- commons-lang3 -->
 		<dependency>
