@@ -26,6 +26,7 @@
 		<junit.version>4.12</junit.version>
 		<spring.version>4.2.5.RELEASE</spring.version>
 		<commons-lang3.version>3.4</commons-lang3.version>
+		<commons-io>2.5</commons-io>
 		<guava.version>19.0</guava.version>
 		<fastjson.version>1.2.13</fastjson.version>
 		<lombok.version>1.16.8</lombok.version>
@@ -78,12 +79,17 @@
 		    <artifactId>lombok</artifactId>
 		    <version>${lombok.version}</version>
 		</dependency>
-		 <!-- commons-lang-->
+		 <!-- apache-->
         <dependency>
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
             <version>${commons-lang.version}</version>
         </dependency>
+        <dependency>
+		    <groupId>commons-io</groupId>
+		    <artifactId>commons-io</artifactId>
+		    <version>${commons-io}</version>
+		</dependency>
         <!-- dom4j -->
         <dependency>
             <groupId>dom4j</groupId>
