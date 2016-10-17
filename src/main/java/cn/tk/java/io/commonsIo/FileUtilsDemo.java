@@ -3,6 +3,7 @@ package cn.tk.java.io.commonsIo;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
+import java.util.List;
 
 import org.apache.commons.io.FileSystemUtils;
 import org.apache.commons.io.FileUtils;
@@ -113,5 +114,16 @@ public class FileUtilsDemo {
 	{
 		System.out.println(FileSystemUtils.freeSpaceKb("F:")/1024/1024 + "G");
 		System.out.println(FileSystemUtils.freeSpaceKb("D:")/1024/1024 + "G");
+	}
+	
+	@Test
+	public void testReadFileToList() throws IOException
+	{
+		File srcFile = new File(basePath + "src.txt");
+		List<String> listContents = FileUtils.readLines(srcFile, "UTF-8");
+		for(String line : listContents)
+		{
+			System.out.println(line);
+		}
 	}
 }
