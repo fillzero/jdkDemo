@@ -41,4 +41,21 @@ public class MapDemo {
 		System.out.println(8 >>> 16);//右移一位相当于处以 2
 		System.out.println(1 << 64);
 	}
+	
+	/**
+	 * @Description:同一台机器 hashCode 不会变
+	 */
+	@Test
+	public void testStringHashMap()
+	{
+		String aString = "lijinlong";
+		String bString = "lijinlong";
+		int count = 0;
+		for (int i = 0; i < 10000; i++) {
+			if (aString.hashCode() == bString.hashCode()) {
+				count ++;
+			}
+		}
+		System.out.println(count);
+	}
 }
