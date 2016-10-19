@@ -110,4 +110,29 @@ public class SetsDemo {
 		ArrayList<String> list = Lists.newArrayList(Arrays.copyOfRange(array, 0, 10));
 		System.out.println(list.toString());
 	}
+	
+	/**
+	 * @description:负荷系数, 满载率 0.75, 16 是初始大小, 超过 16 * 0.75 = 12 以后就会自动扩容
+	 */
+	@Test
+	public void testLoadFactor()
+	{
+		int max = Math.max((int) (11 /.75f) + 1, 16);
+		System.out.println(max);
+	}
+	
+	/**
+	 * @description:初始化 HashSet, 通过 HashMap 内部去重复
+	 */
+	@Test
+	public void testCreateHashSet()
+	{
+		Set<Integer> oldSet = new HashSet<Integer>();
+		for(int i=0; i<21; i++)
+		{
+			oldSet.add(i);
+		}
+		Set<Integer> set = new HashSet<Integer>(oldSet);
+		System.out.println(set);
+	}
 }
