@@ -54,4 +54,35 @@ public class BitOperation {
 		System.out.println(~5);
 		
 	}
+	
+	static volatile int position;
+	/**
+	 * @Description:测试逻辑与运算符
+	 */
+	@Test
+	public void testLogicalAnd()
+	{
+		while(position < 10000)
+		{
+			if((position & 0xFFFFFFC0) != 0) {
+				System.out.println("已经大于等于 64 了");
+				System.out.println("当前 position 值为： " + position);
+				break;
+			}
+			position ++;
+		}
+	}
+	@Test
+	public void testBasicOperator()
+	{
+		while(position < 10000)
+		{
+			if(position >= 64){
+				System.out.println("已经大于等于 64 了");
+				System.out.println("当前 position 值为： " + position);
+				break;
+			}
+			position ++;
+		}
+	}
 }
