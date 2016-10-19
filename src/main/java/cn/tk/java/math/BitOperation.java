@@ -6,6 +6,8 @@ public class BitOperation {
 	@Test
 	public void testBitOperation()
 	{
+		// 右移运算符结果总是向下取整
+		
 		//1、左移
 		// 0000 0101 --> 0001 0100， 左移两位，低位补 0，相当于乘 2^2 = 4
 		System.out.println("***************************** 左移两位 ***************************");
@@ -17,8 +19,10 @@ public class BitOperation {
 		System.out.println("\n***************************** 右移两位 ***************************");
 		System.out.println(5 >> 2);
 		System.out.println(5 / 4);
-		// 1000 0101 --> 1000 0111
+		// 1000 0101 --> 1000 0010
 		System.out.println(-5 >> 2);
+		System.out.println(-10 >> 2);
+		System.out.println(-10 >> 3);
 		
 		
 		//3、无符号右移（高位补 0）
