@@ -2,6 +2,13 @@ package cn.tk.java.algorithm.leetcode;
 
 import org.junit.Test;
 
+/**
+ * @description:这种算法与人类计算两个数相加的过程是一样的, 都是从低位到高位逐步运算, 超过 10 进位,进位保存在 carry 中
+ * 所以链表逆序反而对于计算两个十进数相加更有益, 使用尾插法可以让逆序保持不变.
+ * 整个过程所有链表一直保持逆序状态, 并没有进行顺序转换
+ * 
+ * 如果给出的两个链表是顺序的,反而需要进行两次逆序转换
+ */
 public class AddTwoNumbers {
 	/**
 	 * @description:关键问题要记录最后一个节点, 链表插入使用尾插法, 不使用头插法
@@ -18,7 +25,7 @@ public class AddTwoNumbers {
 			int ai = pa == null ? 0 : pa.value;
 			int bi = pb == null ? 0 : pb.value;
 			int value = (ai + bi + carry) % 10; //模 10 可以算出新链表的值
-			carry = (ai + bi + carry) / 10;//除 10 可以算出每次的进位
+			carry = (ai + bi + carry) / 10;//除 10 可以算出每次的进位, 和小于 10 不产生进位
 			prev.next = new ListNode(value);
 		}
 		if (carry > 0) {
@@ -26,7 +33,7 @@ public class AddTwoNumbers {
 		}
 		return head.next;
 	}
-	
+
 	public ListNode addTwoNumbers1(ListNode l1, ListNode l2) {
 	       int carry =0;
 	 
@@ -49,8 +56,8 @@ public class AddTwoNumbers {
 	            carry /= 10;
 	        }
 	 
-	        if(carry==1) 
-	            prev.next=new ListNode(1);
+	        if(carry > 0) 
+	            prev.next=new ListNode(carry);
 	 
 	        return head.next;
 	    }
