@@ -30,8 +30,8 @@ public class AddTwoNumbers {
 	public ListNode addTwoNumbers1(ListNode l1, ListNode l2) {
 	       int carry =0;
 	 
-	        ListNode newHead = new ListNode(0);
-	        ListNode p1 = l1, p2 = l2, p3=newHead;
+	        ListNode head = new ListNode(0);
+	        ListNode p1 = l1, p2 = l2, prev=head;
 	 
 	        while(p1 != null || p2 != null){
 	            if(p1 != null){
@@ -44,15 +44,15 @@ public class AddTwoNumbers {
 	                p2 = p2.next;
 	            }
 	 
-	            p3.next = new ListNode(carry%10);
-	            p3 = p3.next;
+	            prev.next = new ListNode(carry%10);
+	            prev = prev.next;
 	            carry /= 10;
 	        }
 	 
 	        if(carry==1) 
-	            p3.next=new ListNode(1);
+	            prev.next=new ListNode(1);
 	 
-	        return newHead.next;
+	        return head.next;
 	    }
 
 	/**
