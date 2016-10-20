@@ -2,8 +2,11 @@ package cn.tk.java.util.collections;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.junit.Test;
@@ -134,5 +137,111 @@ public class SetsDemo {
 		}
 		Set<Integer> set = new HashSet<Integer>(oldSet);
 		System.out.println(set);
+	}
+	
+	/**
+	 * @Description: 测试 add 方法, AbstractCollection 重写 toString() 方法， 所有集合都使用这个 toString() 方法打印元素
+	 */
+	@Test
+	public void testAdd()
+	{
+		Set<String> set = new HashSet<String>();
+		set.add("lijinlong");
+		System.out.println(set.toString());
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("lijinlong", new Object());
+		System.out.println(map.get("lijinlong"));
+	}
+	
+	/**
+	 * @Description:测试删除方法，按元素删除
+	 */
+	@Test
+	public void testRemove()
+	{
+		Set<String> set = new HashSet<String>();
+		set.add("lijinlong");
+		boolean removeStatus = set.remove("lijinlong");
+		System.out.println(set.toString());
+		System.out.println(removeStatus);
+	}
+	
+	/**
+	 * @Description:克隆集合对象
+	 */
+	@Test
+	public void testClone()
+	{
+		HashSet<String> set = new HashSet<String>();
+		set.add("lijinlong");
+		HashSet<String> set2 = new HashSet<String>();
+		set2.add("lijinlong");
+		
+		Object clone = set.clone();
+		System.out.println(clone.toString());
+		System.out.println(set.equals(clone));
+		System.out.println(set.equals(set2));
+	}
+	
+	/**
+	 * @Description:集合数据无序，但是可以存放空元素，但会自动去重， 所以由此可看到 HashMap 的 key 值同样可以为空
+	 */
+	@Test
+	public void testAddNull()
+	{
+		Set<String> set = new HashSet<String>();
+		set.addAll(Lists.newArrayList("lijinlong", "wangwenchao", "guodegang", "xijinping", "hujintao", "wenjiabao", null, null));
+		System.out.println(set.toString());
+		
+		System.out.println(set.size());
+		System.out.println(set.contains("lijinlong"));
+		System.out.println(set.containsAll(Lists.newArrayList("wenjiabao", null)));
+	}
+	
+	/**
+	 * @throws InterruptedException 
+	 * @Description:避免线性不安全问题
+	 */
+	@Test
+	public void testSecureSet() throws InterruptedException
+	{
+		Set<String> secureSet = Collections.synchronizedSet(new HashSet<String>());
+		Thread thread = new Thread(new Runnable() {
+			@Override
+			public void run() {
+				for (int i = 0; i < 10000; i++) {
+					secureSet.add("openId" + i);
+				}
+			}
+		});
+		thread.start();
+		Thread.currentThread();
+		Thread.sleep(1000);
+		System.out.println(secureSet.size());
+	}
+	
+	/**
+	 * @Description:使用 HashSet 是不安全的，多线程访问数据会出错
+	 */
+	@Test
+	public void testUnSecureSet() throws InterruptedException
+	{
+		Set<String> set = new HashSet<String>();
+		for (int i = 0; i < 10000; i++) {
+			set.add("openId" + i);
+		}
+		Thread thread = new Thread(new Runnable() {
+			@Override
+			public void run() {
+				for (int i = 0; i < 10000; i++) {
+					set.remove("openId" + i);
+				}
+			}
+		});
+		thread.start();
+		Thread.currentThread();
+		Thread.sleep(1000);
+		System.out.println(set.size());
 	}
 }
