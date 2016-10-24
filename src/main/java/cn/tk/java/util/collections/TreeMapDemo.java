@@ -1,6 +1,9 @@
 package cn.tk.java.util.collections;
 
+import java.util.Collections;
+import java.util.SortedMap;
 import java.util.TreeMap;
+
 import org.junit.Test;
 
 /**
@@ -75,5 +78,18 @@ public class TreeMapDemo {
 		System.out.println(map);
 		map.put("zzz", 89.0);
 		System.out.println(map); //修改元素 value，树结构不变，排序以 key 为依据
+	}
+	
+	/**
+	 * @Description:TreeMap 本身是非同步的，不是线程安全的， 如果要在多线程环境中使用， 需要手动同步
+	 */
+	@Test
+	public void testSynchronizedTreeMap()
+	{
+		SortedMap<String, Double> map = Collections.synchronizedSortedMap(new TreeMap<String, Double>());
+		map.put("ccc", 89.0);
+		map.put("aaa", 80.0);
+		map.put("zzz", 80.0);
+		System.out.println(map);
 	}
 }
