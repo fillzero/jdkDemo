@@ -2,6 +2,7 @@ package cn.tk.java.util.commonUtils;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.io.UnsupportedEncodingException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -17,6 +18,7 @@ import java.util.UUID;
 import lombok.extern.slf4j.Slf4j;
 
 import org.joda.time.DateTime;
+import org.junit.Test;
 
 /**
  * 字符串工具类
@@ -62,6 +64,12 @@ public class StringUtil {
 			result = result.substring(0, result.length() - 1);
 		}
 		return new StringBuilder(result).reverse().toString();
+	}
+	
+	public static long byte2int(byte[] res) 
+	{   
+		long targets = (res[0] & 0xff) | ((res[1] << 8) & 0xff00) | ((res[2] << 24) >>> 8) | (res[3] << 24);   
+		return targets;   
 	}
 
 	/**
