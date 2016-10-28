@@ -1,4 +1,4 @@
-package cn.tk.java.algorithm.leetcode;
+package cn.tk.java.algorithm.leetcode.array;
 
 public class TwoSum {
 	public static int[] twoSum(int[] nums, int target) {
