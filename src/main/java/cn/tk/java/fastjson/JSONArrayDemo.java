@@ -116,4 +116,47 @@ public class JSONArrayDemo {
 			System.out.println(scalaArray.getJSONObject(i).getString("price"));
 		}
 	}
+	
+	/**
+	 	{
+		  "code": "200",
+		  "msg": "success!",
+		  "result": {
+		    "policyList": [
+		      {
+		        "policyNo": "601021702201617807849356284"
+		      },
+		      {
+		        "policyNo": "601021702201617807849356285"
+		      }
+		    ]
+		  }
+		}
+	 */
+	@Test
+	public void testParsePolicy()
+	{
+		String result = "{\r\n" + 
+				"		  \"code\": \"200\",\r\n" + 
+				"		  \"msg\": \"success!\",\r\n" + 
+				"		  \"result\": {\r\n" + 
+				"		    \"policyList\": [\r\n" + 
+				"		      {\r\n" + 
+				"		        \"policyNo\": \"601021702201617807849356284\"\r\n" + 
+				"		      },\r\n" + 
+				"		      {\r\n" + 
+				"		        \"policyNo\": \"601021702201617807849356285\"\r\n" + 
+				"		      }\r\n" + 
+				"		    ]\r\n" + 
+				"		  }\r\n" + 
+				"		}";
+		JSONObject resultJson = JSONObject.parseObject(result);
+		JSONObject resultNode = resultJson.getJSONObject("result");
+		JSONArray policyArray = resultNode.getJSONArray("policyList");
+		JSONObject data = new JSONObject();
+		for (int i = 0; i < policyArray.size(); i++) {
+			data.put("policyNo_" + i, policyArray.getJSONObject(i).get("policyNo"));
+		}
+		System.out.println(data);
+	}
 }
