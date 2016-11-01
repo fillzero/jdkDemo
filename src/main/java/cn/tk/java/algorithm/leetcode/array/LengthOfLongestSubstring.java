@@ -1,4 +1,4 @@
-package cn.tk.java.algorithm.leetcode;
+package cn.tk.java.algorithm.leetcode.array;
 
 import org.junit.Test;
 
