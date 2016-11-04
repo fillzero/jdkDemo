@@ -1,7 +1,7 @@
 package cn.tk.java.innerClass.selector;
 
 public interface Selecter {
-	boolean end();
-	Object current();
+	boolean hasNext();
 	void next();
+	Object value();
 }
