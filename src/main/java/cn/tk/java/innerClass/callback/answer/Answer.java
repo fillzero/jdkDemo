@@ -1,4 +1,4 @@
-package cn.tk.java.callback;
+package cn.tk.java.innerClass.callback.answer;
 
 public class Answer {
 	public Integer calculate(ICallback callback, char operator, Integer a, Integer b)

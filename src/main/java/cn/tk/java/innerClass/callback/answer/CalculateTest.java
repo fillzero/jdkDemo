@@ -1,4 +1,4 @@
-package cn.tk.java.callback;
+package cn.tk.java.innerClass.callback.answer;
 
 import org.junit.Test;
 

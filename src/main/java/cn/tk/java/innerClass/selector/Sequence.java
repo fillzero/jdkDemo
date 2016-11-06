@@ -1,6 +1,5 @@
 package cn.tk.java.innerClass.selector;
 
-
 /**
  * @author: lijl85
  * @date：2016年11月3日下午10:50:39
@@ -11,6 +10,9 @@ package cn.tk.java.innerClass.selector;
  * 如果当前 Sequence 还有元素, 就继续迭代并且打印, Sequence 内部是 Object 数组
  * 
  * 总结: 用到了 "迭代器" 设计模式
+ * 
+ * 内部类实现多重继承典型应用, 多个内部类实现同一个接口, 但是提供不同的实现
+ * 当然多个内部类也可以实现不同的接口 ,然后返回一个内部类的引用供外部类使用.
  */
 public class Sequence {
 	
@@ -33,7 +35,7 @@ public class Sequence {
 	}
 	
 	/**
-	 * @Description: 内部类实现 Selecter 接口， 提供默认实现
+	 * @Description: 内部类实现 Selecter 接口， 提供正向迭代器
 	 */
 	private class DefaultSelecter implements Selecter{
 		private int i = 0;
@@ -54,25 +56,36 @@ public class Sequence {
 			}
 		}
 	}
-	public Selecter getSelecter()
+	
+	/**
+	 * @Description: 内部类实现 Selecter 接口， 提供方向迭代器
+	 */
+	private class ReverseSelecter implements Selecter{
+		private int i = items.length;
+		@Override
+		public boolean hasNext() {
+			return i > 0;
+		}
+
+		@Override
+		public Object value() {
+			return items[i-1];
+		}
+
+		@Override
+		public void next() {
+			if (i > 0) {
+				i --;
+			}
+		}
+	}
+	
+	public Selecter getCommonSelecter()
 	{
 		return new DefaultSelecter();
 	}
-	
-	/**
-	 * @Description:测试迭代器
-	 */
-	public static void main(String[] args)
+	public Selecter getReverseSelecter()
 	{
-		Sequence sequence = new Sequence(10);
-		for(int i=0; i<10; i++) {
-			sequence.add(i);
-		}
-		
-		Selecter selecter = sequence.getSelecter();
-		while (selecter.hasNext()) {
-			System.out.println(selecter.value());
-			selecter.next();
-		}
+		return new ReverseSelecter();
 	}
 }
