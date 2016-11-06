@@ -1,6 +1,6 @@
 package cn.tk.java.innerClass.anonymous.factory;
 
-public class Food implements Product{
+public class Food implements ProductBuilder{
 
 	private Food() {
 
@@ -15,7 +15,7 @@ public class Food implements Product{
 	public static Factory foodFactory =
 			new Factory() {
 				@Override
-				public Product getProduct() {
+				public ProductBuilder getProduct() {
 					return new Food();
 				}
 			};

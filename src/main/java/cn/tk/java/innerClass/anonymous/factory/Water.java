@@ -5,7 +5,7 @@ package cn.tk.java.innerClass.anonymous.factory;
  * @date：2016年11月4日上午8:13:21
  * @description:水厂, 生产水
  */
-public class Water implements Product{
+public class Water implements ProductBuilder{
 	/**
 	 * @Description private 构造器, 构造器写到匿名类里面, 不对外开放
 	 */
@@ -25,7 +25,7 @@ public class Water implements Product{
 	public static Factory waterFactory = 
 			new Factory() {
 				@Override
-				public Product getProduct() {
+				public ProductBuilder getProduct() {
 					return new Water();
 				}
 			};

@@ -6,5 +6,5 @@ package cn.tk.java.innerClass.anonymous.factory;
  * @description:抽象工厂接口, 获取对应产品加工工厂
  */
 public interface Factory {
-	public Product getProduct();
+	public ProductBuilder getProduct();
 }
