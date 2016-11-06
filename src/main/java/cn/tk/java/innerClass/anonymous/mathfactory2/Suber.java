@@ -3,13 +3,13 @@ package cn.tk.java.innerClass.anonymous.mathfactory2;
 
 public class Suber implements CalFactory<Integer>{
 
-	public Suber() {
+	private Suber() {
 		
 	}
 	
 	private static Suber suber;
 	
-	public CalFactory<Integer> getInstance()
+	public static CalFactory<Integer> getInstance()
 	{
 		if(suber == null)
 			suber = new Suber();
@@ -17,7 +17,7 @@ public class Suber implements CalFactory<Integer>{
 	}
 	
 	@Override
-	public Integer calculate(Integer a, Integer b, CalFactory<Integer> factory) {
+	public Integer calculate(Integer a, Integer b) {
 		return a - b;
 	}
 }

@@ -3,14 +3,13 @@ package cn.tk.java.innerClass.anonymous.mathfactory2;
 
 public class Muler implements CalFactory<Integer> {
 	
-	public Muler(){
+	private Muler(){
 		
 	}
 	
 	private static Muler muler;
 	
-	@Override
-	public CalFactory<Integer> getInstance() {
+	public static CalFactory<Integer> getInstance() {
 		if (muler == null) {
 			muler = new Muler();
 		}
@@ -18,7 +17,7 @@ public class Muler implements CalFactory<Integer> {
 	}
 	
 	@Override
-	public Integer calculate(Integer a, Integer b, CalFactory<Integer> factory) {
+	public Integer calculate(Integer a, Integer b) {
 		return a * b;
 	}
 

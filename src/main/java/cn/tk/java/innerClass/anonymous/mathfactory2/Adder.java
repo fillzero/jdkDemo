@@ -3,13 +3,13 @@ package cn.tk.java.innerClass.anonymous.mathfactory2;
 
 public class Adder implements CalFactory<Integer> {
 	
-	public Adder(){
+	private Adder(){
 		
 	}
 	
 	private static Adder adder;
 	
-	public Adder getInstance()
+	public static Adder getInstance()
 	{
 		if (adder == null) {
 			adder = new Adder(); 
@@ -18,7 +18,7 @@ public class Adder implements CalFactory<Integer> {
 	}
 	
 	@Override
-	public Integer calculate(Integer a, Integer b, CalFactory<Integer> factory) {
+	public Integer calculate(Integer a, Integer b) {
 		return a + b;
 	}
 }
