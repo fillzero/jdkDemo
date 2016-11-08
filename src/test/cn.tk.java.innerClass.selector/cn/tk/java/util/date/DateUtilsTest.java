@@ -1,13 +1,15 @@
 package cn.tk.java.util.date;
 
-import java.util.Date;
-
 import static org.hamcrest.CoreMatchers.equalTo;
-import org.junit.Test;
 import static org.junit.Assert.assertThat;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.junit.Test;
+
 public class DateUtilsTest {
-	
+
 	/**
 	 * @Description:字符串按特殊格式转日期
 	 * @Description:特殊格式日期转字符串
@@ -26,7 +28,16 @@ public class DateUtilsTest {
 		System.out.println(today);
 		assertThat(today, equalTo("2016-07-14"));
 	}
-	
+	@Test
+	public void Long2Date()
+	{
+		Long currentTime = new Long(System.currentTimeMillis());
+		SimpleDateFormat format =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String dateStr = format.format(currentTime);
+		Date date = DateUtils.str2Date(dateStr, DateUtils.standard);
+		System.out.println(date);
+	}
+
 	/**
 	 * @Description:计算当前时间的毫秒值： System.currentTimeMillis
 	 */
@@ -35,7 +46,7 @@ public class DateUtilsTest {
 	{
 		System.out.println(DateUtils.getMillis());
 	}
-	
+
 	/**
 	 * @Description:将 Date 格式化
 	 */
@@ -64,7 +75,7 @@ public class DateUtilsTest {
 	{
 		System.out.println(DateUtils.formatYYYYWW());
 	}
-	
+
 	/**
 	 * @Description: Unix 时间戳, 1970年至今的秒数, Date --> Unix时间戳
 	 */
@@ -96,7 +107,7 @@ public class DateUtilsTest {
 	{
 		System.out.println(DateUtils.unixTimestampToDate(1468425600));
 	}
-	
+
 	/**
 	 * @Description:计算两个时间点之间的差距
 	 */
@@ -114,7 +125,7 @@ public class DateUtilsTest {
 		System.out.println("diff between mimute: " + DateUtils.dateDiff('m', yesterday, today) + " 分钟");
 		System.out.println("diff between second: " + DateUtils.dateDiff('s', yesterday, today) + " 秒");
 	}
-	
+
 	/**
 	 * @Description:根据时间戳或者 Date 获取 UTC 标准时间
 	 */
@@ -128,7 +139,7 @@ public class DateUtilsTest {
 	{
 		System.out.println(DateUtils.getUTCTime(1468425600));
 	}
-	
+
 	/**
 	 * @Description: 获取今天零点的时间戳
 	 */
@@ -138,7 +149,7 @@ public class DateUtilsTest {
 		System.out.println(DateUtils.getTodayZeroSeconds());
 		System.out.println(DateUtils.getUTCTime(DateUtils.getTodayZeroSeconds()));
 	}
-	
+
 	/**
 	 * @Description:加减时间， scope: y 是减， 其余是加
 	 */
@@ -150,7 +161,7 @@ public class DateUtilsTest {
 		System.out.println(DateUtils.unixTimestampToDate(minusdate, DateUtils.yy_MM_dd));
 		System.out.println(DateUtils.unixTimestampToDate(plusdate, DateUtils.yy_MM_dd));
 	}
-	
+
 	/**
 	 * @Description:获取两个日期之间的所有日期， 包含 startTime, 不包含 endTime
 	 */
@@ -161,7 +172,7 @@ public class DateUtilsTest {
 		long endTime = DateUtils.getUnixTimestamp("2016-07-15", DateUtils.yy_MM_dd);
 		System.out.println(DateUtils.getRangeDates(startTime, endTime));
 	}
-	
+
 	/**
 	 * @Description:格式化时间戳， 获取 Time， String 类型的
 	 */
@@ -170,7 +181,7 @@ public class DateUtilsTest {
 	{
 		System.out.println(DateUtils.getTime(1468425600, DateUtils.yy_MM_dd));
 	}
-	
+
 	/**
 	 * @Description:获取当月第一天的时间戳
 	 */
@@ -180,7 +191,7 @@ public class DateUtilsTest {
 		System.out.println(DateUtils.getCurrentMonthZeroTimestamp());
 		System.out.println(DateUtils.getTime(DateUtils.getCurrentMonthZeroTimestamp(), DateUtils.yy_MM_dd));
 	}
-	
+
 	/**
 	 * @Description:返回相隔天数
 	 */
@@ -194,7 +205,7 @@ public class DateUtilsTest {
 		System.out.println(DateUtils.getDateDiff(beginTime, endTime));
 		System.out.println(DateUtils.dateDiff('d', beginDate, endDate));
 	}
-	
+
 	/**
 	 * @Description:当前时间的前 day 天零时
 	 */
@@ -203,7 +214,7 @@ public class DateUtilsTest {
 	{
 		System.out.println(DateUtils.getBeforeDay(5));
 	}
-	
+
 	/**
 	 * @Description:传入参数与当前时间毫秒差
 	 */

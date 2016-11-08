@@ -12,8 +12,8 @@ public class DateDemo {
 	@Test
 	public void testTimestampToDate() throws ParseException
 	{
-		Long currentTime = new Long(1467027632423L);  
-		SimpleDateFormat format =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  
+		Long currentTime = new Long(1467027632423L);
+		SimpleDateFormat format =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String date = format.format(currentTime);
 		System.out.println(date);
 		System.out.println(System.currentTimeMillis());
