@@ -14,6 +14,7 @@ import javax.imageio.ImageIO;
 import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
 
+import lombok.Cleanup;
 import lombok.Getter;
 import lombok.Setter;
 import net.coobird.thumbnailator.ThumbnailParameter;
@@ -82,7 +83,7 @@ public class ThumbnailUtil {
 	{
 		try {
 			String format = getImageFormat(filePath);//获取原图格式
-			InputStream inputStream = new FileInputStream(new File(filePath));
+			@Cleanup InputStream inputStream = new FileInputStream(new File(filePath));
 			Thumbnails.of(inputStream)
 			    .size(height, width)
 			    .outputFormat(format)
@@ -99,7 +100,7 @@ public class ThumbnailUtil {
 	{
 		try {
 			String format = getImageFormat(filePath);
-			InputStream inputStream = new FileInputStream(new File(filePath));
+			@Cleanup InputStream inputStream = new FileInputStream(new File(filePath));
 			Thumbnails.of(inputStream)
 				.scale(scale)
 			    .outputFormat(format)
@@ -119,7 +120,7 @@ public class ThumbnailUtil {
 	{
 		try {
 			String format = getImageFormat(filePath);
-			InputStream inputStream = new FileInputStream(new File(filePath));
+			@Cleanup InputStream inputStream = new FileInputStream(new File(filePath));
 			Thumbnails.of(inputStream)
 				.scale(1)
 				.watermark(positions, ImageIO.read(new File(waterMarkPath)), opacity)
@@ -140,7 +141,7 @@ public class ThumbnailUtil {
 			if (format.equals("jpeg")) {
 				format = "jpg";
 			}
-			InputStream inputStream = new FileInputStream(new File(filePath));
+			@Cleanup InputStream inputStream = new FileInputStream(new File(filePath));
 			String fileName = filePath.substring(0, filePath.indexOf("." + format));
 			Thumbnails.of(inputStream)
 				.scale(1)
