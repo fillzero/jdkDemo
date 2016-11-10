@@ -1,5 +1,6 @@
 package cn.tk.java.io.commonsIo.image.thumbnailator;
 
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -99,6 +100,25 @@ public class ThumbnailUtil {
 	public static void resizeByScale(String filePath, String destPath, double scale)
 	{
 		try {
+			String format = getImageFormat(filePath);
+			@Cleanup InputStream inputStream = new FileInputStream(new File(filePath));
+			Thumbnails.of(inputStream)
+				.scale(scale)
+			    .outputFormat(format)
+			    .toFile(new File(destPath));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * @Description:按高度和比例缩略
+	 */
+	public static void resizeByHeight(String filePath, String destPath, int width)
+	{
+		try {
+			BufferedImage read = ImageIO.read(new File(filePath));
+			double scale = Double.valueOf(width) / Double.valueOf(read.getWidth());
 			String format = getImageFormat(filePath);
 			@Cleanup InputStream inputStream = new FileInputStream(new File(filePath));
 			Thumbnails.of(inputStream)
@@ -227,10 +247,9 @@ public class ThumbnailUtil {
                     b[i]+=256;//调整异常数据
                 }
             }
-            OutputStream out = new FileOutputStream(filePath);
+            @Cleanup OutputStream out = new FileOutputStream(filePath);
             out.write(b);
             out.flush();
-            out.close();
             return true;
         }
         catch (Exception e)
