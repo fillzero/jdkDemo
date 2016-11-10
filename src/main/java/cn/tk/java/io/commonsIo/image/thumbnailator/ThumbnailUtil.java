@@ -14,15 +14,33 @@ import javax.imageio.ImageIO;
 import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
 
-import lombok.Cleanup;
 import lombok.Getter;
 import lombok.Setter;
+import net.coobird.thumbnailator.ThumbnailParameter;
 import net.coobird.thumbnailator.Thumbnails;
+import net.coobird.thumbnailator.geometry.Positions;
+import net.coobird.thumbnailator.name.Rename;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
+/**
+ * @Author: lijl85
+ * @Title: ThumbnailUtil.java
+ * @Package: cn.tk.java.io.commonsIo.image.thumbnailator
+ * @Time: 2016年11月10日下午2:34:32
+ *
+ * @Description:图片处理类
+ * 1. resize, resizeByScale: 生成缩略图: 按大小尺寸, 按比例
+ * 2. watermark: 加水印
+ * 3. rotate: 旋转
+ * 4. writeToDirectoryWithCustomPrefix, writeToDirectoryWithCustomSuffix: 写入文件夹
+ * 5. decodeImage: 图片解密, 去除 Base64前缀, 创建图片, 保存
+ * 6. encoderImage: 图片加密生成 Base64, 加Base64前缀, 可以直接放到 img标签中使用
+ * 7. getImageFormat: 获取图片格式
+ * 8. getFormatBase64: 获取图片Base64前缀
+ */
 public class ThumbnailUtil {
-	private static final Map<String, String> formatMap = new HashMap<String, String>();
+	private static final Map<String, String> formatMap = new HashMap<String, String>();//<图片格式, 格式Base64前缀>
 
 	static{
 		formatMap.put(Format.PNG.format, Format.PNG.baseStr);
@@ -53,14 +71,137 @@ public class ThumbnailUtil {
 		}
 	}
 
-	public static void resize(String filePath, String outputPath, int height, int width, String format)
+	/**
+	 * @Description: 按尺寸缩略, 缩略后格式不变
+	 * @param filePath: 输入图片
+	 * @param outputPath: 输出图片
+	 * @param height: 高度
+	 * @param width: 宽度
+	 */
+	public static void resize(String filePath, String destPath, int height, int width)
 	{
 		try {
+			String format = getImageFormat(filePath);//获取原图格式
 			InputStream inputStream = new FileInputStream(new File(filePath));
 			Thumbnails.of(inputStream)
 			    .size(height, width)
 			    .outputFormat(format)
-			    .toFile(new File(outputPath));
+			    .toFile(new File(destPath));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * @Description:按比例缩略
+	 */
+	public static void resizeByScale(String filePath, String destPath, double scale)
+	{
+		try {
+			String format = getImageFormat(filePath);
+			InputStream inputStream = new FileInputStream(new File(filePath));
+			Thumbnails.of(inputStream)
+				.scale(scale)
+			    .outputFormat(format)
+			    .toFile(new File(destPath));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * @Description:添加水印
+	 * @param filePath: 原图
+	 * @param waterMarkPath: 水印图片
+	 * @param opacity: 透明度
+	 */
+	public static void watermark(String filePath, String waterMarkPath, Positions positions, float opacity)
+	{
+		try {
+			String format = getImageFormat(filePath);
+			InputStream inputStream = new FileInputStream(new File(filePath));
+			Thumbnails.of(inputStream)
+				.scale(1)
+				.watermark(positions, ImageIO.read(new File(waterMarkPath)), opacity)
+			    .outputFormat(format)
+			    .toFile(new File(filePath + "-with-watermark"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * @Description: 旋转
+	 */
+	public static void rotate(String filePath, double angle)
+	{
+		try {
+			String format = getImageFormat(filePath);
+			if (format.equals("jpeg")) {
+				format = "jpg";
+			}
+			InputStream inputStream = new FileInputStream(new File(filePath));
+			String fileName = filePath.substring(0, filePath.indexOf("." + format));
+			Thumbnails.of(inputStream)
+				.scale(1)
+				.rotate(angle)
+			    .outputFormat(format)
+			    .toFile(new File(fileName + "-with-rotate." + format));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * @Description: 文件集写入文件夹
+	 * @param noChange: 名字是否改变
+	 * @param prefix: 文件名统一增加前缀
+	 * @param directoryPath: 文件夹名
+	 * @param filePaths: 文件集
+	 */
+	public static void writeToDirectoryWithCustomPrefix(boolean noChange, String prefix, String directoryPath, String ... filePaths)
+	{
+		try {
+			File directory = new File(directoryPath);
+			if (!directory.exists()) {
+				directory.mkdir();
+			}
+			if (noChange) {
+				Thumbnails.of(filePaths)
+				.scale(1)
+				.toFiles(directory, Rename.NO_CHANGE);
+			}else {
+				Thumbnails.of(filePaths)
+				.scale(1)
+				.toFiles(directory, getCustomPrefix(prefix));
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	/**
+	 * @Description: 文件集写入文件夹
+	 * @param noChange: 名字是否改变
+	 * @param prefix: 文件名统一增加后缀
+	 * @param directoryPath: 文件夹名
+	 * @param filePaths: 文件集
+	 */
+	public static void writeToDirectoryWithCustomSuffix(boolean noChange, String suffix, String directoryPath, String ... filePaths)
+	{
+		try {
+			File directory = new File(directoryPath);
+			if (!directory.exists()) {
+				directory.mkdir();
+			}
+			if (noChange) {
+				Thumbnails.of(filePaths)
+				.scale(1)
+				.toFiles(directory, Rename.NO_CHANGE);
+			}else {
+				Thumbnails.of(filePaths)
+				.scale(1)
+				.toFiles(directory, getCustomSuffix(suffix));
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -69,7 +210,7 @@ public class ThumbnailUtil {
 	/**
 	 * @Description: 字符串进行Base64解码并生成图片, 过滤 data:image/png;base64,
 	 */
-	public static boolean generateImage(String base64Str, String filePath) {
+	public static boolean decodeImage(String base64Str, String filePath) {
 
         if (base64Str == null) //图像数据为空
             return false;
@@ -85,9 +226,10 @@ public class ThumbnailUtil {
                     b[i]+=256;//调整异常数据
                 }
             }
-            @Cleanup OutputStream out = new FileOutputStream(filePath);
+            OutputStream out = new FileOutputStream(filePath);
             out.write(b);
             out.flush();
+            out.close();
             return true;
         }
         catch (Exception e)
@@ -113,17 +255,13 @@ public class ThumbnailUtil {
 			e.printStackTrace();
 		}
 		BASE64Encoder encoder = new BASE64Encoder();
-		String imageFormat = getImageFormat(filePath);
+		String imageFormat = getFormatBase64(filePath);
 		return imageFormat + encoder.encode(data);
 	}
 
 	/**
 	 * @Description: 获取文件图片类型, 加密图片加上样式
-	 * 图片格式：
-	 * png： data:image/png;base64,
-	 * jpg： data:image/jpeg;base64,
-	 * gif: data:image/gif;base64,
-	 * bmp: data:image/bmp;base64,
+
 	 */
 	public static String getImageFormat(String filePath) {
         File file = new File(filePath);
@@ -137,12 +275,24 @@ public class ThumbnailUtil {
 	        ImageReader reader = iterator.next();
 	        imageStream.close();
 	        String formatName = reader.getFormatName().toLowerCase();
-	        return formatMap.get(formatName);
-
+	        return formatName;
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	/**
+	 * @Description:获取 Base64 图片字符串前缀
+	 * @return: 图片格式
+	 * png： data:image/png;base64,
+	 * jpg： data:image/jpeg;base64,
+	 * gif: data:image/gif;base64,
+	 * bmp: data:image/bmp;base64,
+	 */
+	public static String getFormatBase64(String formatName)
+	{
+		return formatMap.get(getImageFormat(formatName));
 	}
 
 	/**
@@ -156,5 +306,38 @@ public class ThumbnailUtil {
 			}
 		}
 		return null;
+	}
+	
+	/**
+	 * @Description: 匿名类实现定制化前缀
+	 */
+	public static Rename getCustomPrefix(String prefix)
+	{
+		return new Rename(){
+			@Override
+			public String apply(String name, ThumbnailParameter param) {
+				return appendPrefix(name, prefix);
+			}
+		};
+	}
+	
+	/**
+	 * @Description: 普通内部类实现定制化后缀, 改变文件后缀名, 先去除之前后缀, 变成新的后缀
+	 */
+	public static Rename getCustomSuffix(String suffix)
+	{
+		return new SuffixRename(suffix);
+	}
+	private static class SuffixRename extends Rename{
+		
+		private String suffix;
+		public SuffixRename(String suffix) {
+			this.suffix = suffix;
+		}
+		
+		@Override
+		public String apply(String name, ThumbnailParameter param) {
+			return appendSuffix(name, suffix);
+		}
 	}
 }
