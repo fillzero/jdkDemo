@@ -112,9 +112,45 @@ public class ThumbnailUtil {
 	}
 	
 	/**
-	 * @Description:按高度和比例缩略
+	 * @Description:自动选择按高度或者按宽度缩略, 谁大按谁缩略, 设定expectHeight, expectWidth为边界值
 	 */
-	public static void resizeByHeight(String filePath, String destPath, int width)
+	public static void resizeAuto(String filePath, String destPath, int expectHeight,  int expectWidth)
+	{
+		try {
+			BufferedImage read = ImageIO.read(new File(filePath));
+			if (read.getHeight() > read.getWidth()) {
+				resizeByHeight(filePath, destPath, expectHeight);
+			}else {
+				resizeByWidth(filePath, destPath, expectWidth);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * @Description:按高度缩略
+	 */
+	public static void resizeByHeight(String filePath, String destPath, int height)
+	{
+		try {
+			BufferedImage read = ImageIO.read(new File(filePath));
+			double scale = Double.valueOf(height) / Double.valueOf(read.getHeight());
+			String format = getImageFormat(filePath);
+			@Cleanup InputStream inputStream = new FileInputStream(new File(filePath));
+			Thumbnails.of(inputStream)
+				.scale(scale)
+			    .outputFormat(format)
+			    .toFile(new File(destPath));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * @Description:按宽度缩略
+	 */
+	public static void resizeByWidth(String filePath, String destPath, int width)
 	{
 		try {
 			BufferedImage read = ImageIO.read(new File(filePath));
