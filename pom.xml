@@ -21,7 +21,7 @@
 		<commons-io>2.5</commons-io>
 		<guava.version>19.0</guava.version>
 		<fastjson.version>1.2.13</fastjson.version>
-		<lombok.version>1.16.8</lombok.version>
+		<lombok.version>1.16.10</lombok.version>
 		<commons-lang.version>2.6</commons-lang.version>
 		<dom4j.version>1.6.1</dom4j.version>
 		<slf4j.version>1.7.12</slf4j.version>
@@ -188,5 +188,15 @@
 			<artifactId>thumbnailator</artifactId>
 			<version>${thumbnailator.version}</version>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.0.0-M2</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+    </dependencies>
 </project>
