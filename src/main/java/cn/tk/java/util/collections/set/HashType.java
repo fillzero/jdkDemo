@@ -1,4 +1,4 @@
-package cn.tk.java.collection.set;
+package cn.tk.java.util.collections.set;
 
 /**
  * @author: lijl85

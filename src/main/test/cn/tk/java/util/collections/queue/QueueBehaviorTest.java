@@ -1,4 +1,4 @@
-package cn.tk.java.collection.queue;
+package cn.tk.java.util.collections.queue;
 
 import java.util.LinkedList;
 import java.util.PriorityQueue;
@@ -9,7 +9,7 @@ import java.util.concurrent.PriorityBlockingQueue;
 
 import org.junit.Test;
 
-import cn.tk.java.collection.queue.QueueBehavior.Generator;
+import cn.tk.java.util.collections.queue.QueueBehavior.Generator;
 
 /**
  * @author: lijl85

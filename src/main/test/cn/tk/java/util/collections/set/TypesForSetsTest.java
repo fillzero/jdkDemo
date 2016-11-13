@@ -1,10 +1,15 @@
-package cn.tk.java.collection.set;
+package cn.tk.java.util.collections.set;
 
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.TreeSet;
 
 import org.junit.Test;
+
+import cn.tk.java.util.collections.set.HashType;
+import cn.tk.java.util.collections.set.SetType;
+import cn.tk.java.util.collections.set.TreeType;
+import cn.tk.java.util.collections.set.TypesForSets;
 
 /**
  * @author: lijl85

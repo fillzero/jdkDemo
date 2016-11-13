@@ -1,4 +1,4 @@
-package cn.tk.java.collection.set;
+package cn.tk.java.util.collections.set;
 
 public class TreeType extends SetType implements Comparable<TreeType>{
 

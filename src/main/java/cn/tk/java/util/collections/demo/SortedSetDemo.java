@@ -1,4 +1,4 @@
-package cn.tk.java.collection.demo;
+package cn.tk.java.util.collections.demo;
 
 import java.util.Collections;
 import java.util.Iterator;
