@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL@datamove">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="data">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="information_schema"/>
+    <schema id="3" name="mysql"/>
+    <schema id="4" name="performance_schema"/>
+    <schema id="5" name="sakila"/>
+    <schema id="6" name="sys"/>
+    <schema id="7" name="test"/>
+    <schema id="8" name="world"/>
+    <table id="9" parent="1" name="product"/>
+    <table id="10" parent="1" name="tran_person"/>
+    <table id="11" parent="1" name="user"/>
+    <column id="12" parent="9" name="product_id">
+      <comment>产品编号</comment>
+      <mandatory>1</mandatory>
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="13" parent="9" name="product_name">
+      <comment>产品名称</comment>
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="14" parent="9" name="unitcost">
+      <comment>单价, 精确到小数</comment>
+      <mandatory>1</mandatory>
+      <data-type>decimal(10,2)|0</data-type>
+    </column>
+    <column id="15" parent="9" name="status">
+      <comment>是否售出 1: 售出，0: 未售出</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(1)|0</data-type>
+    </column>
+    <column id="16" parent="9" name="attr1">
+      <comment>特性，large， green</comment>
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="17" parent="9" name="itemid">
+      <comment>项目编号</comment>
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="18" parent="9" name="listprice">
+      <comment>列表价格</comment>
+      <mandatory>1</mandatory>
+      <data-type>decimal(10,2)|0</data-type>
+    </column>
+    <key id="19" parent="9" name="PRIMARY">
+      <columns>product_id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="20" parent="10" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="21" parent="10" name="name">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="22" parent="10" name="age">
+      <data-type>int(100)|0</data-type>
+    </column>
+    <key id="23" parent="10" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="24" parent="11" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="25" parent="11" name="username">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="26" parent="11" name="password">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <key id="27" parent="11" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>

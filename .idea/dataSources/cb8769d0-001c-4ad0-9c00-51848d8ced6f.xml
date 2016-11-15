@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="Oracle@datamove - @localhost">
+  <database-model serializer="dbm" rdbms="ORACLE" format-version="2.6">
+    <schema id="1" name="DATAMOVE">
+      <object-id>70</object-id>
+      <created-timestamp>2016-10-09.16:25:55</created-timestamp>
+      <modified-timestamp>2016-10-31.16:57:24</modified-timestamp>
+      <visible>1</visible>
+      <introspection-timestamp>2016-11-14.13:57:17</introspection-timestamp>
+    </schema>
+    <schema id="2" name="PUBLIC">
+      <object-id>1</object-id>
+    </schema>
+    <schema id="3" name="SYS"/>
+    <schema id="4" name="SYSTEM">
+      <object-id>5</object-id>
+    </schema>
+    <schema id="5" name="OUTLN">
+      <object-id>11</object-id>
+    </schema>
+    <schema id="6" name="DIP">
+      <object-id>19</object-id>
+    </schema>
+    <schema id="7" name="TSMSYS">
+      <object-id>21</object-id>
+    </schema>
+    <schema id="8" name="DBSNMP">
+      <object-id>24</object-id>
+    </schema>
+    <schema id="9" name="WMSYS">
+      <object-id>25</object-id>
+    </schema>
+    <schema id="10" name="EXFSYS">
+      <object-id>34</object-id>
+    </schema>
+    <schema id="11" name="DMSYS">
+      <object-id>35</object-id>
+    </schema>
+    <schema id="12" name="CTXSYS">
+      <object-id>36</object-id>
+    </schema>
+    <schema id="13" name="XDB">
+      <object-id>38</object-id>
+    </schema>
+    <schema id="14" name="ANONYMOUS">
+      <object-id>39</object-id>
+    </schema>
+    <schema id="15" name="ORDSYS">
+      <object-id>43</object-id>
+    </schema>
+    <schema id="16" name="ORDPLUGINS">
+      <object-id>44</object-id>
+    </schema>
+    <schema id="17" name="SI_INFORMTN_SCHEMA">
+      <object-id>45</object-id>
+    </schema>
+    <schema id="18" name="MDSYS">
+      <object-id>46</object-id>
+    </schema>
+    <schema id="19" name="OLAPSYS">
+      <object-id>47</object-id>
+    </schema>
+    <schema id="20" name="MDDATA">
+      <object-id>50</object-id>
+    </schema>
+    <schema id="21" name="SYSMAN">
+      <object-id>51</object-id>
+    </schema>
+    <schema id="22" name="MGMT_VIEW">
+      <object-id>53</object-id>
+    </schema>
+    <schema id="23" name="SCOTT">
+      <object-id>54</object-id>
+    </schema>
+    <schema id="24" name="HR">
+      <object-id>55</object-id>
+    </schema>
+    <schema id="25" name="OE">
+      <object-id>56</object-id>
+    </schema>
+    <schema id="26" name="IX">
+      <object-id>57</object-id>
+    </schema>
+    <schema id="27" name="SH">
+      <object-id>58</object-id>
+    </schema>
+    <schema id="28" name="PM">
+      <object-id>59</object-id>
+    </schema>
+    <schema id="29" name="BI">
+      <object-id>60</object-id>
+    </schema>
+    <schema id="30" name="DEVELOPER1">
+      <object-id>67</object-id>
+    </schema>
+    <schema id="31" name="LIJINLONG">
+      <object-id>68</object-id>
+    </schema>
+    <table id="32" parent="1" name="TRAN_PERSON">
+      <object-id>82415</object-id>
+      <created-timestamp>2016-10-31.16:57:23</created-timestamp>
+      <modified-timestamp>2016-10-31.16:57:23</modified-timestamp>
+      <organization>HEAP</organization>
+    </table>
+    <table id="33" parent="1" name="USER_ORACLE">
+      <object-id>81220</object-id>
+      <created-timestamp>2016-10-13.18:45:36</created-timestamp>
+      <modified-timestamp>2016-10-13.19:18:55</modified-timestamp>
+      <organization>HEAP</organization>
+    </table>
+    <column id="34" parent="32" name="ID">
+      <mandatory>1</mandatory>
+      <data-type>NUMBER(11,2)|0</data-type>
+    </column>
+    <column id="35" parent="32" name="NAME">
+      <data-type>VARCHAR2(32)|0</data-type>
+      <default-expression>NULL</default-expression>
+    </column>
+    <column id="36" parent="32" name="AGE">
+      <data-type>VARCHAR2(32)|0</data-type>
+      <default-expression>NULL</default-expression>
+    </column>
+    <index id="37" parent="32" name="SYS_C0015985">
+      <name-surrogate>1</name-surrogate>
+      <object-id>82416</object-id>
+      <created-timestamp>2016-10-31.16:57:24</created-timestamp>
+      <modified-timestamp>2016-10-31.16:57:24</modified-timestamp>
+      <columns>ID</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+      <tablespace-name>TABLESPACE_DEVELOP</tablespace-name>
+    </index>
+    <key id="38" parent="32" name="SYS_C0015985">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2016-10-31.16:57:24</modified-timestamp>
+      <columns>ID</columns>
+      <initially-deferred>1</initially-deferred>
+      <underlying-index>SYS_C0015985</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="39" parent="33" name="ID">
+      <mandatory>1</mandatory>
+      <data-type>NUMBER(11,2)|0</data-type>
+    </column>
+    <column id="40" parent="33" name="USERNAME">
+      <data-type>VARCHAR2(100)|0</data-type>
+      <default-expression>NULL</default-expression>
+    </column>
+    <column id="41" parent="33" name="PASSWORD">
+      <data-type>VARCHAR2(100)|0</data-type>
+      <default-expression>NULL</default-expression>
+    </column>
+    <index id="42" parent="33" name="SYS_C0015643">
+      <name-surrogate>1</name-surrogate>
+      <object-id>81221</object-id>
+      <created-timestamp>2016-10-13.18:45:36</created-timestamp>
+      <modified-timestamp>2016-10-13.19:18:55</modified-timestamp>
+      <columns>ID</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+      <tablespace-name>TABLESPACE_DEVELOP</tablespace-name>
+    </index>
+    <key id="43" parent="33" name="SYS_C0015643">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2016-10-13.18:45:36</modified-timestamp>
+      <columns>ID</columns>
+      <initially-deferred>1</initially-deferred>
+      <underlying-index>SYS_C0015643</underlying-index>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>

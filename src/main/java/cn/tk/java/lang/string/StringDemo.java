@@ -74,7 +74,7 @@ public class StringDemo {
 		System.out.println(parseSeconds("123.3", 12));
 	}
 	
-	public String emailEncrypt(String email)
+	public String staredEmail(String email)
 	{
 		String star = "";
 		int indexOfAt = email.indexOf("@");
@@ -90,7 +90,9 @@ public class StringDemo {
 	{
 		String qqemail = "1205557282@qq.com";
 		String hotemail = "chengdianxiaocai@hotmail.com";
-		System.out.println(emailEncrypt(qqemail));
-		System.out.println(emailEncrypt(hotemail));
+		String wangyiemail = "ljldeepinit@163.com";
+		System.out.println(staredEmail(qqemail));
+		System.out.println(staredEmail(hotemail));
+		System.out.println(staredEmail(wangyiemail));
 	}
 }

@@ -4,7 +4,7 @@ import java.util.*;
 
 /*
 *@date: 2016/11/14
-*@author: Michael_Li
+*@author: lijl85
 *@mail: ljldeepinit@163.com
 *@description: 简化版的
 */
@@ -43,8 +43,9 @@ public class SlowMap<K, V> extends AbstractMap<K, V> {
         Set<Map.Entry<K, V>> set = new HashSet<Entry<K, V>>();
         Iterator<K> kIterator = keys.iterator();
         Iterator<V> vIterator = values.iterator();
-        while (kIterator.hasNext())
-            set.add(new MapEntry<K, V>(kIterator.next(), vIterator.next()));
+//        while (kIterator.hasNext())
+//            set.add(new MapEntry<K, V>(kIterator.next(), vIterator.next()));
+
         return set;
     }
 }
