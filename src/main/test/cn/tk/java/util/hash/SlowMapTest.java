@@ -46,7 +46,7 @@ public class SlowMapTest {
     @Test
     @DisplayName("get")
     public void get() throws Exception {
-        assertSame("lijinlong", map.get("name"));
+        assertSame("18", map.get("age"));
     }
 
     @Test

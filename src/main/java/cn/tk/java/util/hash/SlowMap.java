@@ -7,6 +7,9 @@ import java.util.*;
 *@author: lijl85
 *@mail: ljldeepinit@163.com
 *@description: 简化版的
+* keys: 相当于 key 的容器
+* values: 相当于 value 的容器, value 根据 key 在 keys 中的下标存储
+* value 在 values 中的下标与 key 在 keys 中的下标一致
 */
 public class SlowMap<K, V> extends AbstractMap<K, V> {
     private List<K> keys = new ArrayList<K>();
@@ -38,14 +41,12 @@ public class SlowMap<K, V> extends AbstractMap<K, V> {
         return values.get(keys.indexOf(key));
     }
 
-    @Override
     public Set<Entry<K, V>> entrySet() {
-        Set<Map.Entry<K, V>> set = new HashSet<Entry<K, V>>();
+        Set<Entry<K, V>> set = new HashSet<Entry<K, V>>();
         Iterator<K> kIterator = keys.iterator();
         Iterator<V> vIterator = values.iterator();
-//        while (kIterator.hasNext())
-//            set.add(new MapEntry<K, V>(kIterator.next(), vIterator.next()));
-
+        while (kIterator.hasNext())
+            set.add(new MapEntry<K, V>(kIterator.next(), vIterator.next()));
         return set;
     }
 }
