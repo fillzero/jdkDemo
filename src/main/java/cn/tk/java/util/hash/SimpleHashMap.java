@@ -54,10 +54,10 @@ public class SimpleHashMap<K, V> extends AbstractMap<K, V>{
         while (iterator.hasNext())
         {
             MapEntry<K, V> entry = iterator.next();
-            if(value.equals(entry.getValue()))
+            if(key.equals(entry.getKey()))//比较key值, 桶位相同, key值也相同, 必须覆盖, 桶位相同, key 值可能不相同
             {
                 found = true;//找到相同取值节点
-                oldValue = value;
+                oldValue = entry.getValue();//oldValue取出返回
                 entry.setValue(value);//value覆盖
                 break;
             }
