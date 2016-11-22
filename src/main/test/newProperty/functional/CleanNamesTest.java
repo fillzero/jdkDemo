@@ -27,6 +27,11 @@ public class CleanNamesTest {
     }
 
     @Test
+    public void cleanNamesParallel(){
+        System.out.println(instance.cleanNamesParallel(nameList));
+    }
+
+    @Test
     public void capitalize() throws Exception {
         assertEquals("Lijinlong", instance.capitalize("lijinlong"));
         assertNotEquals("lijinlong", instance.capitalize("lijinlong"));

@@ -31,15 +31,32 @@ public class CleanNames {
             return sBuffer.substring(0, sBuffer.length()-1).toString();
         }
 
+        /*
+        * @description:java8 函数式编程实现
+        */
         public String cleanNamesNew(List<String> names)
         {
             if (names == null) return "";
             return names
                     .stream()
+                    .filter(name -> name != null)
                     .filter(name -> name.length() > 1)
                     .map(name -> capitalize(name))
                     .collect(Collectors.joining(","));
+        }
 
+        /*
+        * @description: java8 函数式编程实现并行化处理
+        */
+        public String cleanNamesParallel(List<String> names)
+        {
+            if (names == null) return "";
+            return names
+                    .parallelStream()
+                    .filter(name -> name != null)
+                    .filter(name -> name.length() > 1)
+                    .map(name -> capitalize(name))
+                    .collect(Collectors.joining(","));
         }
 
         /*
