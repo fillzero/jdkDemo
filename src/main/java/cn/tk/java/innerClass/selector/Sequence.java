@@ -35,7 +35,7 @@ public class Sequence {
 	}
 	
 	/**
-	 * @Description: 内部类实现 Selecter 接口， 提供正向迭代器
+	 * @description: 内部类实现 Selecter 接口， 提供正向迭代器
 	 */
 	private class DefaultSelecter implements Selecter{
 		private int i = 0;
@@ -58,7 +58,7 @@ public class Sequence {
 	}
 	
 	/**
-	 * @Description: 内部类实现 Selecter 接口， 提供方向迭代器
+	 * @description: 内部类实现 Selecter 接口， 提供方向迭代器
 	 */
 	private class ReverseSelecter implements Selecter{
 		private int i = items.length;

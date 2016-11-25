@@ -8,16 +8,16 @@ import org.junit.Test;
  * @Package: cn.tk.java.algorithm.sort
  * @Time: 2016年8月23日下午1:26:33
  *
- * @Description: 大顶堆
+ * @description: 大顶堆
  */
 public class MaxHeapify {
 	private static int[] input = new int[] {16, 4, 10, 14, 7, 9, 3, 2, 8, 1 };
 	private static int heapSize = input.length;//堆大小
 	
 	/**
-	 * @Description: 递归维护大顶堆方法
-	 * @param array: 数组（用来描述堆）
-	 * @param parent: 根节点下标
+	 * @description: 递归维护大顶堆方法
+	 * @param: array: 数组（用来描述堆）
+	 * @param: parent: 根节点下标
 	 */
 	public static void maxHeapifyRecursion(int[] heap, int parent) {
 		int lchild = parent * 2;//左孩子下标
@@ -60,7 +60,7 @@ public class MaxHeapify {
 	}
 	
 	/**
-	 * @Description:非递归方式维护大顶堆
+	 * @description:非递归方式维护大顶堆
 	 */
 	public static void maxHeapify(int[] heap, int parent)
 	{
@@ -87,7 +87,7 @@ public class MaxHeapify {
 	}
 
 	/**
-	 * @Description: 交换数组中两个元素的值
+	 * @description: 交换数组中两个元素的值
 	 * @param heap： 数组
 	 * @param parent： 父节点下标
 	 * @param largest： 最大值节点下标
@@ -99,7 +99,7 @@ public class MaxHeapify {
 	}
 	
 	/**
-	 * @Description: 打印整个数组
+	 * @description: 打印整个数组
 	 */
 	public static void printArray() {
 		for (int i : input) {

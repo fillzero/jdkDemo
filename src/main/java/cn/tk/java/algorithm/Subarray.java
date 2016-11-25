@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * @Description:最大子数组的基本属性
+ * @description:最大子数组的基本属性
  */
 @Data
 @AllArgsConstructor

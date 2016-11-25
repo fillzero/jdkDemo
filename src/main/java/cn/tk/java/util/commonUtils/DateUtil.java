@@ -223,7 +223,7 @@ public class DateUtil {
 	}
 	
 	/**
-	 * @Description:获取保险期间
+	 * @description:获取保险期间
 	 */
 	public static long getPeriod(String startDate, String endDate)
 	{

@@ -6,7 +6,7 @@ import java.util.Map;
 *@date: 2016/11/16
 *@author: lijl85
 *@mail: ljldeepinit@163.com
-*@description: 
+*@description:
 */
 public class MapEntry<K, V> implements Map.Entry<K, V> {
 

@@ -15,7 +15,7 @@ import org.junit.Test;
  * @Package: cn.tk.java.io.commonsIo
  * @Time: 2016年10月13日下午1:40:14
  *
- * @Description:文件比较器
+ * @description:文件比较器
  */
 public class ComparatorTest {
 	private String basePath = null;
@@ -27,7 +27,7 @@ public class ComparatorTest {
 	}
 	
 	/**
-	 * @Description: 文件名称比较器
+	 * @description: 文件名称比较器
 	 */
 	@Test
 	public void testNameFileComparator()
@@ -39,7 +39,7 @@ public class ComparatorTest {
 	}
 	
 	/**
-	 * @Description: 文件路径比较器
+	 * @description: 文件路径比较器
 	 */
 	@Test
 	public void testPathFileComparator()
@@ -51,7 +51,7 @@ public class ComparatorTest {
 	}
 	
 	/**
-	 * @Description: 组合比较器
+	 * @description: 组合比较器
 	 */
 	@SuppressWarnings("unchecked")
 	@Test

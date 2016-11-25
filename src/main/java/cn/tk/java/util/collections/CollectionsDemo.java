@@ -12,11 +12,11 @@ import org.junit.Test;
 import com.google.common.base.Preconditions;
 
 /**
- * @Description:Collections 集合类
+ * @description:Collections 集合类
  */
 public class CollectionsDemo {
 	/**
-	 * @Description:排序
+	 * @description:排序
 	 */
 	@Test
 	public void testSort() {
@@ -32,7 +32,7 @@ public class CollectionsDemo {
 	}
 
 	/**
-	 * @Description:混排
+	 * @description:混排
 	 */
 	@Test
 	public void testShuffle() {
@@ -48,7 +48,7 @@ public class CollectionsDemo {
 	}
 
 	/**
-	 * @Description:反转
+	 * @description:反转
 	 */
 	@Test
 	public void testReverse() {
@@ -64,7 +64,7 @@ public class CollectionsDemo {
 	}
 
 	/**
-	 * @Description:替换， 用指定元素替换容器中所有元素
+	 * @description:替换， 用指定元素替换容器中所有元素
 	 */
 	@Test
 	public void testFill() {
@@ -80,7 +80,7 @@ public class CollectionsDemo {
 	}
 
 	/**
-	 * @Description:copy(List dest, List src): src > dest 越界异常
+	 * @description:copy(List dest, List src): src > dest 越界异常
 	 * copy 就是用小集合数据替换大集合数据前面的一部分
 	 */
 	@Test

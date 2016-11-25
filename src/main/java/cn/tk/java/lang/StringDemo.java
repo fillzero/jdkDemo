@@ -6,7 +6,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 
 public class StringDemo {
 	/**
-	 * @Description:测试 lastIndexOf 获取最后一个匹配字符串的首字母下标
+	 * @description:测试 lastIndexOf 获取最后一个匹配字符串的首字母下标
 	 */
 	@Test
 	public void testLastIndexOf()

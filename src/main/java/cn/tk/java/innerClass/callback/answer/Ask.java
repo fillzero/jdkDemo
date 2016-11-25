@@ -9,7 +9,7 @@ public class Ask implements ICallback{
 	}
 	
 	/**
-	 * @Description:请求调用主调方法
+	 * @description:请求调用主调方法
 	 */
 	public Integer askQuestion(char operator, Integer a, Integer b) throws InstantiationException, IllegalAccessException
 	{
@@ -18,7 +18,7 @@ public class Ask implements ICallback{
 	
 	/**
 	 * @Author: 李晋龙
-	 * @Description:回调方法
+	 * @description:回调方法
 	 */
 	@Override
 	public Integer solve(char operator, Integer a, Integer b) {

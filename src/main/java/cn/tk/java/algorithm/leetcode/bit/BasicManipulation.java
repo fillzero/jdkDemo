@@ -8,14 +8,14 @@ import org.junit.Test;
  * @Package: cn.tk.java.algorithm.leetcode.bit
  * @Time: 2016年11月1日下午1:27:46
  *
- * @Description:常见位运算计算技巧： 
+ * @description:常见位运算计算技巧：
  * "&": 按位与
  * "|": 按位或
  * "~": 按位非
  */
 public class BasicManipulation {
 	/**
-	 * @Description: 获取最大整型: 移位运算符优先级低于减号，必须加括号
+	 * @description: 获取最大整型: 移位运算符优先级低于减号，必须加括号
 	 */
 	@Test
 	public void getMaxInt()
@@ -29,7 +29,7 @@ public class BasicManipulation {
 	}
 	
 	/**
-	 * @Description: 获取最小整数
+	 * @description: 获取最小整数
 	 */
 	@Test
 	public void getMinInt()
@@ -41,7 +41,7 @@ public class BasicManipulation {
 	}
 	
 	/**
-	 * @Description: 获取最大 long 值
+	 * @description: 获取最大 long 值
 	 */
 	@Test
 	public void getMaxLong()
@@ -55,7 +55,7 @@ public class BasicManipulation {
 	}
 	
 	/**
-	 * @Description: 获取最小 long 值
+	 * @description: 获取最小 long 值
 	 */
 	@Test
 	public void getMinLong()
@@ -67,7 +67,7 @@ public class BasicManipulation {
 	}
 	
 	/**
-	 * @Description: 乘 2 运算
+	 * @description: 乘 2 运算
 	 */
 	@Test
 	public void mulTwo()
@@ -76,7 +76,7 @@ public class BasicManipulation {
 	}
 	
 	/**
-	 * @Description: 除 2 运算: 向下取整
+	 * @description: 除 2 运算: 向下取整
 	 */
 	@Test
 	public void divTwo()
@@ -87,7 +87,7 @@ public class BasicManipulation {
 	}
 	
 	/**
-	 * @Description: 除以 2 的 m 次方: 向下取整
+	 * @description: 除以 2 的 m 次方: 向下取整
 	 */
 	@Test
 	public void divTwoPower()
@@ -97,7 +97,7 @@ public class BasicManipulation {
 	}
 	
 	/**
-	 * @Description: 判断奇偶性
+	 * @description: 判断奇偶性
 	 */
 	@Test
 	public void oddNumber()
@@ -107,7 +107,7 @@ public class BasicManipulation {
 	}
 	
 	/**
-	 * @Description: 不用临时变量交换两个数
+	 * @description: 不用临时变量交换两个数
 	 */
 	@Test
 	public void swap()
@@ -122,7 +122,7 @@ public class BasicManipulation {
 	}
 	
 	/**
-	 * @Description:求绝对值
+	 * @description:求绝对值
 	 * <br>
 	 * <p> 
 	 * 	   n >> 31 取的 n 的符号，若 n 为正数， n >> 31 等于 0， 若 n 为负数， n >> 31 等于	<br>
@@ -142,7 +142,7 @@ public class BasicManipulation {
 	}
 	
 	/**
-	 * @Description: 取最大值
+	 * @description: 取最大值
 	 * 如果 a >= b， （a - b）>> 31 为 0， 否则为 -1
 	 */
 	@Test
@@ -155,7 +155,7 @@ public class BasicManipulation {
 	}
 	
 	/**
-	 * @Description: 取最小值
+	 * @description: 取最小值
 	 */
 	@Test
 	public void min()
@@ -167,7 +167,7 @@ public class BasicManipulation {
 	}
 	
 	/**
-	 * @Description: 判断符号是否相同: true 表示相同， false 表示不相同
+	 * @description: 判断符号是否相同: true 表示相同， false 表示不相同
 	 */
 	@Test
 	public void isSameSign()
@@ -180,7 +180,7 @@ public class BasicManipulation {
 	}
 	
 	/**
-	 * @Description: 计算 2 的 n 次方
+	 * @description: 计算 2 的 n 次方
 	 */
 	@Test
 	public void getFactorialOfTwo()
@@ -190,7 +190,7 @@ public class BasicManipulation {
 	}
 	
 	/**
-	 * @Description: 判断是否是 2 的幂
+	 * @description: 判断是否是 2 的幂
 	 * 如果是 2 的幂， 一定是 1111....， 所以做与运算结果为 0
 	 */
 	@Test
@@ -203,7 +203,7 @@ public class BasicManipulation {
 	}
 	
 	/**
-	 * @Description: 取两个整数的平均值
+	 * @description: 取两个整数的平均值
 	 * (a ^ b) >> 1: 得到 a, b 其中一个为 1 的位并除以 2 <br>
 	 * (a & b)： 得到 a, b 都为 1 的部分， 加一起就是平均数了
 	 */
@@ -217,7 +217,7 @@ public class BasicManipulation {
 	}
 	
 	/**
-	 * @Description: 取 a 的 第 b 位（从低位到高位）
+	 * @description: 取 a 的 第 b 位（从低位到高位）
 	 */
 	@Test
 	public void getBit()
@@ -228,7 +228,7 @@ public class BasicManipulation {
 	}
 	
 	/**
-	 * @Description: 将 a 的第 b 位置为 1（从低位到高位）
+	 * @description: 将 a 的第 b 位置为 1（从低位到高位）
 	 * 14: 1110 --> 15: 1111
 	 */
 	@Test
@@ -240,7 +240,7 @@ public class BasicManipulation {
 	}
 	
 	/**
-	 * @Description: 将 a 的第 b 位置为 0（从低位到高位）
+	 * @description: 将 a 的第 b 位置为 0（从低位到高位）
 	 * 15: 1111 --> 14: 1110
 	 */
 	@Test
@@ -252,7 +252,7 @@ public class BasicManipulation {
 	}
 	
 	/**
-	 * @Description: 位运算常识
+	 * @description: 位运算常识
 	 */
 	@Test
 	public void commonSense()

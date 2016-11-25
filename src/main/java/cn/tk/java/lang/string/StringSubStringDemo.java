@@ -20,7 +20,7 @@ public class StringSubStringDemo {
 	}
 	
 	/**
-	 * @Description:可以存放 80 万个字符的字符串
+	 * @description:可以存放 80 万个字符的字符串
 	 */
 	static class HugeStr{
 		private String string = new String(new char[800000]);
@@ -31,7 +31,7 @@ public class StringSubStringDemo {
 	}
 	
 	/**
-	 * @Description:可以存放 1000 万个字符的字符串
+	 * @description:可以存放 1000 万个字符的字符串
 	 */
 	static class ImprovedHugeStr{
 		private String string = new String(new char[10000000]);

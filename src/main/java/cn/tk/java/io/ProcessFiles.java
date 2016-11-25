@@ -4,12 +4,12 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * @Description:查找指定目录下 指定扩展名的所有文件
+ * @description:查找指定目录下 指定扩展名的所有文件
  * 使用指定的策略在目录中穿梭
  */
 public class ProcessFiles {
 	/**
-	 * @Description: 内部接口， 要实现这个接口必须先继承 ProcessFiles
+	 * @description: 内部接口， 要实现这个接口必须先继承 ProcessFiles
 	 */
 	public interface Strategy{
 		void process(File file);
@@ -50,7 +50,7 @@ public class ProcessFiles {
 	}
 
 	/**
-	 * @Description:java 中 \\ 表示反义字符， \\.ext 表示相对应的扩展名
+	 * @description:java 中 \\ 表示反义字符， \\.ext 表示相对应的扩展名
 	 */
 	public void processDirectoryTree(File root) throws IOException {
 		for(File file : Directory.walk(root.getAbsoluteFile(), ".*\\." + ext))

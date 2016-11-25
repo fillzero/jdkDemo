@@ -12,7 +12,7 @@ import org.junit.experimental.theories.Theory;
 import org.junit.runner.RunWith;
 
 /**
- * @Description:理论机制加入了参数传入, 可以通过 @DataPoint 将参数传入理论测试方法
+ * @description:理论机制加入了参数传入, 可以通过 @DataPoint 将参数传入理论测试方法
  * 带参数的测试函数, 参数来自 @DataPoint
  */
 @RunWith(Theories.class)

@@ -18,7 +18,7 @@ import org.junit.runners.Parameterized.Parameters;
  * @Package: cn.tk.junitDemo.wordDealUtil.parameterized
  * @Time: 2016年5月30日下午3:14:45
  *
- * @Description: 参数化测试, 用域直接注入, 域的可见性变为 public, 而不是 private
+ * @description: 参数化测试, 用域直接注入, 域的可见性变为 public, 而不是 private
  */
 @RunWith(Parameterized.class)
 public class FibonacciTest1 {
@@ -32,7 +32,7 @@ public class FibonacciTest1 {
 	public int fExpected;//预期结果
 	
 	/**
-	 * @Description:方法加注解用于传入需要的参数
+	 * @description:方法加注解用于传入需要的参数
 	 */
 	@Parameters
 	public static Collection<Object[]> data()

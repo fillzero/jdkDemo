@@ -8,7 +8,7 @@ import org.junit.Test;
 
 public class WordDealUtilTest {
 	/**
-	 * @Description:判断运行结果是否达到预期效果
+	 * @description:判断运行结果是否达到预期效果
 	 */
 	@Test
 	public void testWordFormat4DB()
@@ -19,7 +19,7 @@ public class WordDealUtilTest {
 	}
 	
 	/**
-	 * @Description:测试 null 时的处理情况 -- 抛异常(error)
+	 * @description:测试 null 时的处理情况 -- 抛异常(error)
 	 */
 	@Test
 	public void wordFormat4DBNull()
@@ -30,7 +30,7 @@ public class WordDealUtilTest {
 	}
 	
 	/**
-	 * @Description:测试空字符串的处理情况
+	 * @description:测试空字符串的处理情况
 	 */
 	@Test
 	public void wordFormat4DBEmpty()
@@ -41,7 +41,7 @@ public class WordDealUtilTest {
 	}
 	
 	/**
-	 * @Description:测试首字母大写时的情况 --> 失败(failure)
+	 * @description:测试首字母大写时的情况 --> 失败(failure)
 	 */
 	@Test
 	public void wordFormat4DBBegin()
@@ -52,7 +52,7 @@ public class WordDealUtilTest {
 	}
 	
 	/**
-	 * @Description:测试尾字母为大写的情况
+	 * @description:测试尾字母为大写的情况
 	 */
 	@Ignore
 	public void wordFormat4DBEnd()
@@ -63,7 +63,7 @@ public class WordDealUtilTest {
 	}
 	
 	/**
-	 * @Description:测试多个相连字母大写的情况
+	 * @description:测试多个相连字母大写的情况
 	 */
 	@Test
 	public void wordFormat4DBTogether()

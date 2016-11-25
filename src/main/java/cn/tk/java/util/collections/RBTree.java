@@ -10,7 +10,7 @@ import lombok.Setter;
  * @Package: cn.tk.java.util.collections
  * @Time: 2016年10月24日下午2:45:01
  *
- * @Description:编写简略版红黑树
+ * @description:编写简略版红黑树
  * 基本性质：
  * 1. 所有结点只能是黑色或是红色
  * 2. 根节点是黑色的
@@ -44,7 +44,7 @@ public class RBTree {
 	private transient Entry<String,String> root;
 	
     /**
-     * @Description:左旋，传入旋转中心
+     * @description:左旋，传入旋转中心
      * 
      * 左旋只有两个结点位置变化了： p， r（p 变成了 r 的左子树）
      * 两个结点： 四条链接变换
@@ -68,7 +68,7 @@ public class RBTree {
     }
 
     /**
-     * @Description:右旋，传入旋转中心， 父子位置互换
+     * @description:右旋，传入旋转中心， 父子位置互换
      */
     public void rotateRight(Entry<String, String> p) {
         if (p != null) {
@@ -91,7 +91,7 @@ public class RBTree {
 	
 	/**
 	 * @Author: lijl85
-	 * @Description: Entry 类， TreeMap 中的结点类
+	 * @description: Entry 类， TreeMap 中的结点类
 	 */
 	static final class Entry<K, V> implements Map.Entry<K, V> {
 		K key;
@@ -141,7 +141,7 @@ public class RBTree {
 	}
 	
     /**
-     * @Description:比较两个对象
+     * @description:比较两个对象
      */
     static final boolean valEquals(Object o1, Object o2) {
         return (o1==null ? o2==null : o1.equals(o2));

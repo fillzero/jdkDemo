@@ -23,7 +23,7 @@ public class DirListTest {
 	}
 	
 	/**
-	 * @Description: 
+	 * @description:
 	 */
 	@Test
 	public void testPrintDirsWithFilter2()

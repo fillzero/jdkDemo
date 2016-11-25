@@ -5,7 +5,7 @@ import org.junit.Test;
 public class DecAndEncTest {
 	
 	/**
-	 * @Description:测试解密
+	 * @description:测试解密
 	 */
 	@Test
 	public void testDec()

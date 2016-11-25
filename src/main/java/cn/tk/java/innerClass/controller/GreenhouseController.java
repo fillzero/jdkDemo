@@ -103,7 +103,7 @@ public class GreenhouseController extends Controller{
 	}
 	
 	/**
-	 * @Description: 响铃事件
+	 * @description: 响铃事件
 	 */
 	public class Bell extends Event{
 		public Bell(long delayTime) {

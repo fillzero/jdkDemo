@@ -4,7 +4,7 @@ import java.io.File;
 
 public class ProcessFilesTest {
 	/**
-	 * @Description: 打印根目录下所有的 java 文件
+	 * @description: 打印根目录下所有的 java 文件
 	 */
 	public static void main(String[] args)
 	{

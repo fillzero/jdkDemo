@@ -26,7 +26,7 @@ public class SetsDemo {
 	}
 	
 	/**
-	 * @Description:集合分块测试： 使用 Arrays.copyOfRange(array, from, to)
+	 * @description:集合分块测试： 使用 Arrays.copyOfRange(array, from, to)
 	 */
 	@Test
 	public void testDivision()
@@ -47,7 +47,7 @@ public class SetsDemo {
 	}
 	
 	/**
-	 * @Description:集合分块测试： 使用 list.subList(from, to)
+	 * @description:集合分块测试： 使用 list.subList(from, to)
 	 */
 	@Test
 	public void testDivisionBySublist()
@@ -68,7 +68,7 @@ public class SetsDemo {
 	}
 	
 	/**
-	 * @Description:测试集合是否能够去重复
+	 * @description:测试集合是否能够去重复
 	 * 结论： 集合确实有自动去重复功能： 内部实际是一个 HashMap，将 add 的值当作 key 放入 map，所以会自动覆盖去重
 	 */
 	@Test
@@ -85,7 +85,7 @@ public class SetsDemo {
 	}
 	
 	/**
-	 * @Description:subList(from, to) 截取的是 from ~ (to-1) 的数
+	 * @description:subList(from, to) 截取的是 from ~ (to-1) 的数
 	 * 这种截取子链表的方式取不到最后一位，一定要特别注意
 	 * ArrayList 内部是一个数组实现， 所以数据是有序的
 	 */
@@ -103,7 +103,7 @@ public class SetsDemo {
 	}
 	
 	/**
-	 * @Description: copyOfRange(array, from, to) 截取的是 from ~ (to-1) 的数
+	 * @description: copyOfRange(array, from, to) 截取的是 from ~ (to-1) 的数
 	 * 这种截取子数组的方式取不到最后一位，一定要特别注意
 	 */
 	@Test
@@ -140,7 +140,7 @@ public class SetsDemo {
 	}
 	
 	/**
-	 * @Description: 测试 add 方法, AbstractCollection 重写 toString() 方法， 所有集合都使用这个 toString() 方法打印元素
+	 * @description: 测试 add 方法, AbstractCollection 重写 toString() 方法， 所有集合都使用这个 toString() 方法打印元素
 	 */
 	@Test
 	public void testAdd()
@@ -155,7 +155,7 @@ public class SetsDemo {
 	}
 	
 	/**
-	 * @Description:测试删除方法，按元素删除
+	 * @description:测试删除方法，按元素删除
 	 */
 	@Test
 	public void testRemove()
@@ -168,7 +168,7 @@ public class SetsDemo {
 	}
 	
 	/**
-	 * @Description:克隆集合对象
+	 * @description:克隆集合对象
 	 */
 	@Test
 	public void testClone()
@@ -185,7 +185,7 @@ public class SetsDemo {
 	}
 	
 	/**
-	 * @Description:集合数据无序，但是可以存放空元素，但会自动去重， 所以由此可看到 HashMap 的 key 值同样可以为空
+	 * @description:集合数据无序，但是可以存放空元素，但会自动去重， 所以由此可看到 HashMap 的 key 值同样可以为空
 	 */
 	@Test
 	public void testAddNull()
@@ -201,7 +201,7 @@ public class SetsDemo {
 	
 	/**
 	 * @throws InterruptedException 
-	 * @Description:避免线性不安全问题
+	 * @description:避免线性不安全问题
 	 */
 	@Test
 	public void testSecureSet() throws InterruptedException
@@ -222,7 +222,7 @@ public class SetsDemo {
 	}
 	
 	/**
-	 * @Description:使用 HashSet 是不安全的，多线程访问数据会出错
+	 * @description:使用 HashSet 是不安全的，多线程访问数据会出错
 	 */
 	@Test
 	public void testUnSecureSet() throws InterruptedException

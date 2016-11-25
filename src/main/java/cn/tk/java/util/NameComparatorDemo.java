@@ -9,7 +9,7 @@ public class NameComparatorDemo implements Comparator<String> {
 	/**
 	 * @Author: lijl85
 	 * @Time: 2016年10月21日下午4:21:41 
-	 * @Description：
+	 * @description：
 	 * 1. 都变成大写
 	 * 2. 依次比较每个字符差值
 	 * 3. 比较长度差值
@@ -35,7 +35,7 @@ public class NameComparatorDemo implements Comparator<String> {
 	}
 	
 	/**
-	 * @Description:字符串比较器默认实现， 内部类
+	 * @description:字符串比较器默认实现， 内部类
 	 */
 	@Test
 	public void testNameComparator()

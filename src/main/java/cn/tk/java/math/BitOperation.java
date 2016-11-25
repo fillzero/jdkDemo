@@ -57,7 +57,7 @@ public class BitOperation {
 	
 	static volatile int position;
 	/**
-	 * @Description:测试逻辑与运算符
+	 * @description:测试逻辑与运算符
 	 */
 	@Test
 	public void testLogicalAnd()

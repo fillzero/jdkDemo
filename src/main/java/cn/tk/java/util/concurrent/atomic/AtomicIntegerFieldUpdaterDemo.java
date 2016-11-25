@@ -3,7 +3,7 @@ package cn.tk.java.util.concurrent.atomic;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 
 /**
- * @Description:原子更新， 使用原子变量 ＝＝> 不用锁就可以安全的更新变量
+ * @description:原子更新， 使用原子变量 ＝＝> 不用锁就可以安全的更新变量
  * 读， 写， 更新作为一个原子操作
  */
 public class AtomicIntegerFieldUpdaterDemo {

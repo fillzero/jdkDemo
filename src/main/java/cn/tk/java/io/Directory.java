@@ -8,12 +8,12 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 /**
- * @Description:目录实用工具
+ * @description:目录实用工具
  */
 public class Directory {
 	/**
 	 * @Param：File dir: 指定的目录
-	 * @Description:通过正则表达式过滤返回指定目录下的所有文件和文件夹， list() 方法只是返回文件名， listFiles() 是返回文件对象
+	 * @description:通过正则表达式过滤返回指定目录下的所有文件和文件夹， list() 方法只是返回文件名， listFiles() 是返回文件对象
 	 */
 	public static File[] local(File dir, final String regex)
 	{
@@ -35,7 +35,7 @@ public class Directory {
 	}
 	
 	/**
-	 * @Description:新建数据结构， 用于显示目录下的所有文件和所有文件夹
+	 * @description:新建数据结构， 用于显示目录下的所有文件和所有文件夹
 	 */
 	public static class TreeInfo implements Iterable<File>{
 		public List<File> files = new ArrayList<File>();//所有文件
@@ -79,7 +79,7 @@ public class Directory {
 	}
 
 	/**
-	 * @Description: 递归方法， 获取一个目录下的所有文件和文件夹（形成一个巨大的树形结构）
+	 * @description: 递归方法， 获取一个目录下的所有文件和文件夹（形成一个巨大的树形结构）
 	 */
 	static TreeInfo recurseDirs(File startDir, String regex) {
 		TreeInfo fileTree = new TreeInfo();

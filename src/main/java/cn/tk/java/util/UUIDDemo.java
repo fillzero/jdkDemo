@@ -16,7 +16,7 @@ public class UUIDDemo {
 	}
 	
 	/**
-	 * @Description:位运算简单测试
+	 * @description:位运算简单测试
 	 */
 	@Test
 	public void testBitOperation()

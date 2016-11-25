@@ -72,7 +72,7 @@ public class DateUtilTest {
 	}
 
 	/**
-	 * @Description:获取给定日期的凌晨零点零分的日期对象
+	 * @description:获取给定日期的凌晨零点零分的日期对象
 	 */
 	@Test
 	public void testGetTimeOf12()
@@ -82,7 +82,7 @@ public class DateUtilTest {
 	}
 	
 	/**
-	 * @Description:获取给定日期下个月的第一天凌晨零点零分的日期对象
+	 * @description:获取给定日期下个月的第一天凌晨零点零分的日期对象
 	 */
 	@Test
 	public void testGetFirstDayOfNextMonth()

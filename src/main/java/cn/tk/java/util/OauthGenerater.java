@@ -15,7 +15,7 @@ public class OauthGenerater
 			+ "?other=###&response_type=code&scope=snsapi_base&state=tkonline#wechat_redirect";
 	
     /**
-     * @Description:获取 oauth 链接
+     * @description:获取 oauth 链接
      */
     public String makeOauthUrl(String url)
     {
@@ -33,7 +33,7 @@ public class OauthGenerater
     }
     
     /**
-     * @Description:获取 oauth 链接
+     * @description:获取 oauth 链接
      */
     public JSONObject getShareUrl(HashMap<String, String> map)
 	{
@@ -57,7 +57,7 @@ public class OauthGenerater
 	}
     
     /**
-     * @Description:替换一下就好了
+     * @description:替换一下就好了
      */
     @Test
     public void testOauth()

@@ -13,7 +13,7 @@ public class ZTest {
 	}
 	
 	/**
-	 * @Description:测试迭代器
+	 * @description:测试迭代器
 	 */
 	@Test
 	public void testCommonSelecter()
@@ -26,7 +26,7 @@ public class ZTest {
 	}
 	
 	/**
-	 * @Description:测试迭代器
+	 * @description:测试迭代器
 	 */
 	@Test
 	public void testReverseSelecter()

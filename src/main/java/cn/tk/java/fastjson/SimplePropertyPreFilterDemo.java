@@ -15,7 +15,7 @@ import com.alibaba.fastjson.serializer.SimplePropertyPreFilter;
  * @Package: cn.tk.java.fastjson
  * @Time: 2016年7月7日上午11:53:57
  *
- * @Description:SimplePropertyPreFilter 要过滤必须要有 javaBean， 不能直接在 json 的基础上进行过滤，希望写一个功能可以
+ * @description:SimplePropertyPreFilter 要过滤必须要有 javaBean， 不能直接在 json 的基础上进行过滤，希望写一个功能可以
  * 实现更加智能化的过滤， 任意一个 json 直接可以进行过滤。
  */
 public class SimplePropertyPreFilterDemo {

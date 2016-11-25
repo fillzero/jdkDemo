@@ -21,7 +21,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 
 /**
- * @Description:Charset 使用事例
+ * @description:Charset 使用事例
  */
 public class CharsetDemo {
 	@Test

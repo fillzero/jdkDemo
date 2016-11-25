@@ -17,7 +17,7 @@ import org.junit.Test;
 public class DotThis {
 	
 	/**
-	 * @Description: 外部类方法
+	 * @description: 外部类方法
 	 */
 	public String func(String param)
 	{
@@ -26,7 +26,7 @@ public class DotThis {
 	}
 	
 	/**
-	 * @Description: 外部类 inner() 返回内部类的引用
+	 * @description: 外部类 inner() 返回内部类的引用
 	 */
 	public Inner inner()
 	{
@@ -34,7 +34,7 @@ public class DotThis {
 	}
 	
 	/**
-	 * @Description: 内部类 outer() 方法返回外部类的引用
+	 * @description: 内部类 outer() 方法返回外部类的引用
 	 */
 	private class Inner{
 		public DotThis outer()

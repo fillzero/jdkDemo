@@ -31,7 +31,7 @@ import sun.misc.BASE64Encoder;
  * @Package: cn.tk.java.io.commonsIo.image.thumbnailator
  * @Time: 2016年11月10日下午2:34:32
  *
- * @Description:图片处理类
+ * @description:图片处理类
  * 1. resize, resizeByScale: 生成缩略图: 按大小尺寸, 按比例
  * 2. watermark: 加水印
  * 3. rotate: 旋转
@@ -52,7 +52,7 @@ public class ThumbnailUtil {
 	}
 
 	/**
-	 * @Description: 图片样式
+	 * @description: 图片样式
 	 * png： data:image/png;base64,
 	 * jpg： data:image/jpeg;base64,
 	 * gif: data:image/gif;base64,
@@ -74,11 +74,11 @@ public class ThumbnailUtil {
 	}
 
 	/**
-	 * @Description: 按尺寸缩略, 缩略后格式不变
-	 * @param filePath: 输入图片
-	 * @param outputPath: 输出图片
-	 * @param height: 高度
-	 * @param width: 宽度
+	 * @description: 按尺寸缩略, 缩略后格式不变
+	 * @param: filePath: 输入图片
+	 * @param: outputPath: 输出图片
+	 * @param: height: 高度
+	 * @param: width: 宽度
 	 */
 	public static void resize(String filePath, String destPath, int height, int width)
 	{
@@ -95,7 +95,7 @@ public class ThumbnailUtil {
 	}
 	
 	/**
-	 * @Description:按比例缩略
+	 * @description:按比例缩略
 	 */
 	public static void resizeByScale(String filePath, String destPath, double scale)
 	{
@@ -112,7 +112,7 @@ public class ThumbnailUtil {
 	}
 	
 	/**
-	 * @Description:自动选择按高度或者按宽度缩略, 谁大按谁缩略, 设定expectHeight, expectWidth为边界值
+	 * @description:自动选择按高度或者按宽度缩略, 谁大按谁缩略, 设定expectHeight, expectWidth为边界值
 	 */
 	public static void resizeAuto(String filePath, String destPath, int expectHeight,  int expectWidth)
 	{
@@ -129,7 +129,7 @@ public class ThumbnailUtil {
 	}
 	
 	/**
-	 * @Description:按高度缩略
+	 * @description:按高度缩略
 	 */
 	public static void resizeByHeight(String filePath, String destPath, int height)
 	{
@@ -148,7 +148,7 @@ public class ThumbnailUtil {
 	}
 	
 	/**
-	 * @Description:按宽度缩略
+	 * @description:按宽度缩略
 	 */
 	public static void resizeByWidth(String filePath, String destPath, int width)
 	{
@@ -167,7 +167,7 @@ public class ThumbnailUtil {
 	}
 	
 	/**
-	 * @Description:添加水印
+	 * @description:添加水印
 	 * @param filePath: 原图
 	 * @param waterMarkPath: 水印图片
 	 * @param opacity: 透明度
@@ -188,7 +188,7 @@ public class ThumbnailUtil {
 	}
 	
 	/**
-	 * @Description: 旋转
+	 * @description: 旋转
 	 */
 	public static void rotate(String filePath, double angle)
 	{
@@ -210,7 +210,7 @@ public class ThumbnailUtil {
 	}
 	
 	/**
-	 * @Description: 文件集写入文件夹
+	 * @description: 文件集写入文件夹
 	 * @param noChange: 名字是否改变
 	 * @param prefix: 文件名统一增加前缀
 	 * @param directoryPath: 文件夹名
@@ -237,11 +237,11 @@ public class ThumbnailUtil {
 		}
 	}
 	/**
-	 * @Description: 文件集写入文件夹
-	 * @param noChange: 名字是否改变
-	 * @param prefix: 文件名统一增加后缀
-	 * @param directoryPath: 文件夹名
-	 * @param filePaths: 文件集
+	 * @description: 文件集写入文件夹
+	 * @param: noChange: 名字是否改变
+	 * @param: prefix: 文件名统一增加后缀
+	 * @param: directoryPath: 文件夹名
+	 * @param: filePaths: 文件集
 	 */
 	public static void writeToDirectoryWithCustomSuffix(boolean noChange, String suffix, String directoryPath, String ... filePaths)
 	{
@@ -265,7 +265,7 @@ public class ThumbnailUtil {
 	}
 
 	/**
-	 * @Description: 字符串进行Base64解码并生成图片, 过滤 data:image/png;base64,
+	 * @description: 字符串进行Base64解码并生成图片, 过滤 data:image/png;base64,
 	 */
 	public static boolean decodeImage(String base64Str, String filePath) {
 
@@ -295,7 +295,7 @@ public class ThumbnailUtil {
 	}
 
 	/**
-	 * @Description: 根据图片地址转换为base64编码字符串
+	 * @description: 根据图片地址转换为base64编码字符串
 	 * 字符串最前面加上： "data:image/png;base64," 方便 img 标签直接使用
 	 */
 	public static String encoderImage(String filePath) {
@@ -316,7 +316,7 @@ public class ThumbnailUtil {
 	}
 
 	/**
-	 * @Description: 获取文件图片类型, 加密图片加上样式
+	 * @description: 获取文件图片类型, 加密图片加上样式
 
 	 */
 	public static String getImageFormat(String filePath) {
@@ -339,7 +339,7 @@ public class ThumbnailUtil {
 	}
 
 	/**
-	 * @Description:获取 Base64 图片字符串前缀
+	 * @description:获取 Base64 图片字符串前缀
 	 * @return: 图片格式
 	 * png： data:image/png;base64,
 	 * jpg： data:image/jpeg;base64,
@@ -352,7 +352,7 @@ public class ThumbnailUtil {
 	}
 
 	/**
-	 * @Description: 解密的时候需要将样式截取掉
+	 * @description: 解密的时候需要将样式截取掉
 	 */
 	public static String deleteFormat(String base64Str) {
 		Format[] values = Format.values();
@@ -365,7 +365,7 @@ public class ThumbnailUtil {
 	}
 	
 	/**
-	 * @Description: 匿名类实现定制化前缀
+	 * @description: 匿名类实现定制化前缀
 	 */
 	public static Rename getCustomPrefix(String prefix)
 	{
@@ -378,7 +378,7 @@ public class ThumbnailUtil {
 	}
 	
 	/**
-	 * @Description: 普通内部类实现定制化后缀, 改变文件后缀名, 先去除之前后缀, 变成新的后缀
+	 * @description: 普通内部类实现定制化后缀, 改变文件后缀名, 先去除之前后缀, 变成新的后缀
 	 */
 	public static Rename getCustomSuffix(String suffix)
 	{

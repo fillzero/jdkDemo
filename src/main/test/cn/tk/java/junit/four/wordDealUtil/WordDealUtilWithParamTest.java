@@ -16,7 +16,7 @@ public class WordDealUtilWithParamTest {
 	private String target;
 
 	/**
-	 * @Description:用一组参数搞定一个方法的所有测试
+	 * @description:用一组参数搞定一个方法的所有测试
 	 * 是 WordDealUtilTest.java 的简化版本, 去除重复的代码, 让代码变的更加简洁
 	 * 
 	 * @Parameters: 提供构造函数的参数
@@ -35,7 +35,7 @@ public class WordDealUtilWithParamTest {
 	}
 	
 	/**
-	 * @Description: 参数化测试必须的构造函数
+	 * @description: 参数化测试必须的构造函数
 	 * @param expected: 期望的测试结果, 对应参数集中的第一个参数
 	 * @param target: 测试数据, 对应参数集中的第二个参数
 	 */
@@ -46,7 +46,7 @@ public class WordDealUtilWithParamTest {
 	}
 	
 	/**
-	 * @Description:测试将 java 对象名称到数据库名称的转换
+	 * @description:测试将 java 对象名称到数据库名称的转换
 	 */
 	@Test
 	public void wordFormat4DB()

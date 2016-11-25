@@ -4,7 +4,7 @@ package cn.tk.java.innerClass.anonymous.mathfactory2;
 /**
  * @author: lijl85
  * @date：2016年11月6日上午11:29:42
- * @Description: 非工厂模式....作为反例
+ * @description: 非工厂模式....作为反例
  */
 public class ZTest {
 	

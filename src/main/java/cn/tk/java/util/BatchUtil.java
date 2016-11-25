@@ -11,21 +11,21 @@ import org.junit.Test;
  * @Package: cn.tk.java.util
  * @Time: 2016年10月10日下午4:40:52
  *
- * @Description: 批处理仿真
+ * @description: 批处理仿真
  * 1. while 循环截取子集： 创建两个索引直接截取子集
  * 2. for 循环创建临时列表： 小包不停的放到临时列表中
  */
 public class BatchUtil {
 	
 	/**
-	 * @Description: 批量插入数据库
+	 * @description: 批量插入数据库
 	 */
 	public void save(List<Integer> subList)
 	{
 		System.out.println("插入1000条数据");
 	}
 	/**
-	 * @Description:批量更新数据库
+	 * @description:批量更新数据库
 	 */
 	private int update(List<Integer> tempList) {
 		System.out.println("更新1000条数据");
@@ -33,7 +33,7 @@ public class BatchUtil {
 	}
 	
 	/**
-	 * @Description: while 循环截取子集
+	 * @description: while 循环截取子集
 	 * listSize: 总数量
 	 * stepSize； 操作步长，每次批量处理数量
 	 * subList； 子列表，每次批量操作的数据
@@ -62,7 +62,7 @@ public class BatchUtil {
 	}
 	
 	/**
-	 * @Description: for 循环创建临时链表
+	 * @description: for 循环创建临时链表
 	 * 注意 List 使用 ArrayList 不用 LinkedList， LinkedList 的  get() 方法很慢
 	 */
 	public int updateBatch(List<Integer> lists) {

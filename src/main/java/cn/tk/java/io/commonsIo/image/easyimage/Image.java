@@ -38,7 +38,7 @@ public class Image {
 	}
 
 	/**
-	 * @Description: 图片样式
+	 * @description: 图片样式
 	 * png： data:image/png;base64,
 	 * jpg： data:image/jpeg;base64,
 	 * gif: data:image/gif;base64,
@@ -638,7 +638,7 @@ public class Image {
 	}
 
 	/**
-	 * @Description: 字符串进行Base64解码并生成图片, 过滤 data:image/png;base64,
+	 * @description: 字符串进行Base64解码并生成图片, 过滤 data:image/png;base64,
 	 */
 	public static boolean generateImage(String base64Str, String filePath) {
 
@@ -668,7 +668,7 @@ public class Image {
 	}
 
 	/**
-	 * @Description: 根据图片地址转换为base64编码字符串
+	 * @description: 根据图片地址转换为base64编码字符串
 	 * 字符串最前面加上： "data:image/png;base64," 方便 img 标签直接使用
 	 */
 	public static String encoderImage(String filePath) {
@@ -689,7 +689,7 @@ public class Image {
 	}
 
 	/**
-	 * @Description: 获取文件图片类型, 加密图片加上样式
+	 * @description: 获取文件图片类型, 加密图片加上样式
 	 * 图片格式：
 	 * png： data:image/png;base64,
 	 * jpg： data:image/jpeg;base64,
@@ -717,7 +717,7 @@ public class Image {
 	}
 
 	/**
-	 * @Description: 解密的时候需要将样式截取掉
+	 * @description: 解密的时候需要将样式截取掉
 	 */
 	public static String deleteFormat(String base64Str) {
 		Format[] values = Format.values();

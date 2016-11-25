@@ -17,7 +17,7 @@ import org.junit.runners.Parameterized.Parameters;
  * @Package: cn.tk.junitDemo.wordDealUtil.parameterized
  * @Time: 2016年5月30日下午3:14:45
  *
- * @Description: 参数化测试, 构造函数注入参数
+ * @description: 参数化测试, 构造函数注入参数
  */
 @RunWith(Parameterized.class)
 public class FibonacciTest {
@@ -26,7 +26,7 @@ public class FibonacciTest {
 	private int fExpected;//预期结果
 	
 	/**
-	 * @Description:构造函数用于传入参数
+	 * @description:构造函数用于传入参数
 	 */
 	public FibonacciTest(int input, int expected) {
 		this.fInput = input;
@@ -34,7 +34,7 @@ public class FibonacciTest {
 	}
 	
 	/**
-	 * @Description:方法加注解用于传入需要的参数
+	 * @description:方法加注解用于传入需要的参数
 	 */
 	@Parameters
 	public static Collection<Object[]> data()

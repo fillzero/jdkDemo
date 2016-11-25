@@ -3,7 +3,7 @@ package cn.tk.java.util.concurrent.atomic;
 import org.junit.Test;
 
 /**
- * @Description:经过实验该非阻塞计数器是线程安全的
+ * @description:经过实验该非阻塞计数器是线程安全的
  */
 public class NonblockingCounterTest {
 	private static volatile int value = 0;

@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
  */
 public class DotNew {
 	/**
-	 * @Description: 静态内部类
+	 * @description: 静态内部类
 	 */
 	@Data
 	@AllArgsConstructor
@@ -24,7 +24,7 @@ public class DotNew {
 	}
 	
 	/**
-	 * @Description: 非静态内部类
+	 * @description: 非静态内部类
 	 */
 	@Data
 	@AllArgsConstructor
@@ -34,7 +34,7 @@ public class DotNew {
 	}
 	
 	/**
-	 * @Description: 创建内部类对象
+	 * @description: 创建内部类对象
 	 * new OuterClass.InnerClass()  等效于 outerObject.new InnerClass()
 	 * 先创建外部类对象， 内部类引用指向内部类引用，所以内部类对象可以访问外部类中所有元素
 	 * 

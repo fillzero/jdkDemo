@@ -3,7 +3,7 @@ package cn.tk.java.algorithm;
 import java.util.Arrays;
 
 /**
- * @Description: 求解最大非空连续子数组的和
+ * @description: 求解最大非空连续子数组的和
  * 1. 暴力求解
  * 2. 递归求解
  * 3. 动态规划
@@ -11,7 +11,7 @@ import java.util.Arrays;
 public class MaxSubarray {
 	
 	/**
-	 * @Description:1. 暴力求解, O(n^3) 的时间复杂度
+	 * @description:1. 暴力求解, O(n^3) 的时间复杂度
 	 */
 	public Subarray findMaxSubArray(int[] data, int left, int right)
 	{
@@ -33,7 +33,7 @@ public class MaxSubarray {
 	}
 	
 	/**
-	 * @Description:求子数组的和
+	 * @description:求子数组的和
 	 */
 	public int getArraySum(int[] array) {
 		if(array==null || array.length==0)
@@ -47,7 +47,7 @@ public class MaxSubarray {
 	}
 	
 	/**
-	 * @Description:2. 递归算法：  O(n*logn) 的时间复杂度
+	 * @description:2. 递归算法：  O(n*logn) 的时间复杂度
 	 */
 	public Subarray maxSubArray_recursion(int[] data, int left, int right, Subarray currentSubarray)
 	{
@@ -64,7 +64,7 @@ public class MaxSubarray {
 	}
 	
 	/**
-	 * @Description: 找三个数中最大的
+	 * @description: 找三个数中最大的
 	 */
 	public Subarray getMax3(Subarray maxCrossSubarray,
 			Subarray maxLeftSubarray, Subarray maxRightSubarray) {
@@ -80,7 +80,7 @@ public class MaxSubarray {
 	}
 
 	/**
-	 * @Description:含中间部分最大和
+	 * @description:含中间部分最大和
 	 * max 值开始一定要用负无穷， 不能用 0 代替， 否则负数中的最大值就不会被计算进来（注意最大值与正负无关）
 	 * 当所有值都是负数的时候， 负数也可能成为最大值
 	 */
@@ -114,7 +114,7 @@ public class MaxSubarray {
 	}
 	
 	/**
-	 * @Description:3. 线性时间求解最大非空连续子数组的和
+	 * @description:3. 线性时间求解最大非空连续子数组的和
 	 * curSum <= 0： 从当前值重新开始计算，如果负数为最大值， 只可能是单一一个负数， 所以只需要记住一个最大的
 	 * O(n) 的时间复杂度
 	 */

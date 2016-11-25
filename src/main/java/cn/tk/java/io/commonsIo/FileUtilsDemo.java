@@ -16,7 +16,7 @@ import org.junit.Test;
  * @Package: cn.tk.java.io.commonsIo
  * @Time: 2016年10月13日上午10:24:59
  *
- * @Description: 工具类
+ * @description: 工具类
  * FileUtils
  * IOUtils
  * FilenameUtils
@@ -35,7 +35,7 @@ public class FileUtilsDemo {
 	}
 	
 	/**
-	 * @Description:拷贝文件
+	 * @description:拷贝文件
 	 */
 	@Test
 	public void testCopy() throws IOException
@@ -46,7 +46,7 @@ public class FileUtilsDemo {
 	}
 	
 	/**
-	 * @Description:删除文件
+	 * @description:删除文件
 	 */
 	@Test
 	public void testDelete() throws IOException
@@ -64,7 +64,7 @@ public class FileUtilsDemo {
 	}
 	
 	/**
-	 * @Description:移动文件
+	 * @description:移动文件
 	 */
 	@Test
 	public void testMoveFile() throws IOException
@@ -75,7 +75,7 @@ public class FileUtilsDemo {
 	}
 	
 	/**
-	 * @Description:读文件
+	 * @description:读文件
 	 */
 	@Test
 	public void testRead() throws IOException
@@ -88,7 +88,7 @@ public class FileUtilsDemo {
 	}
 	
 	/**
-	 * @Description:写文件
+	 * @description:写文件
 	 */
 	@Test
 	public void testWrite() throws IOException
@@ -98,7 +98,7 @@ public class FileUtilsDemo {
 	}
 	
 	/**
-	 * @Description:比较文件内容
+	 * @description:比较文件内容
 	 */
 	@Test
 	public void testCompareFile() throws IOException

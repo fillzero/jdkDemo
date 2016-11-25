@@ -9,7 +9,7 @@ import com.google.common.collect.Lists;
 
 public class ListDemo {
 	/**
-	 * @Description: 3 没有删除掉，list 删除一个元素，后面整体前移一个位置， 所以下一个元素不会被删除掉。
+	 * @description: 3 没有删除掉，list 删除一个元素，后面整体前移一个位置， 所以下一个元素不会被删除掉。
 	 * @return: [1, 3, 4, 5]
 	 */
 	@Test
@@ -25,7 +25,7 @@ public class ListDemo {
 	}
 	
 	/**
-	 * @Description:ConcurrentModificationException
+	 * @description:ConcurrentModificationException
 	 * 迭代器不允许遍历的时候删除，因为存在隐含风险，所以会 fast-fail
 	 */
 	@Test
@@ -41,7 +41,7 @@ public class ListDemo {
 	}
 	
 	/**
-	 * @Description:成功删除，这种方法可以实现 for 循环过程中删除元素
+	 * @description:成功删除，这种方法可以实现 for 循环过程中删除元素
 	 */
 	@Test
 	public void testDeleteByIterator()

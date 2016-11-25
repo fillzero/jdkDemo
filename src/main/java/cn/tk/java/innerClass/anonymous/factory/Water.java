@@ -7,7 +7,7 @@ package cn.tk.java.innerClass.anonymous.factory;
  */
 public class Water implements ProductBuilder{
 	/**
-	 * @Description private 构造器, 构造器写到匿名类里面, 不对外开放
+	 * @description private 构造器, 构造器写到匿名类里面, 不对外开放
 	 */
 	private Water() {
 		

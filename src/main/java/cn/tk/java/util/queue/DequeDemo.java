@@ -6,7 +6,7 @@ import java.util.Deque;
 import org.junit.Test;
 
 /**
- * @Description:Deque： double ended queue: 双端队列
+ * @description:Deque： double ended queue: 双端队列
  * 可以作为队列（FIFO） 使用， 也可以作为栈（FILO） 使用
  * 12 种方法：两个维度（3 * 4）
  * insert  remove  examine
@@ -22,7 +22,7 @@ public class DequeDemo {
 	}
 	
 	/**
-	 * @Description:添加元素， add, offer 
+	 * @description:添加元素， add, offer
 	 * 左边是队列的头， addFirst 添加到左边第一个， add 默认添加到队尾
 	 */
 	@Test
@@ -40,7 +40,7 @@ public class DequeDemo {
 	}
 	
 	/**
-	 * @Description:删除元素， remove, poll
+	 * @description:删除元素， remove, poll
 	 */
 	@Test
 	public void testRemove()
@@ -53,7 +53,7 @@ public class DequeDemo {
 	}
 	
 	/**
-	 * @Description:查看队首元素， 只做查看，不删除
+	 * @description:查看队首元素， 只做查看，不删除
 	 */
 	@Test
 	public void testExamine()

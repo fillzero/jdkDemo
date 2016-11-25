@@ -22,11 +22,11 @@ import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.ListenableFutureTask;
 
 /**
- * @Description: Cache 的创建和移除
+ * @description: Cache 的创建和移除
  */
 public class CacheDemo {
 	/**
-	 * @Description:cacheloader 方法
+	 * @description:cacheloader 方法
 	 */
 	@Test
 	public void testCacheBuilder() throws ExecutionException
@@ -47,7 +47,7 @@ public class CacheDemo {
 	}
 	
 	/**
-	 * @Description: callable 方法
+	 * @description: callable 方法
 	 */
 	@Test
 	public void testCallable() throws ExecutionException
@@ -67,7 +67,7 @@ public class CacheDemo {
 	}
 	
 	/**
-	 * @Description: callable 方法， 使用 lamda 表达式， 写法简洁
+	 * @description: callable 方法， 使用 lamda 表达式， 写法简洁
 	 */
 	@Test
 	public void testCallableWithLamdaExpression() throws ExecutionException
@@ -80,7 +80,7 @@ public class CacheDemo {
 	}
 	
 	/**
-	 * @Description:数据的移除
+	 * @description:数据的移除
 	 */
 	@Test
 	public void testCacheInvalidate()
@@ -100,7 +100,7 @@ public class CacheDemo {
 	}
 	
 	/**
-	 * @Description:定义自己的刷新行为， 重写 Cacheloader.load(K,V) 方法
+	 * @description:定义自己的刷新行为， 重写 Cacheloader.load(K,V) 方法
 	 * LoadingCache.refresh(K) 方法是异步的， 刷新不能即时生效
 	 */
 	@Test

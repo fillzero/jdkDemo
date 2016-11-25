@@ -15,11 +15,11 @@ import com.google.common.collect.HashBiMap;
  * @Package: cn.tk.java.guava.collections
  * @Time: 2016年7月5日下午5:50:23
  *
- * @Description:双向 Map， key， value 都不可以重复
+ * @description:双向 Map， key， value 都不可以重复
  */
 public class BiMapDemo {
 	/**
-	 * @Description:传统 map， key 不可以重复， 但是 value 可以重复， 是一种多对多的关系， 无法实现直接自动反转
+	 * @description:传统 map， key 不可以重复， 但是 value 可以重复， 是一种多对多的关系， 无法实现直接自动反转
 	 */
 	@Test
 	public void testinverseMap()
@@ -35,7 +35,7 @@ public class BiMapDemo {
 	}
 	
 	/**
-	 * @Description:BiMap 两次反转， 因为是双向 Map, key/value 都不可以重复， 所以可以实现直接反转，
+	 * @description:BiMap 两次反转， 因为是双向 Map, key/value 都不可以重复， 所以可以实现直接反转，
 	 * key/value 一一对应
 	 */
 	@Test
@@ -58,7 +58,7 @@ public class BiMapDemo {
 	}
 	
 	/**
-	 * @Description:放重复的 value 就会出现 IllegalArgumentException
+	 * @description:放重复的 value 就会出现 IllegalArgumentException
 	 */
 	public BiMap<String, String> prepareBiMapData()
 	{

@@ -24,14 +24,14 @@ import org.hamcrest.core.CombinableMatcher;
 import org.junit.Test;
 
 /**
- * @Description:
+ * @description:
  * Equals: 对比两个对象的值是否相等
  * Same: 对比两个对象是否是同一个对象
  */
 public class AssertTests {
 	
 	/**
-	 * @Description:比较两个 byte 数组值是否相等
+	 * @description:比较两个 byte 数组值是否相等
 	 */
 	@Test
 	public void testAssertArrayEquals()
@@ -42,7 +42,7 @@ public class AssertTests {
 	}
 	
 	/**
-	 * @Description: 比较两个 null 值是否相等
+	 * @description: 比较两个 null 值是否相等
 	 */
 	@Test
 	public void testAssertNullEquals() {
@@ -52,7 +52,7 @@ public class AssertTests {
 	}
 
 	/**
-	 * @Description: 比较两个字符串值是否相等
+	 * @description: 比较两个字符串值是否相等
 	 */
 	@Test
 	public void testAssertEquals()
@@ -61,7 +61,7 @@ public class AssertTests {
 	}
 	
 	/**
-	 * @Description:比较两个 Object 是否是同一个对象, 证明两个新 new 的 Object 不是同一个对象, 占用内存空间不一样
+	 * @description:比较两个 Object 是否是同一个对象, 证明两个新 new 的 Object 不是同一个对象, 占用内存空间不一样
 	 */
 	@Test
 	public void testAssertNotSame() throws ClassNotFoundException
@@ -70,7 +70,7 @@ public class AssertTests {
 	}
 	
 	/**
-	 * @Description: aNumber 与 aNumber 是同一个对象
+	 * @description: aNumber 与 aNumber 是同一个对象
 	 */
 	@Test
 	public void testAssertSame()
@@ -80,7 +80,7 @@ public class AssertTests {
 	}
 	
 	/**
-	 * @Description:区别 Equals 和 Same
+	 * @description:区别 Equals 和 Same
 	 * 自动装箱池 IntegerCache
 	 */
 	@Test
@@ -96,7 +96,7 @@ public class AssertTests {
 	}
 	
 	/**
-	 * @Description:断言对象是否为空
+	 * @description:断言对象是否为空
 	 */
 	@Test
 	public void testAssertNull()

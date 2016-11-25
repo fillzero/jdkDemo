@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class AnimalTest {
 	/**
-	 * @Description:不重写 hashCode() 和 equals()
+	 * @description:不重写 hashCode() 和 equals()
 	 */
 	@Test
 	public void testEquals()
@@ -29,7 +29,7 @@ public class AnimalTest {
 	}
 	
 	/**
-	 * @Description:equals 方法必须满足的四个特性
+	 * @description:equals 方法必须满足的四个特性
 	 */
 	@Test
 	public void testEqualsFeatures()

@@ -4,7 +4,7 @@ import org.junit.Test;
 
 public class ThirdMax {
 	/**
-	 * @Description:返回数组中第三大的值，如果没有返回最大的
+	 * @description:返回数组中第三大的值，如果没有返回最大的
 	 */
 	public int thirdMax(int[] nums) {
 	    return 0;

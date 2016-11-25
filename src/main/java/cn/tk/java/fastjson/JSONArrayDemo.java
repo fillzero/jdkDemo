@@ -11,7 +11,7 @@ import com.alibaba.fastjson.JSONObject;
  * @Package: cn.tk.java.fastjson
  * @Time: 2016年10月27日上午11:30:21
  *
- * @Description: 测试 Array
+ * @description: 测试 Array
  * Object 对象是 : key - value 对
  * Array 对象是 : key - array(values) 对
  * 
@@ -86,7 +86,7 @@ public class JSONArrayDemo {
 	}
 	
 	/**
-	 * @Description: 利用数据拼成一个 jsonArray 字符串
+	 * @description: 利用数据拼成一个 jsonArray 字符串
 	 * 从里到外拼接 JSON 数据
 	 */
 	@Test
@@ -96,7 +96,7 @@ public class JSONArrayDemo {
 	}
 	
 	/**
-	 * @Description:将一个字符串转换成 JSONArray，遍历 Array 中数据
+	 * @description:将一个字符串转换成 JSONArray，遍历 Array 中数据
 	 */
 	@Test
 	public void testParse()

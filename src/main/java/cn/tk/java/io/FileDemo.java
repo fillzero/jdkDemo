@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class FileDemo {
 	/**
-	 * @Description:找根路径方法
+	 * @description:找根路径方法
 	 */
 	@Test
 	public void testCreateFile()

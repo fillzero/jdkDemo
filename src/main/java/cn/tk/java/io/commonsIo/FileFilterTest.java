@@ -12,7 +12,7 @@ import org.junit.Test;
  * @Package: cn.tk.java.io.commonsIo
  * @Time: 2016年10月13日下午1:39:19
  *
- * @Description:文件过滤器
+ * @description:文件过滤器
  */
 public class FileFilterTest {
 	private String basePath = null;
@@ -24,7 +24,7 @@ public class FileFilterTest {
 	}
 	
 	/**
-	 * @Description:过滤出所有非空文件
+	 * @description:过滤出所有非空文件
 	 */
 	@Test
 	public void testEmptyFileFilter()
@@ -38,7 +38,7 @@ public class FileFilterTest {
 	}
 	
 	/**
-	 * @Description:文件是否为空靠 length() 方法判断，返回文件所占字节数， 空文件为 0
+	 * @description:文件是否为空靠 length() 方法判断，返回文件所占字节数， 空文件为 0
 	 */
 	@Test
 	public void testFileLength()

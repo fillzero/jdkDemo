@@ -7,7 +7,7 @@ package cn.tk.java.junit.four.parameterized;
  * @Package: cn.tk.junitDemo.parameterized
  * @Time: 2016年5月30日下午3:12:16
  *
- * @Description: 斐波那契类
+ * @description: 斐波那契类
  */
 public class Fibonacci {
 	public static int compute(int n)

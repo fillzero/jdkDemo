@@ -6,12 +6,12 @@ import java.util.Arrays;
 import java.util.regex.Pattern;
 
 /**
- * @Description: 目录列表器代码
+ * @description: 目录列表器代码
  */
 public class DirList {
 	
 	/**
-	 * @Description: 直接打印给定路径的所有文件名
+	 * @description: 直接打印给定路径的所有文件名
 	 */
 	public void printDirs(String directoryPath)
 	{
@@ -24,7 +24,7 @@ public class DirList {
 	}
 	
 	/**
-	 * @Description:directory.list(new DirFilter(regex));
+	 * @description:directory.list(new DirFilter(regex));
 	 * 使用回调机制： directory.list(filter)
 	 * 里面调用了 filter.accept()
 	 * 
@@ -55,7 +55,7 @@ public class DirList {
 	}
 	
 	/**
-	 * @Description:使用匿名内部类实现过滤器
+	 * @description:使用匿名内部类实现过滤器
 	 */
 	public void printDirsWithFilter2(String regex, String directoryPath) {
 		File directory = new File(directoryPath);
@@ -68,7 +68,7 @@ public class DirList {
 	}
 	
 	/**
-	 * @Description:使用匿名内部类实现过滤器, 进一步简化代码
+	 * @description:使用匿名内部类实现过滤器, 进一步简化代码
 	 * directory.list()， 参数是一个指向 FilenameFilter 或其实现类的引用
 	 */
 	public void printDirsWithFilter3(String regex, String directoryPath)

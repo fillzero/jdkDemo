@@ -6,7 +6,7 @@ import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 
 /**
- * @Description:junit特性: 测试运行器
+ * @description:junit特性: 测试运行器
  */
 public class TestRunner {
 	public static void main(String[] args)

@@ -13,7 +13,7 @@ import com.google.common.collect.Lists;
 
 public class TreeSetDemo {
 	/**
-	 * @Description:会自动排序， 所有插入元素必须实现 Comparable 接口
+	 * @description:会自动排序， 所有插入元素必须实现 Comparable 接口
 	 */
 	@Test
 	public void testAdd()
@@ -24,7 +24,7 @@ public class TreeSetDemo {
 	}
 	
 	/**
-	 * @Description:集合类都有迭代器用来遍历所有元素， iterator() 正向迭代
+	 * @description:集合类都有迭代器用来遍历所有元素， iterator() 正向迭代
 	 */
 	@Test
 	public void testIterator()
@@ -40,7 +40,7 @@ public class TreeSetDemo {
 	}
 	
 	/**
-	 * @Description:迭代器反向迭代
+	 * @description:迭代器反向迭代
 	 */
 	@Test
 	public void testDecendingIterator()
@@ -68,7 +68,7 @@ public class TreeSetDemo {
 	}
 	
 	/**
-	 * @Description:获取反向集合
+	 * @description:获取反向集合
 	 */
 	@Test
 	public void testDecendingSet()
@@ -80,7 +80,7 @@ public class TreeSetDemo {
 	}
 	
 	/**
-	 * @Description:线程安全的 TreeSet
+	 * @description:线程安全的 TreeSet
 	 */
 	@Test
 	public void testSecureTreeset()
@@ -90,7 +90,7 @@ public class TreeSetDemo {
 	}
 	
 	/**
-	 * @Description:TreeSet 基本方法
+	 * @description:TreeSet 基本方法
 	 */
 	@Test
 	public void testBasicMethod()

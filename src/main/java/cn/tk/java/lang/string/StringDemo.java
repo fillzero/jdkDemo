@@ -16,7 +16,7 @@ public class StringDemo {
 	}
 	
 	/**
-	 * @Description: little 首字符 l 在字符串中第一次出现的位置是 7
+	 * @description: little 首字符 l 在字符串中第一次出现的位置是 7
 	 */
 	@Test
 	public void testSkipUntil()

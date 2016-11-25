@@ -8,7 +8,7 @@ import org.junit.Test;
  * @Package: cn.tk.java.algorithm.sort
  * @Time: 2016年8月23日下午4:43:25
  *
- * @Description: 堆排序
+ * @description: 堆排序
  */
 public class HeapSort {
 	private static int[] input = new int[] {16, 4, 10, 14, 7, 9, 3, 2, 8, 1 };

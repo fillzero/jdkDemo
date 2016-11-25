@@ -6,7 +6,7 @@ package cn.tk.java.junit.five;
  * @Package: cn.tk.java.junit.five
  * @Time: 2016年11月11日下午5:28:50
  *
- * @Description: 
+ * @description:
  * https://www.ibm.com/developerworks/cn/java/j-junit5/index.html
  * 官方指南 + Demo + API: Github
  * 

@@ -6,7 +6,7 @@ package cn.tk.java.algorithm.leetcode.bit;
  * @Package: cn.tk.java.algorithm.leetcode.bit
  * @Time: 2016年11月3日上午10:00:28
  *
- * @Description: 整数转换成 16进制， 负数使用补码
+ * @description: 整数转换成 16进制， 负数使用补码
  * Given an integer, write an algorithm to convert it to hexadecimal. 
  * For negative integer, two’s complement method is used.
  * 

@@ -7,7 +7,7 @@ import org.junit.Test;
 public class DirectoryTest {
 	
 	/**
-	 * @Description: local 方法根据正则表达式过滤指定目录下的文件和文件夹
+	 * @description: local 方法根据正则表达式过滤指定目录下的文件和文件夹
 	 */
 	@Test
 	public void testLocal() {

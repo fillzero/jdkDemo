@@ -7,7 +7,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
- * @Description:@Test有两个参数可以完成异常测试和超时测试
+ * @description:@Test有两个参数可以完成异常测试和超时测试
  * 抛出异常的情况下测试通过, 如果没有抛出改异常, 测试失败
  */
 public class RegularExpressionJUnit4Test {

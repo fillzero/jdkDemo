@@ -7,7 +7,7 @@ import org.junit.Test;
 public class LinkedHashMapDemo {
 	
 	/**
-	 * @Description: jdk 实现 LRU 算法， 可以用作缓存
+	 * @description: jdk 实现 LRU 算法， 可以用作缓存
 	 */
 	@Test
 	public void test() throws InterruptedException
@@ -22,7 +22,7 @@ public class LinkedHashMapDemo {
 	}
 	
 	/**
-	 * @Description: Cache 使用 LRU 算法， 重写 removeEldestEntry 方法， 定时删除 map 中长时间或者很少使用的元素。
+	 * @description: Cache 使用 LRU 算法， 重写 removeEldestEntry 方法， 定时删除 map 中长时间或者很少使用的元素。
 	 */
 	public class LRUCache extends LinkedHashMap<String, String>
 	{

@@ -11,7 +11,7 @@ public class ValueConvert {
 	private static final double MAX_VALUE = 9999999999999.99D;
 
 	/**
-	 * @Description:
+	 * @description:
 	 * @param v： 金额
 	 * @return 人民币小写转大写
 	 */
@@ -55,7 +55,7 @@ public class ValueConvert {
 	}
 
 	/**
-	 * @Description:四舍五入
+	 * @description:四舍五入
 	 * @param num
 	 * @param i
 	 * @return

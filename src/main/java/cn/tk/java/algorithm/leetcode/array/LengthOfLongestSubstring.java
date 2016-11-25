@@ -8,7 +8,7 @@ import org.junit.Test;
  * @Package: cn.tk.java.algorithm.leetcode
  * @Time: 2016年10月21日上午11:23:01
  *
- * @Description:最长不重复字串问题
+ * @description:最长不重复字串问题
  * 
  * 题目： Given a string, find the length of the longest substring without repeating characters.
  * Examples:
@@ -18,7 +18,7 @@ import org.junit.Test;
  */
 public class LengthOfLongestSubstring {
 	 /**
-	 * @Description:查找没有重复字符的最长子串长度
+	 * @description:查找没有重复字符的最长子串长度
 	 */
 	public int lengthOfLongestSubstring(String s) {
 		int max_count = 0;

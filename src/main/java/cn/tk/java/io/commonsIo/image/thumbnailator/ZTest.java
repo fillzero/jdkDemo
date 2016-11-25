@@ -15,7 +15,7 @@
 //
 //public class ZTest {
 //	/**
-//	 * @Description:测试按尺寸缩小图片
+//	 * @description:测试按尺寸缩小图片
 //	 */
 //	@Test
 //	public void testResize() throws InterruptedException
@@ -36,7 +36,7 @@
 //	}
 //
 //	/**
-//	 * @Description: 测试按比例缩小图片
+//	 * @description: 测试按比例缩小图片
 //	 */
 //	@Test
 //	public void testResizeByScale()
@@ -49,7 +49,7 @@
 //	}
 //
 //	/**
-//	 * @Description: 测试旋转
+//	 * @description: 测试旋转
 //	 */
 //	@Test
 //	public void testRotate()
@@ -67,7 +67,7 @@
 //	}
 //
 //	/**
-//	 * @Description: 测试加水印
+//	 * @description: 测试加水印
 //	 */
 //	@Test
 //	public void testWatermark()
@@ -82,7 +82,7 @@
 //	}
 //
 //	/**
-//	 * @Description: 测试将文件集写入文件夹, 给所有文件加前缀
+//	 * @description: 测试将文件集写入文件夹, 给所有文件加前缀
 //	 * 可以给所有文件加时间前缀
 //	 */
 //	@Test
@@ -101,7 +101,7 @@
 //	}
 //
 //	/**
-//	 * @Description: 测试将文件集写入文件夹, 给所有文件名加后缀
+//	 * @description: 测试将文件集写入文件夹, 给所有文件名加后缀
 //	 * 可以给所有文件加作者后缀
 //	 */
 //	@Test
@@ -118,7 +118,7 @@
 //	}
 //
 //	/**
-//	 * @Description:关闭流之后再删除文件
+//	 * @description:关闭流之后再删除文件
 //	 */
 //	@Test
 //	public void testDeleteFileAfterCloseStream()

@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class MapDemo {
 	/**
-	 * @Description:map 的 key， value 最好不要用 null， 虽然不会报错， 但是会引起歧义
+	 * @description:map 的 key， value 最好不要用 null， 虽然不会报错， 但是会引起歧义
 	 * map.get(key) 为 null， 可能是 value 为 null， 也有可能不存在相应的值
 	 */
 	@Test
@@ -24,7 +24,7 @@ public class MapDemo {
 	}
 	
 	 /**
-	 * @Description: HashMap 中的 hash 实现
+	 * @description: HashMap 中的 hash 实现
 	 */
 	static final int hash(Object key) {
 		 int h;
@@ -32,7 +32,7 @@ public class MapDemo {
 	 }
 	
 	/**
-	 * @Description:测试 HashMap 的 hash 特性， 与 hashCode 和 equals 方法建立关联
+	 * @description:测试 HashMap 的 hash 特性， 与 hashCode 和 equals 方法建立关联
 	 */
 	@Test
 	public void testHashMap()
@@ -43,7 +43,7 @@ public class MapDemo {
 	}
 	
 	/**
-	 * @Description:同一台机器 hashCode 不会变
+	 * @description:同一台机器 hashCode 不会变
 	 */
 	@Test
 	public void testStringHashMap()

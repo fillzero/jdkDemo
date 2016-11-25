@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class CollectionsDemoTest {
 	/**
-	 * @Description:测试生成随机数， 红包的概率取决于每一类红包所占的数量
+	 * @description:测试生成随机数， 红包的概率取决于每一类红包所占的数量
 	 */
 	@Test
 	public void testBonusGenerator()

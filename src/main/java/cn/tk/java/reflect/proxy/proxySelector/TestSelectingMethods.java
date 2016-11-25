@@ -8,7 +8,7 @@ import java.lang.reflect.Proxy;
  * @Package: cn.tk.java.reflect.proxy.proxySelector
  * @Time: 2016年8月31日下午5:42:04
  *
- * @Description:动态代理类可以在真正的实现类前后加上相应的监控过滤代码， 这部分代码写在 invoke() 方法里
+ * @description:动态代理类可以在真正的实现类前后加上相应的监控过滤代码， 这部分代码写在 invoke() 方法里
  * 
  * 本方法对实现类 Implementation 的  interesting 方法进行了过滤， 其它方法间接调用实现方法。
  * 

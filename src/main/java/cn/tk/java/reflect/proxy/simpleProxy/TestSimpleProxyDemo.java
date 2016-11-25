@@ -7,7 +7,7 @@ package cn.tk.java.reflect.proxy.simpleProxy;
  * @Package: cn.tk.java.reflect.proxy
  * @Time: 2016年8月31日下午4:57:34
  *
- * @Description:代理可以用于监测代码的性能， 现在显示的是静态代理， 编译阶段完成代理， 用 SimpleProxy 代理 RealObject 做事情。
+ * @description:代理可以用于监测代码的性能， 现在显示的是静态代理， 编译阶段完成代理， 用 SimpleProxy 代理 RealObject 做事情。
  */
 public class TestSimpleProxyDemo {
 	public static void consumer(Interface iface)

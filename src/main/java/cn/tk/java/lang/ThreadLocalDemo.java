@@ -5,13 +5,13 @@ import static org.junit.Assert.assertThat;
 import static org.hamcrest.CoreMatchers.equalTo;
 
 /**
- * @Description:ThreadLocal, Thread类内置类
+ * @description:ThreadLocal, Thread类内置类
  */
 public class ThreadLocalDemo {
 	ThreadLocal<Integer> threadLocal = new ThreadLocal<Integer>()
 	{
 		/**
-		 * @Description:重写 initialValue() 方法, 初始化 get() 的时候可以获取到初始化值
+		 * @description:重写 initialValue() 方法, 初始化 get() 的时候可以获取到初始化值
 		 */
 		protected Integer initialValue()
 		{

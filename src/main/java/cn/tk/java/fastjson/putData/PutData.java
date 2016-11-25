@@ -6,7 +6,7 @@ import com.alibaba.fastjson.JSON;
 
 public class PutData {
 	/**
-	 * @Description:String 类型数据多， 不会影响 parseObject, 只会把所需要的放进去
+	 * @description:String 类型数据多， 不会影响 parseObject, 只会把所需要的放进去
 	 */
 	@Test
 	public void testPutDataToModel()
@@ -23,7 +23,7 @@ public class PutData {
 	}
 	
 	/**
-	 * @Description:String 类型数据少， 不会影响 parseObject, 只会把非空的数据放进去
+	 * @description:String 类型数据少， 不会影响 parseObject, 只会把非空的数据放进去
 	 */
 	@Test
 	public void testPutDataToModel2()

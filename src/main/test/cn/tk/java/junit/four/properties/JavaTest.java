@@ -11,7 +11,7 @@ import org.junit.Test;
  * @Package: cn.tk.junitDemo
  * @Time: 2016年5月26日下午4:53:41
  *
- * @Description: Junit特性: 测试工具
+ * @description: Junit特性: 测试工具
  */
 public class JavaTest extends TestCase{
 	protected int value1, value2;

@@ -11,8 +11,8 @@ import org.junit.Test;
 public class DateUtilsTest {
 
 	/**
-	 * @Description:字符串按特殊格式转日期
-	 * @Description:特殊格式日期转字符串
+	 * @description:字符串按特殊格式转日期
+	 * @description:特殊格式日期转字符串
 	 * 字符串日期相互转换
 	 */
 	@Test
@@ -39,7 +39,7 @@ public class DateUtilsTest {
 	}
 
 	/**
-	 * @Description:计算当前时间的毫秒值： System.currentTimeMillis
+	 * @description:计算当前时间的毫秒值： System.currentTimeMillis
 	 */
 	@Test
 	public void testGetMillis()
@@ -48,7 +48,7 @@ public class DateUtilsTest {
 	}
 
 	/**
-	 * @Description:将 Date 格式化
+	 * @description:将 Date 格式化
 	 */
 	@Test
 	public void testFormatDate()
@@ -77,7 +77,7 @@ public class DateUtilsTest {
 	}
 
 	/**
-	 * @Description: Unix 时间戳, 1970年至今的秒数, Date --> Unix时间戳
+	 * @description: Unix 时间戳, 1970年至今的秒数, Date --> Unix时间戳
 	 */
 	@Test
 	public void testGetUnixTimestamp()
@@ -95,7 +95,7 @@ public class DateUtilsTest {
 		System.out.println(DateUtils.getUnixTimestamp("2016-07-14", DateUtils.yy_MM_dd));
 	}
 	/**
-	 * @Description: Unix时间戳 --> Date
+	 * @description: Unix时间戳 --> Date
 	 */
 	@Test
 	public void testUnixTimestampToDate()
@@ -109,7 +109,7 @@ public class DateUtilsTest {
 	}
 
 	/**
-	 * @Description:计算两个时间点之间的差距
+	 * @description:计算两个时间点之间的差距
 	 */
 	@Test
 	public void testDateDiff()
@@ -127,7 +127,7 @@ public class DateUtilsTest {
 	}
 
 	/**
-	 * @Description:根据时间戳或者 Date 获取 UTC 标准时间
+	 * @description:根据时间戳或者 Date 获取 UTC 标准时间
 	 */
 	@Test
 	public void testGetUTCTimeByDate()
@@ -141,7 +141,7 @@ public class DateUtilsTest {
 	}
 
 	/**
-	 * @Description: 获取今天零点的时间戳
+	 * @description: 获取今天零点的时间戳
 	 */
 	@Test
 	public void testGetTodayZeroSeconds()
@@ -151,7 +151,7 @@ public class DateUtilsTest {
 	}
 
 	/**
-	 * @Description:加减时间， scope: y 是减， 其余是加
+	 * @description:加减时间， scope: y 是减， 其余是加
 	 */
 	@Test
 	public void testGetDate()
@@ -163,7 +163,7 @@ public class DateUtilsTest {
 	}
 
 	/**
-	 * @Description:获取两个日期之间的所有日期， 包含 startTime, 不包含 endTime
+	 * @description:获取两个日期之间的所有日期， 包含 startTime, 不包含 endTime
 	 */
 	@Test
 	public void testGetRangeDates()
@@ -174,7 +174,7 @@ public class DateUtilsTest {
 	}
 
 	/**
-	 * @Description:格式化时间戳， 获取 Time， String 类型的
+	 * @description:格式化时间戳， 获取 Time， String 类型的
 	 */
 	@Test
 	public void testGetTime()
@@ -183,7 +183,7 @@ public class DateUtilsTest {
 	}
 
 	/**
-	 * @Description:获取当月第一天的时间戳
+	 * @description:获取当月第一天的时间戳
 	 */
 	@Test
 	public void testGetCurrentMonthZeroTimestamp()
@@ -193,7 +193,7 @@ public class DateUtilsTest {
 	}
 
 	/**
-	 * @Description:返回相隔天数
+	 * @description:返回相隔天数
 	 */
 	@Test
 	public void testGetDateDiff()
@@ -207,7 +207,7 @@ public class DateUtilsTest {
 	}
 
 	/**
-	 * @Description:当前时间的前 day 天零时
+	 * @description:当前时间的前 day 天零时
 	 */
 	@Test
 	public void testGetBeforeDay()
@@ -216,7 +216,7 @@ public class DateUtilsTest {
 	}
 
 	/**
-	 * @Description:传入参数与当前时间毫秒差
+	 * @description:传入参数与当前时间毫秒差
 	 */
 	@Test
 	public void testDiffSecondNow()

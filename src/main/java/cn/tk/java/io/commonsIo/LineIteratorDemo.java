@@ -14,7 +14,7 @@ import org.junit.Test;
  * @Package: cn.tk.java.io.commonsIo
  * @Time: 2016年10月13日下午1:39:37
  *
- * @Description:文件行迭代器
+ * @description:文件行迭代器
  */
 public class LineIteratorDemo {
 	private String basePath = null;
@@ -26,7 +26,7 @@ public class LineIteratorDemo {
 	}
 	
 	/**
-	 * @Description: 文件行迭代器
+	 * @description: 文件行迭代器
 	 */
 	@Test
 	public void testIterator() throws IOException

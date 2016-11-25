@@ -12,7 +12,7 @@ import com.google.common.collect.HashMultimap;
 
 public class CandidateAndVoters {
 	/**
-	 * @Description:一个 key 对应多个 value, 场景： 一个候选人对应多张选票， 将数据反转， 一个 key 对应多个 value
+	 * @description:一个 key 对应多个 value, 场景： 一个候选人对应多张选票， 将数据反转， 一个 key 对应多个 value
 	 * key: String
 	 * value： HashSet<String>
 	 */
@@ -38,7 +38,7 @@ public class CandidateAndVoters {
 	}
 	
 	/**
-	 * @Description:使用 HashMultimap， 一个 key 可以对应多个 value, 不需要考虑覆盖的问题， 并没有实现 Map
+	 * @description:使用 HashMultimap， 一个 key 可以对应多个 value, 不需要考虑覆盖的问题， 并没有实现 Map
 	 * 内部本质也是 value 为 Collection
 	 */
 	@Test
@@ -58,7 +58,7 @@ public class CandidateAndVoters {
 	}
 	
 	/**
-	 * @Description:
+	 * @description:
 	 * key: voter
 	 * value: candidate 
 	 */

@@ -7,7 +7,7 @@ import java.io.StringReader;
 
 public class BufferedInputFile {
 	/**
-	 * @Description:根据 filename 读文件内容
+	 * @description:根据 filename 读文件内容
 	 * 提供 readLine() 方法， 当读到 null 时就读到了文件的末尾。
 	 * BufferedReader 会将文件暂存缓冲区
 	 */
@@ -23,7 +23,7 @@ public class BufferedInputFile {
 	}
 	
 	/**
-	 * @Description:一个字符一个字符的读文件
+	 * @description:一个字符一个字符的读文件
 	 */
 	public static void read2(String filepath) throws IOException
 	{

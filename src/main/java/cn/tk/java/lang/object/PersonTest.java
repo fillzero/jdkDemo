@@ -14,7 +14,7 @@ public class PersonTest {
 	}
 	
 	/**
-	 * @Description:重写 hashCode() 和 equals()
+	 * @description:重写 hashCode() 和 equals()
 	 */
 	@Test
 	public void testEquals()
@@ -38,7 +38,7 @@ public class PersonTest {
 	}
 	
 	/**
-	 * @Description:equals 方法必须满足的四个特性
+	 * @description:equals 方法必须满足的四个特性
 	 */
 	@Test
 	public void testEqualsFeatures()

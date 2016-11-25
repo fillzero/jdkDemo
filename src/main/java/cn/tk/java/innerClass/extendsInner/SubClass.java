@@ -11,7 +11,7 @@ package cn.tk.java.innerClass.extendsInner;
 public class SubClass extends Outer.Inner{
 	
 	/**
-	 * @Description: 特殊子类构造器
+	 * @description: 特殊子类构造器
 	 */
 	public SubClass(Outer outer) {
 		outer.super();

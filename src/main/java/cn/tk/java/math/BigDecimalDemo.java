@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class BigDecimalDemo {
 	/**
-	 * @Description: BigDecimal 构造函数
+	 * @description: BigDecimal 构造函数
 	 * String 构造函数可预知， 推荐使用
 	 * double 构造函数不可预知
 	 */
@@ -23,7 +23,7 @@ public class BigDecimalDemo {
 	}
 	
 	/**
-	 * @Description:BigDecimal 加法
+	 * @description:BigDecimal 加法
 	 */
 	@Test
 	public void testBigDecimalAdd()
@@ -41,7 +41,7 @@ public class BigDecimalDemo {
 	}
 	
 	/**
-	 * @Description:保费以元为单位，算利息可能会有问题， 所以要转化成分为单位， 这时候使用 double 的构造函数会有问题
+	 * @description:保费以元为单位，算利息可能会有问题， 所以要转化成分为单位， 这时候使用 double 的构造函数会有问题
 	 * 要使用 String 的构造函数
 	 */
 	@Test

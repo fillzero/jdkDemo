@@ -12,7 +12,7 @@ import org.junit.Test;
  * @Package: cn.tk.java.util.collections
  * @Time: 2016年10月21日下午4:05:11
  *
- * @Description:排序平衡二叉树（红黑树）
+ * @description:排序平衡二叉树（红黑树）
  * 1、添加节点（重新调整）
  * 2、删除节点（重新调整）
  * 3、修改节点
@@ -31,7 +31,7 @@ import org.junit.Test;
  */
 public class TreeMapDemo {
 	/**
-	 * @Description:添加节点
+	 * @description:添加节点
 	 * 插入元素然后调整红黑树， TreeMap 内部维护了一颗红黑树（自动调整平衡）
 	 */
 	@Test
@@ -47,7 +47,7 @@ public class TreeMapDemo {
 	}
 	
 	/**
-	 * @Description: 更新节点  
+	 * @description: 更新节点
 	 * Delete the node, and then rebalance the tree.
 	 * 删除节点，并且自动调整红黑树至平衡状态， 返回被删除元素
 	 */
@@ -64,7 +64,7 @@ public class TreeMapDemo {
 	}
 	
 	/**
-	 * @Description:更新节点
+	 * @description:更新节点
 	 * 更新节点不需要调整位置，因为只是修改值不会改变树的结构（树的排序是以 key 为主要依据的， 所以 value 的修改不会影响排序）
 	 */
 	@Test
@@ -81,7 +81,7 @@ public class TreeMapDemo {
 	}
 	
 	/**
-	 * @Description:TreeMap 本身是非同步的，不是线程安全的， 如果要在多线程环境中使用， 需要手动同步
+	 * @description:TreeMap 本身是非同步的，不是线程安全的， 如果要在多线程环境中使用， 需要手动同步
 	 */
 	@Test
 	public void testSynchronizedTreeMap()

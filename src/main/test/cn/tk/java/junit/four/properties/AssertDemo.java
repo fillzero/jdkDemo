@@ -7,7 +7,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 /**
- * @Description:断言类
+ * @description:断言类
  */
 public class AssertDemo {
 	@Test
@@ -23,7 +23,7 @@ public class AssertDemo {
 	}
 	
 	/**
-	 * @Description:该单元测试可以被忽略, 不会被单元测试运行器扫描到
+	 * @description:该单元测试可以被忽略, 不会被单元测试运行器扫描到
 	 */
 	@Ignore
 	public void testSub()

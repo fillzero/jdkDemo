@@ -3,18 +3,18 @@ package cn.tk.java.util.concurrent.atomic;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
- * @Description:用 AtomicReference 创建栈安全的堆栈
+ * @description:用 AtomicReference 创建栈安全的堆栈
  */
 public class LinkedStack<T> {
 	
 	/**
-	 * @Description:栈结构， 包含一组 Node, stacks 是一个对象类型， 所以用 AtomicReference 修饰， 保证更新的原子性
+	 * @description:栈结构， 包含一组 Node, stacks 是一个对象类型， 所以用 AtomicReference 修饰， 保证更新的原子性
 	 * 入栈出栈都是对于该栈对象的更新， 多线程环境下可能引发线程安全问题， 所以要用原子类实现非阻塞算法
 	 */
 	private AtomicReference<Node<T>> stacks = new AtomicReference<Node<T>>();
 
 	/**
-	 * @Description:入栈
+	 * @description:入栈
 	 */
 	public T push(T e)
 	{
@@ -31,7 +31,7 @@ public class LinkedStack<T> {
 	}
 	
 	/**
-	 * @Description:出栈
+	 * @description:出栈
 	 */
 	public T pop()
 	{
@@ -48,7 +48,7 @@ public class LinkedStack<T> {
 	}
 	
 	/**
-	 * @Description:Node 数据结构， 
+	 * @description:Node 数据结构，
 	 * object 数据属性
 	 * next 指向下一个节点的指针
 	 */

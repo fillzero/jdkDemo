@@ -22,14 +22,14 @@ import com.google.common.collect.ImmutableSet;
  * @Package: cn.tk.java.guava.collections
  * @Time: 2016年7月5日下午4:35:49
  *
- * @Description: 
+ * @description:
  * 1. Guava Collections 都是以 create 或者 of 等静态方法构造对象。
  * 因为构造函数种类较多， 需要传入不同的参数， 使用不便， 使用 create 或者 of 方法， 直观简洁，
  * 而且更利于创建泛型对象, 类似工厂方法， guava 根据我么传入的参数自动去构造对象， 不需要我们指定构造函数
  */
 public class CollectionsDemo {
 	/**
-	 * @Description:UnsupportedOperationException
+	 * @description:UnsupportedOperationException
 	 */
 	@Test
 	public void testUnmodifiableSet()
@@ -41,7 +41,7 @@ public class CollectionsDemo {
 	}
 	
 	/**
-	 * @Description:使用 ImmutableSet 简化代码编写， 直接生成不可更改集合
+	 * @description:使用 ImmutableSet 简化代码编写， 直接生成不可更改集合
 	 */
 	@SuppressWarnings("deprecation")
 	@Test
@@ -55,7 +55,7 @@ public class CollectionsDemo {
 	}
 	
 	/**
-	 * @Description:不可变更集合的构造器, 可以通过构造器添加单个数据， 或者添加既有集合
+	 * @description:不可变更集合的构造器, 可以通过构造器添加单个数据， 或者添加既有集合
 	 */
 	@Test
 	public void ImmutableSetBuilder()
@@ -67,7 +67,7 @@ public class CollectionsDemo {
 	}
 	
 	/**
-	 * @Description:用普通方式统计每个字符在 List 中出现次数
+	 * @description:用普通方式统计每个字符在 List 中出现次数
 	 * key 对应字符串， value 对应个数， 第一次放 1， 之后每次放 count + 1
 	 */
 	@Test
@@ -87,7 +87,7 @@ public class CollectionsDemo {
 	}
 	
 	/**
-	 * @Description:用 Multiset 统计字符串在链表中出现的个数， 可重复集合
+	 * @description:用 Multiset 统计字符串在链表中出现的个数， 可重复集合
 	 */
 	@Test
 	public void testCountWithMultiSet()

@@ -11,7 +11,7 @@ import cn.tk.java.reflect.proxy.simpleProxy.RealObject;
  * @Package: cn.tk.java.reflect.proxy
  * @Time: 2016年8月31日下午5:14:19
  *
- * @Description:
+ * @description:
  * Proxy.newProxyInstance 静态方法
  * ClassLoader loader： 类加载器， 从已经加载的对象中获取其类加载器
  * Class<?>[] interfaces： 希望实现的接口列表

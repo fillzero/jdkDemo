@@ -75,8 +75,8 @@ public class StringUtil {
 	/**
 	 * 得到指定分割符之前的str（str中左起第一个分割符之前）
 	 * 
-	 * @param str源字符串
-	 * @param separator分割符
+	 * @param : str源字符串
+	 * @param : separator分割符
 	 * @return 指定分割符之前的str
 	 * @author zhaopuqing
 	 */
@@ -94,8 +94,8 @@ public class StringUtil {
 	/**
 	 * 得到指定分割符之后的str（str中左起第一个分割符之后）
 	 * 
-	 * @param str源字符串
-	 * @param separator分割符
+	 * @param: str源字符串
+	 * @param: separator分割符
 	 * @return 指定分割符之后的str
 	 * @author zhaopuqing
 	 */
@@ -301,7 +301,7 @@ public class StringUtil {
 
 	/**
 	 * @Title: getDateAlter
-	 * @Description: 计算指定时间的天数之前的时间 <br>
+	 * @description: 计算指定时间的天数之前的时间 <br>
 	 *               <i>正：向后；负：向前</i></br>
 	 * @param dateStr
 	 *            指定时间
@@ -554,8 +554,8 @@ public class StringUtil {
 	/**
 	 * 获取两个日期中间的间隔的所有月份
 	 * 
-	 * @param firstTime
-	 * @param endTime
+	 * @param: firstTime
+	 * @param: endTime
 	 * @return
 	 * @throws ParseException
 	 */

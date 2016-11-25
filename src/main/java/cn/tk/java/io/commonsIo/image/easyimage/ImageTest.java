@@ -20,7 +20,7 @@ public class ImageTest {
 	}
 
 	/**
-	 * @Description:加密生成 Base64字符串
+	 * @description:加密生成 Base64字符串
 	 */
 	@Test
 	public void testImage2Str()
@@ -32,7 +32,7 @@ public class ImageTest {
 	}
 
 	/**
-	 * @Description:解密生成图片
+	 * @description:解密生成图片
 	 */
 	@Test
 	public void testStr2Image()

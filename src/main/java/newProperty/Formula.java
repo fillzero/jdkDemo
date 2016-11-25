@@ -3,7 +3,7 @@ package newProperty;
 import org.junit.Test;
 
 /**
- * @Description:接口的 default 方法在子类中可以直接使用
+ * @description:接口的 default 方法在子类中可以直接使用
  */
 public class Formula implements IFormula{
 	@Override
@@ -12,7 +12,7 @@ public class Formula implements IFormula{
 	}
 	
 	/**
-	 * @Description: default 方法也可以覆盖
+	 * @description: default 方法也可以覆盖
 	 */
 	@Override
 	public double sqrt(int a) {

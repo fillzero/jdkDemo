@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import com.alibaba.fastjson.JSON;
 
 /**
- * @Description:存放红包的队列
+ * @description:存放红包的队列
  */
 @SuppressWarnings("unchecked")
 public class StatisticsQueue<T extends StatisticsAvaliable> implements Queue<T>, Serializable{

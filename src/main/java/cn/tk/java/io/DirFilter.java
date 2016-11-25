@@ -5,7 +5,7 @@ import java.io.FilenameFilter;
 import java.util.regex.Pattern;
 
 /**
- * @Description:目录名称过滤器
+ * @description:目录名称过滤器
  */
 public class DirFilter implements FilenameFilter {
 	
@@ -15,7 +15,7 @@ public class DirFilter implements FilenameFilter {
 	 * @Author: 李晋龙
 	 * @Time: 2016年7月27日下午2:31:20
 	 * @param regex: 正则表达式
-	 * @Description: 初始化的时候，传入正则表达式， 创建正则表达式匹配器
+	 * @description: 初始化的时候，传入正则表达式， 创建正则表达式匹配器
 	 */
 	public DirFilter(String regex) {
 		pattern = Pattern.compile(regex);
@@ -25,7 +25,7 @@ public class DirFilter implements FilenameFilter {
 	 * @Author: 李晋龙
 	 * @Time: 2016年7月27日下午2:31:54
 	 * 
-	 * @Description:重载方法: accept 方法用于正则表达式的匹配， 选出满足条件的项， 返回布尔值
+	 * @description:重载方法: accept 方法用于正则表达式的匹配， 选出满足条件的项， 返回布尔值
 	 */
 	@Override
 	public boolean accept(File dir, String name) {

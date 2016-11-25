@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 public class WordDealUtil {
 	/**
-	 * @Description:掌握正则表达式非终端添加和替换
+	 * @description:掌握正则表达式非终端添加和替换
 	 * 1. 读字符串, 将读到的部分暂时放入字符缓冲区, 直到读到匹配的位置
 	 * 2. 将匹配的部分与 replacement 进行替换
 	 * 3. 从缓冲区读出暂时存入的字符串与替换后的部分合并, 生成新的字符串

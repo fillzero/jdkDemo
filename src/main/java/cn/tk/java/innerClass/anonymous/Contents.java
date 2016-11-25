@@ -10,7 +10,7 @@ import org.junit.Test;
  */
 public class Contents {
 	/**
-	 * @Description:显式实现类，通过方法返回指向接口的引用
+	 * @description:显式实现类，通过方法返回指向接口的引用
 	 */
 	private class ExplicitImpl implements IContents{
 		@Override
@@ -24,7 +24,7 @@ public class Contents {
 	}
 	
 	/**
-	 * @Description:通过匿名类实现， 返回指向接口的引用
+	 * @description:通过匿名类实现， 返回指向接口的引用
 	 */
 	public IContents anonymousContents()
 	{
