@@ -17,34 +17,32 @@ public class PredicateImpl {
     * predicate: 决定是否打折
     * consumer: 决定打几折
     */
-    public static Student updateStudentFee(Student student, Predicate<Student> predicate, Consumer<Student> consumer){
+    public static Customer updateStudentFee(Customer student, Predicate<Customer> predicate, Consumer<Customer> consumer){
         if ( predicate.test(student)){
             consumer.accept(student);
         }
         return student;
     }
 
-    public Student getStudent(String firstName, String lastName, Double grade)
+    public Customer getStudent(String name, Double grade)
     {
-        return new Student(firstName, lastName, grade);
+        return new Customer(name, grade);
     }
 
-    public class Student {
-        String firstName;
-        String lastName;
+    public class Customer {
+        String name;
         Double grade;
         Double feeDiscount = 0.0;
         Double baseFee = 20000.0;
 
-        public Student(String firstName, String lastName, Double grade) {
-            this.firstName = firstName;
-            this.lastName = lastName;
+        public Customer(String name, Double grade) {
+            this.name = name;
             this.grade = grade;
         }
 
         public void printFee() {
-            Double newFee = baseFee - ((baseFee * feeDiscount) / 100);
-            System.out.println("The fee after discount: " + newFee);
+            Double newFee = baseFee - (baseFee * feeDiscount);
+            System.out.println("The discount for " + name + " is "+ newFee);
         }
     }
 }
