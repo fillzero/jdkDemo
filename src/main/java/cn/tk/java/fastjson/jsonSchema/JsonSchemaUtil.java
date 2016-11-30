@@ -13,9 +13,9 @@ import com.github.fge.jsonschema.main.JsonSchemaFactory;
 @Slf4j
 public class JsonSchemaUtil
 {
-	public String validate(String jsonSchema,String reqJsonString)
+	public static boolean validate(String jsonSchema,String reqJsonString)
 	{
-		String retString = "";
+		boolean retString = true;
 		try
         {
 			ObjectMapper oMapper  = new ObjectMapper();
@@ -27,17 +27,17 @@ public class JsonSchemaUtil
 	        ProcessingReport report = schema.validate(reqSchema);
 	        if(report.isSuccess())
 	        {
-	        	retString = "ok";
+	        	retString = true;
 	        }
 	        else
 	        {
-	        	retString = report.toString();
+	        	retString = false;
 	        	log.debug("JsonSchemaUtil validate fail {}" , retString);
 	        }
         }
         catch (Exception e)
         {
-	        retString = "SYSTEM_ILLEGAL_REQUEST";
+	        retString = false;
 	        log.debug("JsonSchemaUtil validate Exception {}" , e.toString());
 	        e.printStackTrace();
         }
@@ -45,7 +45,7 @@ public class JsonSchemaUtil
         return retString;
 	}
 	
-	public String validate(String jsonSchema,HashMap<String, String> map)
+	public static String validate(String jsonSchema,HashMap<String, String> map)
 	{
 		String retString = "";
 		try
