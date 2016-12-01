@@ -1,6 +1,8 @@
 package newProperty.functional.lambda;
 
 import static java.util.Arrays.asList;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -44,12 +46,12 @@ public class LambdaDemo {
     }
 
     public static void loopCommon(){
-        List<String> persons = asList("Joe", "Jim", "John");
+        List<String> persons = new ArrayList<>();
         for (String person : persons)
         {
-            person = person + " Doe";
-            persons.add(person);
+            System.out.println(person.toString());
         }
-        System.out.println(persons.toString());
     }
+
+
 }
