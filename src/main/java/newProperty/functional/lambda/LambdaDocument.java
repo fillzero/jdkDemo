@@ -12,6 +12,10 @@ import java.util.function.Predicate;
 * @description: JDK8 lambda 官方文档
 * Lambda表达式 --> 更简洁的编写只有一个方法的类
 * 场景: social networking application
+* 函数式变成三步走: processPersonsFunction
+* Filters: Predicate<T> 给出过滤条件
+* Maps: Function<T, R> 给出映射
+* Actions: Consumer<T> 给出执行行为
 */
 public class LambdaDocument {
 
@@ -126,6 +130,7 @@ public class LambdaDocument {
             }
         }
     }
+
     public static void printPersons(
             List<Person> roster,
             Predicate<Person> tester,
@@ -149,6 +154,7 @@ public class LambdaDocument {
                         && person.getAge() <= 50,
                 person -> person.printPerson());
     }
+
     public static void processPersonsFunction(List<Person> roster) {
         printPersons(
                 roster,
@@ -158,5 +164,24 @@ public class LambdaDocument {
                 p -> p.getEmailAddress(),// Function 获取邮箱
                 email -> System.out.println(email)//打印邮箱地址
         );
+    }
+
+    /*
+    * @description: 8. 引入聚合操作: Aggregate Operations, 不需要实现接口, 直接操作数据源
+    * Stream<T> filter(Predicate<? super T> predicate);
+    * <R> Stream<R> map(Function<? super T, ? extends R> mapper);
+    * void forEach(Consumer<? super T> action);
+    *
+    * 聚合操作本质上也是提供 Predicate, Function, Consumer 的实现类
+    */
+    public static void printPersonsByAggregate(List<Person> roster) {
+        roster.stream()
+                .filter(
+                    p -> p.getGender() == Person.Sex.MALE
+                         && p.getAge() >= 18
+                         && p.getAge() <= 25
+                )
+                .map(p -> p.getEmailAddress())
+                .forEach(email -> System.out.println(email));
     }
 }

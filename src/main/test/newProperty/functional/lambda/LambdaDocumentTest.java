@@ -66,4 +66,10 @@ public class LambdaDocumentTest {
     public void processPersonsFunction() throws Exception{
         LambdaDocument.processPersonsFunction(roster);
     }
+
+    @Test
+    @DisplayName("8. 聚合操作使用 Lambda 表达式, 无需实现各种接口")
+    public void printPersonsByAggregate() throws Exception{
+        LambdaDocument.processPersonsFunction(roster);
+    }
 }
