@@ -16,6 +16,13 @@ import java.util.function.Predicate;
 * Filters: Predicate<T> 给出过滤条件
 * Maps: Function<T, R> 给出映射
 * Actions: Consumer<T> 给出执行行为
+*
+* 演化过程:
+* 1. 接口 + 内部实现类
+* 2. 接口 + 匿名实现类
+* 3. 接口 + Lambda表达式
+*
+* 注意这里的接口只能有一个方法, 称为功能性接口, 这样给出的 lambda 表达式就是该方法的具体实现.
 */
 public class LambdaDocument {
 
@@ -167,7 +174,7 @@ public class LambdaDocument {
     }
 
     /*
-    * @description: 8. 引入聚合操作: Aggregate Operations, 不需要实现接口, 直接操作数据源
+    * @description: 8. 引入聚合操作:  Aggregate Operations,不需要实现接口, 直接操作数据源
     * Stream<T> filter(Predicate<? super T> predicate);
     * <R> Stream<R> map(Function<? super T, ? extends R> mapper);
     * void forEach(Consumer<? super T> action);
