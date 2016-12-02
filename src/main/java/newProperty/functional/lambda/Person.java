@@ -3,6 +3,8 @@ package newProperty.functional.lambda;
 import lombok.Getter;
 
 import java.time.LocalDate;
+import java.time.Period;
+import java.time.chrono.Chronology;
 import java.time.chrono.IsoChronology;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,14 +15,17 @@ import java.util.List;
 */
 public class Person {
 
+    /*
+    * @description: 性别枚举
+    */
     public enum Sex {
         MALE, FEMALE
     }
 
-    LocalDate birthday;
     @Getter String name;
     @Getter Sex gender;
     @Getter String emailAddress;
+    LocalDate birthday;
 
     Person(String nameArg, LocalDate birthdayArg,
            Sex genderArg, String emailArg) {
@@ -30,24 +35,39 @@ public class Person {
         emailAddress = emailArg;
     }
 
+    /*
+    * @description: 获取年龄
+    */
     public int getAge() {
         return birthday
-                .until(IsoChronology.INSTANCE.dateNow())
+                .until(IsoChronology.INSTANCE.dateNow())//birthday 与当前日期的差值
                 .getYears();
     }
 
+    /*
+    * @description: 打印姓名: 年龄
+    */
     public void printPerson() {
-        System.out.println(name + ", " + this.getAge());
+        System.out.println(name + ": " + this.getAge());
     }
 
+    /*
+    * @description: 获取生日
+    */
     public LocalDate getBirthday() {
         return birthday;
     }
 
+    /*
+    * @description: 比较年龄大小 -1, 1, 0
+    */
     public static int compareByAge(Person a, Person b) {
         return a.birthday.compareTo(b.birthday);
     }
 
+    /*
+    * @description: 社交网络花名册
+    */
     public static List<Person> createRoster() {
 
         List<Person> roster = new ArrayList<>();
