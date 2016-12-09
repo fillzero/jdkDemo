@@ -159,4 +159,16 @@ public class JSONArrayDemo {
 		}
 		System.out.println(data);
 	}
+
+	@Test
+	public void testCratePureArray()
+	{
+		JSONArray array = new JSONArray();
+		array.add("java");
+		array.add("html");
+		array.add("python");
+		array.add("c++");
+		System.out.println(array);
+		System.out.println(array.get(3));
+	}
 }
