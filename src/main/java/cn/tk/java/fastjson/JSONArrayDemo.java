@@ -171,4 +171,61 @@ public class JSONArrayDemo {
 		System.out.println(array);
 		System.out.println(array.get(3));
 	}
+	
+	String tempJSON = "{\n" +
+			"  \"policyNo\": \"125895371207420467468347520\",\n" +
+			"  \"mobile\": \"13800000000\",\n" +
+			"  \"isSendMessage\": 1,\n" +
+			"  \"openId\": \"dDSALKDSAJ121234138jW\",\n" +
+			"  \"reportorName\": \"小李子\",\n" +
+			"  \"checkTime\": 123132415,\n" +
+			"  \"identifyType\": \"01\",\n" +
+			"  \"identifyNumber\": \"623024194711209255\",\n" +
+			"  \"imageList\": [\n" +
+			"    {\n" +
+			"      \"imageId\": \"askdfjlaksjflkas\"\n" +
+			"    },\n" +
+			"    {\n" +
+			"      \"imageId\": \"askdfjlaksjflkas\"\n" +
+			"    },\n" +
+			"    {\n" +
+			"      \"imageId\": \"askdfjlaksjflkas\"\n" +
+			"    }\n" +
+			"  ]\n" +
+			"}";
+	String appendImage = "{\n" +
+			"  \"policyNo\": \"125895371207420467468347520\",\n" +
+			"  \"claimNo\": \"623024194711209255\",\n" +
+			"  \"isSendMessage\": 1,\n" +
+			"  \"imageList\": [\n" +
+			"    {\n" +
+			"      \"imageId\": \"askdfjlaksjflkas\"\n" +
+			"    },\n" +
+			"    {\n" +
+			"      \"imageId\": \"askdfjlaksjflkas\"\n" +
+			"    },\n" +
+			"    {\n" +
+			"      \"imageId\": \"askdfjlaksjflkas\"\n" +
+			"    }\n" +
+			"  ]\n" +
+			"}";
+	@Test
+	public void testgetImages()
+	{
+		JSONObject input = JSONObject.parseObject(tempJSON);
+		JSONObject append = JSONObject.parseObject(appendImage);
+
+		JSONArray imageList = input.getJSONArray("imageList");
+		JSONArray imageList1 = append.getJSONArray("imageList");
+
+		String imges = imageList.toString();
+		System.out.println(imges);
+		JSONArray array = JSONArray.parseArray(imges);
+		System.out.println(array);
+		String imageStr = input.getString("imageList");
+		System.out.println(imageStr);
+		System.out.println(JSONArray.parseArray(imageStr));
+		imageList.addAll(imageList1);
+
+	}
 }
