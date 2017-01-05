@@ -30,8 +30,8 @@ public class StringUtilTest {
     */
     @Test
     public void underlineToCamelhump() throws Exception {
-        String word = "product_catalog";
-        assertEquals("productCatalog", StringUtil.underlineToCamelhump(word));
+        String word = "product_catalog_";
+        assertEquals("productCatalog_", StringUtil.underlineToCamelhump(word));
     }
 
     @Test
