@@ -23,4 +23,14 @@ public class StringDemo {
 		String str = "woshinibabadebaba";
 		assertThat(str.substring(0, str.length()-6), equalTo("woshinibaba"));
 	}
+
+	@Test
+	public void testStringFormat()
+	{
+		String htmlTemplate   = "<tr><td>%s:%s</td></tr>";
+		String id = "name";
+		String content = "lijinlong";
+		String html = String.format(htmlTemplate, id, content);
+		System.out.println(html);
+	}
 }
