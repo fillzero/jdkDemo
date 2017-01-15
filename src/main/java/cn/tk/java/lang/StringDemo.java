@@ -33,4 +33,12 @@ public class StringDemo {
 		String html = String.format(htmlTemplate, id, content);
 		System.out.println(html);
 	}
+
+	@Test
+	public void testReplace()
+	{
+		String demo = "calculateModule";
+		demo = demo.replace("Module", "Data");
+		System.out.println(demo);
+	}
 }
