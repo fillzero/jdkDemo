@@ -3,11 +3,15 @@ package cn.tk.java.fastjson.jsonSchema;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Created by lijl85 on 2016/11/30.
+ *
+ * @description: jsonSchema: 两种返回结果: accepted, refused: 接收/拒绝
  */
+
 public class JsonSchemaUtilTest {
 
     private static final String candidateStr = "{\n" +
@@ -27,6 +31,37 @@ public class JsonSchemaUtilTest {
 
     @Test
     public void validate() throws Exception {
+        assertTrue(JsonSchemaUtil.validate(jsonSchema, candidateStr));
+    }
+
+    /*
+    * @description: 空 jsonSchema 因为没有校验规则, 所以可以接收任何形式的 JSON 数据
+    *
+    */
+    @Test
+    public void validateAnything()
+    {
+        assertTrue(JsonSchemaUtil.validate("{}", candidateStr));
+    }
+    /*
+    * @description: String 类型
+    */
+    @Test
+    public void validateString()
+    {
+        String jsonSchema = "{\n" +
+                "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\n" +
+                "  \"type\": \"object\",\n" +
+                "  \"properties\": {\n" +
+                "    \"str\": {\n" +
+                "      \"type\": \"string\"\n" +
+                "    }\n" +
+                "  },\n" +
+                "  \"required\": [\n" +
+                "    \"str\"\n" +
+                "  ]\n" +
+                "}";
+        String candidateStr = "{\"str\":\"I'm a string\"}";
         assertTrue(JsonSchemaUtil.validate(jsonSchema, candidateStr));
     }
 
