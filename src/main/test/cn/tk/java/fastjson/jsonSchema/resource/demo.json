@@ -1,3 +1,8 @@
 {
-  "name": "lijinlong"
+  "additional": {
+    "street_address": "1600 Pennsylvania Avenue NW",
+    "city": "Washington",
+    "state": "DC",
+    "type": "business"
+  }
 }
