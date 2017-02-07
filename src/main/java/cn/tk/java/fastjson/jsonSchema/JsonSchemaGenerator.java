@@ -14,7 +14,7 @@ public class JsonSchemaGenerator {
 
     public void generateSchema(JSONObject inputJson)
     {
-        System.out.println("hha");
+
     }
 
     public static void main(String[] args) {

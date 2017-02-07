@@ -28,7 +28,7 @@ public class JsonSchemaUtilTest {
     @SneakyThrows
     public static void readJsonAndSchema()
     {
-        String jsonPath = "./src/main/test/cn/tk/java/fastjson/jsonSchema/resource/demo.json";
+        String jsonPath = "./src/main/test/cn/tk/java/fastjson/jsonSchema/resource/options.json";
         String schemaPath = "./src/main/test/cn/tk/java/fastjson/jsonSchema/resource/schema.txt";
         candidateStr = FileUtils.readFileToString(new File(jsonPath), Charset.forName("UTF-8"));
         jsonSchema = FileUtils.readFileToString(new File(schemaPath), Charset.forName("UTF-8"));
