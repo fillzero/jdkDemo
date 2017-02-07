@@ -1,0 +1,9 @@
+{
+  "id":"insuredAgeRange",
+  "title":"投保年龄范围",
+  "visible":false,
+  "type":"number",
+  "returned":true,
+  "maximum":65,
+  "minimum":18
+}
