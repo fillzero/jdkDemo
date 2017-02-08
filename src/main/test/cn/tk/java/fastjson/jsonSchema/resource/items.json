@@ -1,0 +1,16 @@
+{
+    "pass1":[1, 2, 3, 4, 5],
+    "pass2":[],
+    "fail1":[1, 2, "3", 4, 5],
+
+    "pass3":[1600, "Pennsylvania", "Avenue", "NW"],
+    "pass4":[1600, "Pennsylvania", "Avenue", "NW", "Washington"],
+    "fail2":["Palais de l'Élysée"],
+
+    "pass5":[1, 2],
+    "pass6":[1, 2, 3],
+    "fail3":[1, 2, 3, 4],
+
+    "pass7":[1, 2, 3, 4, 5],
+    "fail4":[1, 2, 3, 3, 4]
+}
