@@ -181,5 +181,13 @@
             <artifactId>junit</artifactId>
             <version>4.12</version>
         </dependency>
-    </dependencies>
+
+		<!-- Itext -->
+		<dependency>
+			<groupId>itext</groupId>
+			<artifactId>itext</artifactId>
+			<version>4.2.1</version>
+		</dependency>
+
+	</dependencies>
 </project>
