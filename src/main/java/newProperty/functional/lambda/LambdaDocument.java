@@ -1,5 +1,6 @@
 package newProperty.functional.lambda;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -65,7 +66,7 @@ public class LambdaDocument {
     */
 
     public static void printPersonsAnonymous(List<Person> roster) {
-        printPersons(roster, new CheckPerson() {
+        printPersons(roster,  new CheckPerson() {
             @Override
             public boolean test(Person person) {
                 return person.getGender() == Person.Sex.MALE
