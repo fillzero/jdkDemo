@@ -15,7 +15,10 @@ import java.util.List;
 * 
 */
 public class PseudoGenericity<T>{
-    @Test
+    /*
+    * @description: 强转失败, Object 类型的数组无法转换成 String 类型的数组
+    */
+    @Test(expected=ClassCastException.class)
     public void testGenericity()
     {
         Object[] a = new Object[4];
