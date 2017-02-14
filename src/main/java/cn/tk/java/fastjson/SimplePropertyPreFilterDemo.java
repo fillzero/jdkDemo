@@ -36,11 +36,13 @@ public class SimplePropertyPreFilterDemo {
 		person.setCidNo("141112191305020012");
 		person.setMobile("13800000000");
 		person.setSex("famale");
+
 		Person person1 = new Person();
 		person1.setName("xiaozhang");
 		person1.setCidNo("141112191305020023");
 		person1.setMobile("13811111111");
 		person1.setSex("male");
+
 		persons.add(person);
 		persons.add(person1);
 		return persons;

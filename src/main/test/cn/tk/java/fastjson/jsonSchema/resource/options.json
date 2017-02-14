@@ -1,0 +1,22 @@
+{
+  "id": "insurePeriod",
+  "description": "保险期间",
+  "default": "Y1",
+  "type": "string",
+  "visible": true,
+  "returned": true,
+  "options": [
+    {
+      "key": "3天",
+      "value": "D3"
+    },
+    {
+      "key": "5天",
+      "value": "D5"
+    },
+    {
+      "key": "7天",
+      "value": "D7"
+    }
+  ]
+}

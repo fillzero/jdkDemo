@@ -2,6 +2,8 @@ package cn.tk.java.algorithm.leetcode.array;
 
 import org.junit.Test;
 
+import java.util.HashMap;
+
 /**
  * @Author: lijl85
  * @Title: LengthOfLongestSubstring.java
@@ -46,7 +48,22 @@ public class LengthOfLongestSubstring {
 		max_count = max_count > count ? max_count : count;
 		return max_count;
 	}
-	 
+
+	public int lengthOfLongestSubstring2(String s) {
+		if (s.length()==0) return 0;
+		HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+		int max=0;
+		for (int i=0, j=0; i<s.length(); ++i){
+			if (map.containsKey(s.charAt(i))){
+				j = Math.max(j,map.get(s.charAt(i))+1);
+			}
+			map.put(s.charAt(i),i);
+			max = Math.max(max,i-j+1);
+		}
+		return max;
+	}
+
+
 	@Test
 	public void testGetLongestLength()
 	{
@@ -54,5 +71,13 @@ public class LengthOfLongestSubstring {
 		System.out.println(lengthOfLongestSubstring("au"));
 		System.out.println(lengthOfLongestSubstring("dvdf"));
 		System.out.println(lengthOfLongestSubstring("pwwkew"));
+	}
+	@Test
+	public void testGetLongestLength2()
+	{
+		System.out.println(lengthOfLongestSubstring2("a"));
+		System.out.println(lengthOfLongestSubstring2("au"));
+		System.out.println(lengthOfLongestSubstring2("dvdf"));
+		System.out.println(lengthOfLongestSubstring2("pwwkew"));
 	}
 }

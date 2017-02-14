@@ -1,0 +1,59 @@
+{
+  "id": "exchangeWidget",
+  "title": "参数获取微件",
+  "description": "参数获取微件，包含链接里面的参数",
+  "visible": false,
+  "returned": false,
+  "type": "object",
+  "components": [
+    {
+      "id": "platformId",
+      "description": "平台编号",
+      "default": "",
+      "type": "string",
+      "visible": false,
+      "returned": true
+    },
+    {
+      "id": "channelId",
+      "description": "渠道编号",
+      "default": "",
+      "type": "string",
+      "visible": false,
+      "returned": true
+    },
+    {
+      "id": "referId",
+      "description": "推荐人标号",
+      "default": "",
+      "type": "string",
+      "visible": false,
+      "returned": true
+    },
+    {
+      "id": "openId",
+      "description": "客户openid",
+      "default": "",
+      "type": "string",
+      "visible": false,
+      "returned": true
+    },
+    {
+      "id": "coopRequestId",
+      "description": "渠道请求编号",
+      "default": "",
+      "type": "string",
+      "visible": false,
+      "returned": true
+    },
+    {
+      "id": "metadataId",
+      "description": "产品元数据",
+      "default": "",
+      "type": "string",
+      "sequence": 8,
+      "visible": false,
+      "returned": true
+    }
+  ]
+}
