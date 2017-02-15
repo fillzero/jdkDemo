@@ -8,20 +8,17 @@ import java.time.chrono.Chronology;
 import java.time.chrono.IsoChronology;
 import java.util.ArrayList;
 import java.util.List;
-
 /*
 * @description: Lambda 表达式测试场景类: Person
 * social networking application: 客户类
 */
 public class Person {
-
     /*
     * @description: 性别枚举
     */
     public enum Sex {
         MALE, FEMALE
     }
-
     @Getter String name;
     @Getter Sex gender;
     @Getter String emailAddress;
