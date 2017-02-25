@@ -8,6 +8,7 @@ import org.apache.commons.codec.binary.Base64;
 /** 
  * 高级加密标准
  */
+@SuppressWarnings("Duplicates")
 public class AesUtil
 {
 	/**

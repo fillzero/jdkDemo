@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 /** 
  * 数据加密标准，一种使用密钥加密的块算法
  */
+@SuppressWarnings("Duplicates")
 public class DESUtil {
 	private static Logger log = LoggerFactory.getLogger(DESUtil.class);
 
