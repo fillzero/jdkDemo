@@ -1,7 +1,10 @@
 package newProperty;
 
+import newProperty.functional.lambda.Person;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 import static newProperty.PredicateImpl.updateStudentFee;
@@ -11,6 +14,8 @@ import static org.junit.Assert.*;
  * Created by lijl85 on 2016/11/25.
  */
 public class PredicateImplTest {
+
+    List<Person> roster = Person.createRoster();
 
     @Test
     public void testPredicate(){

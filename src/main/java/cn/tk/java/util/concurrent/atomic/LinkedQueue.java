@@ -5,6 +5,7 @@ import java.util.concurrent.atomic.AtomicReference;
 /**
  * @description:非阻塞链表
  */
+@SuppressWarnings("JavaDoc")
 public class LinkedQueue<E>{
 	/**
 	 * @description:头结点
