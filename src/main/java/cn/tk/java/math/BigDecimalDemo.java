@@ -1,7 +1,10 @@
 package cn.tk.java.math;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.math.BigDecimal;
 
+import lombok.SneakyThrows;
 import org.junit.Test;
 
 public class BigDecimalDemo {
@@ -18,8 +21,8 @@ public class BigDecimalDemo {
 		BigDecimal aDoubleString = new BigDecimal("1.22");
 		System.out.println(aDoubleString);
 		
-		BigDecimal trasferDouble = new BigDecimal(Double.toString(1.22));
-		System.out.println(trasferDouble);
+		BigDecimal transferDouble = new BigDecimal(Double.toString(1.22));
+		System.out.println(transferDouble);
 	}
 	
 	/**
@@ -45,6 +48,7 @@ public class BigDecimalDemo {
 	 * 要使用 String 的构造函数
 	 */
 	@Test
+	@SneakyThrows
 	public void testApply()
 	{
 	    BigDecimal bigDecimal = new BigDecimal(1.23);

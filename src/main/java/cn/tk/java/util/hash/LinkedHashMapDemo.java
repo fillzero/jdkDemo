@@ -29,17 +29,17 @@ public class LinkedHashMapDemo {
 	public class LRUCache extends LinkedHashMap<String, String>
 	{
 		private static final long serialVersionUID = 1L;
-		protected int maxElements;
+		protected int cacheSize;
 
-		public LRUCache(int maxSize, float loadFactor, boolean accessOrder) {
-			super(maxSize, loadFactor, accessOrder);
-			this.maxElements = maxSize;
+		public LRUCache(int cacheSize, float loadFactor, boolean accessOrder) {
+			super(cacheSize, loadFactor, accessOrder);
+			this.cacheSize = cacheSize;
 		}
-		
+
 		@Override
 		protected boolean removeEldestEntry(
 				java.util.Map.Entry<String, String> eldest) {
-			return size() > maxElements;
+			return size() > cacheSize;
 		}
 	}
 
