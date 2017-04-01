@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>cn.tk.jdkDemo</groupId>
@@ -9,13 +9,13 @@
 
 	<name>jdkDemo</name>
 	<url>http://maven.apache.org</url>
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <junit.version>4.12</junit.version>
-        <junit.jupiter.version>5.0.0-M2</junit.jupiter.version>
-        <junit.vintage.version>${junit.version}.0-M2</junit.vintage.version>
-        <junit.platform.version>1.0.0-M2</junit.platform.version>
+		<junit.version>4.12</junit.version>
+		<junit.jupiter.version>5.0.0-M2</junit.jupiter.version>
+		<junit.vintage.version>${junit.version}.0-M2</junit.vintage.version>
+		<junit.platform.version>1.0.0-M2</junit.platform.version>
 		<spring.version>4.2.5.RELEASE</spring.version>
 		<commons-lang3.version>3.4</commons-lang3.version>
 		<commons-io>2.5</commons-io>
@@ -171,16 +171,16 @@
 			<artifactId>thumbnailator</artifactId>
 			<version>${thumbnailator.version}</version>
 		</dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.0.0-M2</version>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-        </dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.0.0-M2</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+		</dependency>
 
 		<!-- Itext -->
 		<dependency>

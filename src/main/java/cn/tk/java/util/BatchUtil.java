@@ -85,7 +85,7 @@ public class BatchUtil {
 		}
 		return updateCount;
 	}
-	
+
 	@Test
 	public void testSaveBatch()
 	{
