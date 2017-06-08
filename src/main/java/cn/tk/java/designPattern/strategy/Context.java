@@ -20,10 +20,18 @@ public class Context {
     }
 
     /**
-     * Description: 抽象流程
+     * Description: 抽象流程，可以在策略执行的前后引入监控报警，方便同一控制
      */
     public void algorithm(){
+        long startTime = System.currentTimeMillis();
+
         // 使用策略解决流程问题
         strategy.doBusiness();
+
+        long endTime = System.currentTimeMillis();
+        long elapseTime = (endTime - startTime) / 1000;
+        if (elapseTime > 2)
+            System.out.println("超时！");
+        System.out.println("一切正常！");
     }
 }
