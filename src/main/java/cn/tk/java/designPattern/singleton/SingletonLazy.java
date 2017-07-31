@@ -7,7 +7,7 @@ package cn.tk.java.designPattern.singleton;
 *@description: 懒汉模式, 需要的时候才去创建实例: 延时加载
 */
 public class SingletonLazy {
-    private static SingletonLazy INSTANCE;
+    private static volatile SingletonLazy INSTANCE;
 
     private SingletonLazy(){
 
@@ -18,7 +18,7 @@ public class SingletonLazy {
     */
     public static synchronized SingletonLazy getInstance()
     {
-        if (INSTANCE != null)
+        if (INSTANCE == null)
             INSTANCE = new SingletonLazy();
         return INSTANCE;
     }

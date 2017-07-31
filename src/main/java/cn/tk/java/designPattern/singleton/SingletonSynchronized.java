@@ -8,7 +8,7 @@ package cn.tk.java.designPattern.singleton;
 * 懒汉模式双重同步锁, 锁的粒度变小
 */
 public class SingletonSynchronized {
-    private static SingletonSynchronized INSTANCE;
+    private static volatile SingletonSynchronized INSTANCE;
 
     private SingletonSynchronized(){
 
