@@ -16,10 +16,12 @@ public class SingletonSynchronized {
      * Description：单实例收到反射攻击之后会报警，但是双重锁模式没有办法从根本上防止反射攻击
      */
     private SingletonSynchronized(){
-        if (!flag)
-            flag = !flag;
-        else
-            throw new RuntimeException("单实例收到侵犯！");
+        synchronized (SingletonSynchronized.class) {
+            if (!flag)
+                flag = !flag;
+            else
+                throw new RuntimeException("单实例收到侵犯！");
+        }
     }
 
     /*
