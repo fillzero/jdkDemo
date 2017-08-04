@@ -10,8 +10,16 @@ package cn.tk.java.designPattern.singleton;
 public class SingletonSynchronized {
     private static volatile SingletonSynchronized INSTANCE;
 
-    private SingletonSynchronized(){
+    private static volatile boolean flag = false;
 
+    /**
+     * Description：单实例收到反射攻击之后会报警，但是双重锁模式没有办法从根本上防止反射攻击
+     */
+    private SingletonSynchronized(){
+        if (!flag)
+            flag = !flag;
+        else
+            throw new RuntimeException("单实例收到侵犯！");
     }
 
     /*
