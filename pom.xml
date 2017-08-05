@@ -195,5 +195,12 @@
 			<version>3.16</version>
 		</dependency>
 
+		<!-- cglib 字节码技术 -->
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>3.2.5</version>
+		</dependency>
+
 	</dependencies>
 </project>
