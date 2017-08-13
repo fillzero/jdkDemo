@@ -8,6 +8,8 @@ package cn.tk.java.designPattern.singleton;
 * 懒汉模式双重同步锁, 锁的粒度变小
 */
 public class SingletonSynchronized {
+
+    // 变量必须加 volatile 关键字，对象创建的过程存在重排序的问题，指令执行顺序的变化可能会导致双重锁无法创建唯一的对象，会报错。
     private static volatile SingletonSynchronized INSTANCE;
 
     private static volatile boolean flag = false;
