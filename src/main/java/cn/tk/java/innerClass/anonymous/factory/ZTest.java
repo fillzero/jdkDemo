@@ -3,7 +3,7 @@ package cn.tk.java.innerClass.anonymous.factory;
 /**
  * @author: lijl85
  * @date：2016年11月6日上午10:57:28
- * @description:Factory --> Builder --> Product
+ * @description:Factory --> FtpClientBuilder --> Product
  * 工厂制造工具, 工具生产产品
  */
 public class ZTest {
