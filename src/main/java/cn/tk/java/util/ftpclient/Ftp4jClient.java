@@ -13,6 +13,7 @@ import lombok.SneakyThrows;
  * 单例 + Builder
  * 单例用于保证实例的唯一性，Builder 用于显式的创建实例
  */
+@SuppressWarnings("Duplicates")
 public class Ftp4jClient {
 
     private volatile static FTPClient ftpClient;
@@ -87,6 +88,8 @@ public class Ftp4jClient {
             FTPClient ftpClient = new FTPClient();
             ftpClient.connect(this.address, this.port);
             ftpClient.login(this.user, this.password);
+            ftpClient.setPassive(true);
+            ftpClient.setType(FTPClient.TYPE_BINARY);
             return ftpClient;
         }
     }

@@ -32,7 +32,6 @@ public class FtpHelper {
                 .user(user)
                 .password(password)
                 .build();
-
     }
 
     /**
