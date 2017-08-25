@@ -6,9 +6,9 @@ import lombok.*;
  * Author: lijinlong
  * Mail: lijinlong3@jd.com
  * Date: 2017/8/23
- * Description: 用于完成跟 FTP 服务器的各种交互
+ * Description: 使用 jdk 获取 FTP 服务器的连接
  */
-public class FtpClient {
+public class FtpJdkClient {
 
     @Getter private String fileType; //必传参数
     @Getter private String connectionMode;//连接模式：PASV
@@ -18,11 +18,11 @@ public class FtpClient {
     @Getter private String address;//可传参数
     @Getter private Integer port;//可传参数
 
-    private FtpClient() {
+    private FtpJdkClient() {
 
     }
 
-    private FtpClient(FtpClientBuilder ftpClientBuilder)
+    private FtpJdkClient(FtpClientBuilder ftpClientBuilder)
     {
         this.fileType = ftpClientBuilder.fileType;
         this.user = ftpClientBuilder.user;
@@ -71,9 +71,9 @@ public class FtpClient {
             return this;
         }
 
-        public FtpClient build()
+        public FtpJdkClient build()
         {
-             return new FtpClient();
+             return new FtpJdkClient();
         }
     }
 }

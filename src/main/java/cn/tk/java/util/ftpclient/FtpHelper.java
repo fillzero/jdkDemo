@@ -5,8 +5,10 @@ package cn.tk.java.util.ftpclient;
  * Mail: lijinlong3@jd.com
  * Date: 2017/8/23
  * Description: 提供给客户使用：提供常用功能
- * （1）uploadFile
- * （2）downLoadFile
+ * （1）upload
+ * （2）downLoad
+ * （3）delete
+ * （4）rename
  */
 public class FtpHelper {
 
@@ -24,7 +26,7 @@ public class FtpHelper {
      */
     public void upload(String localPath, String remotePath)
     {
-        FtpClient ftpClient = new FtpClient.FtpClientBuilder(fileType)
+        FtpJdkClient ftpClient = new FtpJdkClient.FtpClientBuilder(fileType)
                 .address(address)
                 .port(port)
                 .user(user)
