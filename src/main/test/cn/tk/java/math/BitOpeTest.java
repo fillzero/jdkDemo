@@ -4,7 +4,7 @@ package cn.tk.java.math;
 *@date: 2017/8/27 0027
 *@author: lijl85
 *@mail: ljldeepinit@163.com
-*@description: 
+*@description: 位运算性能超过基本运算 3 ~ 5 倍，不同机器会有所不同
 */
 public class BitOpeTest {
     public static void main(String[] args) {
