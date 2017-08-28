@@ -1,7 +1,6 @@
 package cn.tk.java.util.ftpclient;
 
 import it.sauronsoftware.ftp4j.FTPClient;
-import lombok.Builder;
 import lombok.SneakyThrows;
 
 /**

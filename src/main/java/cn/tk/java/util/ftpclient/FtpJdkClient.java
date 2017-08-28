@@ -1,6 +1,9 @@
 package cn.tk.java.util.ftpclient;
 
 import lombok.*;
+import sun.net.ftp.FtpClient;
+
+import java.net.InetSocketAddress;
 
 /**
  * Author: lijinlong
@@ -10,26 +13,36 @@ import lombok.*;
  */
 public class FtpJdkClient {
 
-    @Getter private String fileType; //必传参数
-    @Getter private String connectionMode;//连接模式：PASV
-    @Getter private String transferMode;//传输模式：BINARY
-    @Getter private String user;//可传参数
-    @Getter private String password;//可传参数
-    @Getter private String address;//可传参数
-    @Getter private Integer port;//可传参数
+    private volatile static FtpClient ftpClient;
+
+    private static String address = "192.168.1.110";
+    private static Integer port = 21;
+    private static String user = "jdftp";
+    private static String password = "uchanceftp";
 
     private FtpJdkClient() {
 
     }
 
-    private FtpJdkClient(FtpClientBuilder ftpClientBuilder)
+    public static FtpClient getClient()
     {
-        this.fileType = ftpClientBuilder.fileType;
-        this.user = ftpClientBuilder.user;
-        this.password = ftpClientBuilder.password;
-        this.address = ftpClientBuilder.address;
-        this.port = ftpClientBuilder.port;
+        if (ftpClient == null)
+        {
+            synchronized (FtpJdkClient.class)
+            {
+                if (ftpClient == null)
+                    ftpClient = FtpClientBuilder
+                            .builder()
+                            .address(address)
+                            .port(port)
+                            .user(user)
+                            .password(password)
+                            .build();
+            }
+        }
+        return ftpClient;
     }
+
 
     /**
      * Description：构造请求体：FtpClientBuilder 模式处理多参数构造函数类
@@ -37,14 +50,14 @@ public class FtpJdkClient {
      */
     public static class FtpClientBuilder {
 
-        private final String fileType; //必传参数
-        private String user;//可传参数
-        private String password;//可传参数
-        private String address;//可传参数
-        private Integer port;//可传参数
+        private String address;
+        private Integer port;
+        private String user;
+        private String password;
 
-        public FtpClientBuilder(String fileType){
-            this.fileType = fileType;
+        public static FtpClientBuilder builder()
+        {
+            return new FtpClientBuilder();
         }
 
         public FtpClientBuilder address(String address)
@@ -71,9 +84,16 @@ public class FtpJdkClient {
             return this;
         }
 
-        public FtpJdkClient build()
+        @SneakyThrows
+        public FtpClient build()
         {
-             return new FtpJdkClient();
+            FtpClient ftpClient = FtpClient.create();
+            ftpClient.connect(new InetSocketAddress(this.address, this.port));
+            ftpClient.login(this.user, this.password.toCharArray());
+            ftpClient.enablePassiveMode(true);
+            ftpClient.setBinaryType();
+            System.out.println(ftpClient.getWelcomeMsg());
+            return ftpClient;
         }
     }
 }
