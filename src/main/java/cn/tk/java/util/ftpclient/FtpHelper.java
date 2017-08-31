@@ -1,65 +1,43 @@
 package cn.tk.java.util.ftpclient;
 
 /**
- * Author: lijinlong
- * Mail: lijinlong3@jd.com
- * Date: 2017/8/23
- * Description: 提供给客户使用：提供常用功能
- * （1）upload
- * （2）downLoad
- * （3）delete
- * （4）rename
+ * Created by lijinlong3 on 2017/8/28.
  */
-public class FtpHelper {
-
-    private final String address = "192.168.1.110";
-    private final Integer port = 21;
-    private final String user = "jdftp";
-    private final String password = "uchanceftp";
-    private final String fileType = "txt";
-
+public interface FtpHelper {
 
     /**
-     * Description：上传文件
-     * @param localPath 本地文件（文件夹）路径
-     * @param remotePath FTP 服务器上文件（文件夹）路径
+     * Description：上传文件，缺省文件名称跟本地文件一致
+     * @param localPath 本地文件路径
+     * @param remotePath 远程文件夹路径
      */
-    public void upload(String localPath, String remotePath)
-    {
-        FtpJdkClient ftpClient = new FtpJdkClient.FtpClientBuilder(fileType)
-                .address(address)
-                .port(port)
-                .user(user)
-                .password(password)
-                .build();
-    }
+    void upload(String localPath, String remotePath);
 
     /**
      * Description：下载文件
-     * @param localPath 本地文件（文件夹）路径
-     * @param remotePath FTP 服务器上文件（文件夹）路径
+     * @param localPath 本地文件路径
+     * @param remotePath 远程文件路径
      */
-    public void downLoad(String localPath, String remotePath)
-    {
-
-    }
+    void downLoad(String localPath, String remotePath, String remoteFileName);
 
     /**
-     * Description：删除 FTP 服务器某文件，或文件夹下的所有文件
-     * @param remotePath FTP 服务器上文件（文件夹）
+     * Description：删除文件或文件夹，文件夹只有为空时才可以删除
+     * @param remotePath：远程文件（文件夹）路径
+     * @param isFile：true 为文件，false 为文件夹
      */
-    public void delete(String remotePath)
-    {
+    boolean delete(String remotePath, boolean isFile);
 
-    }
 
     /**
      * Description：重命名 FTP 服务器上某文件的名称
-     * @param remotePath FTP 服务器上文件路径
+     * @param remotePath FTP 服务器上文件夹路径
+     * @param oldName 旧名字
      * @param newName 新名称
      */
-    public void rename(String remotePath, String newName)
-    {
+    void rename(String remotePath, String oldName, String newName);
 
-    }
+    /**
+     * Description：判断文件是否存在，不存在直接创建
+     * @param remotePath：FTP 服务器上的文件夹路径
+     */
+    void checkAndMakeDirectory(String remotePath);
 }
