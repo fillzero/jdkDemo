@@ -22,6 +22,8 @@ import java.util.stream.Stream;
  * Note: "aba" is also a valid answer.
  *
  * 客上天然居，居然天上客 ^。^
+ *
+ * 最大回文子字符串问题：ref: https://segmentfault.com/a/1190000002991199
  */
 public class LongestPalindromic {
 
