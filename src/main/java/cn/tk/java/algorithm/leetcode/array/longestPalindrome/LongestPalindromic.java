@@ -1,4 +1,4 @@
-package cn.tk.java.algorithm.leetcode.array;
+package cn.tk.java.algorithm.leetcode.array.longestPalindrome;
 
 import org.junit.Test;
 
@@ -12,7 +12,9 @@ import java.util.stream.Stream;
  * Author: lijinlong
  * Mail: lijinlong3@jd.com
  * Date: 2017/9/1
- * Description: 寻找最长回文
+ * Description: 寻找最长回文：自己编写的堆栈解决方法，但是其实 abcba 也是回文串，
+ * 而堆栈法要求相同字符一对一对的出现，出现一堆出栈一对，放到临时列表，像上面这个
+ * 字符串很难满足算法要求，可能找不到该回文串。
  *
  * Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
  *
