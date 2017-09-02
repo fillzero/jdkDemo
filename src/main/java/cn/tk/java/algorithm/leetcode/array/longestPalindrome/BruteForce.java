@@ -15,8 +15,13 @@ public class BruteForce {
      */
     public String longestPalindrome(String s)
     {
+        // 空字符串没有回文
         if (s == null || s.length() == 0)
             return "没有回文！";
+
+        // 单字符字符串其本身就是最长回文串
+        if (s.length() == 1)
+            return s;
 
         // 最长回文串起始下标
         int maxStart = 0;
@@ -26,9 +31,11 @@ public class BruteForce {
 
         int length = s.length();
 
+
+        // i 是子字符串的左端下标，j 是子字符串右端下标
         for (int i=0; i<length; i++)
         {
-            for (int j=i+1; j<length; j++)
+            for (int j=i+1; j<length+1; j++)
             {
                 if ((j-i)>maxLength && isPalindrome(s, i, j))
                 {
@@ -46,7 +53,7 @@ public class BruteForce {
      */
     private boolean isPalindrome(String s, int i, int j)
     {
-        String substring = s.substring(i, i + j);
+        String substring = s.substring(i, j);
         StringBuffer sb = new StringBuffer(substring);
         sb = sb.reverse();
         return substring.equals(sb.toString());
@@ -55,13 +62,13 @@ public class BruteForce {
     @Test
     public void testLongestPalindrome()
     {
-        // 无回文
+        // 无回文："a"
         System.out.println(longestPalindrome("abc"));
 
-        // 1 个回文
+        // 1 个回文："abcba"
         System.out.println(longestPalindrome("defabcba"));
 
-        // 2个回文：abcba defg abcdcba
+        // 2个回文：abcba defg abcdcba："abcdcba"
         System.out.println(longestPalindrome("abcbadefgabcdcba"));
     }
 }
