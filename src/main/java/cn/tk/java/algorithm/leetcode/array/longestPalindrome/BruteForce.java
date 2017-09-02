@@ -31,7 +31,6 @@ public class BruteForce {
 
         int length = s.length();
 
-
         // i 是子字符串的左端下标，j 是子字符串右端下标
         for (int i=0; i<length; i++)
         {
