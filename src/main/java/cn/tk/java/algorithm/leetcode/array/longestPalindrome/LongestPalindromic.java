@@ -26,6 +26,8 @@ import java.util.stream.Stream;
  * 客上天然居，居然天上客 ^。^
  *
  * 最大回文子字符串问题：ref: https://segmentfault.com/a/1190000002991199
+ *
+ * 该方法只能解决中间字符为偶数的回文串，无法处理中间字符为奇数的回文串
  */
 public class LongestPalindromic {
 

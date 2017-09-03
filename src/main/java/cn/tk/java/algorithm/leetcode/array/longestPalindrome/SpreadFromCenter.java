@@ -16,8 +16,10 @@ public class SpreadFromCenter {
     {
         for (int i=0; i<s.length(); i++)
         {
+            // 奇数回文串
             calculate(s, i, 0);
 
+            // 偶数回文串
             calculate(s, i, 1);
         }
         return longest;
@@ -44,18 +46,24 @@ public class SpreadFromCenter {
     }
 
     @Test
-    public void test()
+    public void testLongestPalindrome()
     {
         // 无回文："a"
         System.out.println(longestPalindrome("abc"));
+        longest = "";
 
         // 1 个回文："abcba"
         System.out.println(longestPalindrome("defabcba"));
+        longest = "";
 
         // 2个回文：abcba defg abcdcba："abcdcba"
         System.out.println(longestPalindrome("abcbadefgabcdcba"));
+        longest = "";
 
         // 偶数回文串
         System.out.println(longestPalindrome("bccb"));
+        longest = "";
+
+        System.out.println(longestPalindrome("12212321"));
     }
 }

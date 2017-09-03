@@ -69,5 +69,10 @@ public class BruteForce {
 
         // 2个回文：abcba defg abcdcba："abcdcba"
         System.out.println(longestPalindrome("abcbadefgabcdcba"));
+
+        // 偶数回文串
+        System.out.println(longestPalindrome("bccb"));
+
+        System.out.println(longestPalindrome("12212321"));
     }
 }
