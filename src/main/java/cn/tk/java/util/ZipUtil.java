@@ -5,12 +5,12 @@ import lombok.SneakyThrows;
 import org.apache.commons.io.FileUtils;
 
 import java.io.*;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
-import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
 
 /**
@@ -29,11 +29,10 @@ public class ZipUtil {
      *
      * 文件夹：压缩文件名为该文件夹，子文件文件名不变
      * 文件：压缩文件名为该文件
-     *
      */
     @SneakyThrows
     public static void compress(File file, String zipPath) {
-        String rootPath = file.isFile() ? file.getPath() : file.getParent();
+        String rootPath = file.isFile() ? file.getParent() : file.getAbsolutePath();
         @Cleanup ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(new File(zipPath)));
         List<String> entryNames = new ArrayList<>();
         getEntryNames(entryNames, rootPath, file);
@@ -50,6 +49,62 @@ public class ZipUtil {
                 zos.write(data, 0 , count);
             }
         }
+    }
+
+    /**
+     * Description：解压文件（文件夹）
+     * @param zipPath 压缩文件: *.zip
+     * @param destPath 目标文件夹
+     *
+     * @note 解压是针对文件的，不是文件夹，不存在的文件夹要不断的创建。
+     */
+    @SneakyThrows
+    public static void uncompress(String zipPath, String destPath, Charset charset)
+    {
+        File zipFile = new File(zipPath);
+
+        File rootDir = new File(destPath);
+        if (!rootDir.exists())
+            rootDir.mkdirs();
+
+        // 缺省 UTF-8 编码方式，entryName 都是 UTF-8 编码的
+        ZipFile zip = new ZipFile(zipFile, charset);
+        Enumeration<? extends ZipEntry> zipEntries = zip.entries();
+        while (zipEntries.hasMoreElements()) {
+            ZipEntry zipEntry = zipEntries.nextElement();
+            String entryName = zipEntry.getName();
+
+            // 级联创建子目录
+            String outPath = createSubDir(destPath, entryName);
+            if (outPath == null)
+                continue;
+
+            byte[] buffer = new byte[1024];
+            @Cleanup InputStream in = zip.getInputStream(zipEntry);
+            @Cleanup OutputStream os = new FileOutputStream(outPath);
+            int count;
+            while ((count = in.read(buffer)) > 0)
+            {
+                os.write(buffer, 0, count);
+            }
+        }
+    }
+
+    /**
+     * Description：解压文件
+     */
+    @SneakyThrows
+    public static void uncompress(byte[] data, String destPath, Charset charset)
+    {
+        // 字节数组转换成临时文件
+        File zipFile = new File("./temp.zip");
+        FileUtils.writeByteArrayToFile(zipFile, data);
+
+        // 解压到指定 destPath
+        uncompress("./temp.zip", destPath, charset);
+
+        // 删除临时文件
+        FileUtils.deleteQuietly(zipFile);
     }
 
     /**
@@ -74,71 +129,23 @@ public class ZipUtil {
         }
     }
 
-    @SneakyThrows
-    public static void main(String[] args) {
-//        File file = new File("C:\\Users\\lijinlong3\\Desktop\\zipfile");
-//        String zipPath = "C:\\Users\\lijinlong3\\Desktop\\zipfile.zip";
-//        compress(file, zipPath);
-
-        File file1 = new File("C:\\Users\\lijinlong3\\Desktop\\618");
-        String zipPath1 = "C:\\Users\\lijinlong3\\Desktop\\618.zip";
-//        compress(file1, zipPath1);
-
-        uncompress(new File(zipPath1), file1);
-    }
-
     /**
-     * Description：解压文件（文件夹）
-     * @param zipFile 文件类型
-     *
-     * @note 解压是针对文件的，不是文件夹，不存在的文件夹要不断的创建。
+     * Description：根据 entryName 和 destPath 创建子目录，用于存放解压文件
      */
-    @SneakyThrows
-    public static void uncompress(File zipFile, File srcFile)
-    {
-        if (!srcFile.exists())
-            srcFile.mkdirs();
+    private static String createSubDir(String rootPath, String entryName) {
+        String outPath = (rootPath + File.separator + entryName).replaceAll("\\\\", "/");
+        int endIndex = outPath.lastIndexOf("/");
 
-        ZipFile zip = new ZipFile(zipFile);
-        for (Enumeration<? extends ZipEntry> entries = zip.entries(); entries.hasMoreElements();){
-            ZipEntry zipEntry = entries.nextElement();
-            String entryName = zipEntry.getName();
-            @Cleanup InputStream in = zip.getInputStream(zipEntry);
-            String outPath = (srcFile.getAbsolutePath() + File.separator + entryName);
-            int endIndex = outPath.lastIndexOf(File.separator);
-            String substring = outPath.substring(0, endIndex);
-            File file = new File(substring);
-            if (!file.exists())
-            {
-                file.mkdirs();
-            }
-
-            if (new File(outPath).isDirectory()){
-                continue;
-            }
-
-            byte[] buffer = new byte[1024];
-            @Cleanup OutputStream os = new FileOutputStream(outPath);
-            int count;
-            while ((count = in.read(buffer)) > 0)
-            {
-                os.write(buffer, 0, count);
-            }
+        // 解压文件所在的文件夹
+        String unZipDirPath = outPath.substring(0, endIndex);
+        File unZipDir = new File(unZipDirPath);
+        if (!unZipDir.exists())
+        {
+            unZipDir.mkdirs();
         }
+        if (new File(outPath).isDirectory()){
+            return null;
+        }
+        return outPath;
     }
-
-    /**
-     * Description：解压文件（文件夹）
-     * @param data 字节数组
-     * @param
-     */
-//    @SneakyThrows
-//    public static File uncompress(byte[] data, File srcFile)
-//    {
-//        if (!srcFile.exists())
-//            srcFile.mkdir();
-//
-//
-//
-//    }
 }
