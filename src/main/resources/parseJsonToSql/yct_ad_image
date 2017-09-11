@@ -1,0 +1,61 @@
+{
+    "total":4,
+    "rows":[
+        {
+            "id":"105",
+            "ad_image_desc":"羊城通首页",
+            "ad_image_channel":"2",
+            "ad_image_weight":"1",
+            "ad_image_url":"//img14.360buyimg.com/cms/jfs/t7861/158/1105175497/101730/f1551003/599a4fa0Ndbb7536b.jpg",
+            "ad_image_response_url":"//sale.jd.com/m/act/1uskJlDyixGNL.html",
+            "ad_image_status":"1",
+            "ad_image_start_time":"2017-09-04 15:49:17",
+            "ad_image_end_time":"2017-12-31 23:59:59",
+            "yn":"1",
+            "created":"2017-09-04 15:50:47",
+            "modified":"2017-09-07 18:32:48"
+        },
+        {
+            "id":"106",
+            "ad_image_desc":"京东尚学季",
+            "ad_image_channel":"2",
+            "ad_image_weight":"1",
+            "ad_image_url":"//img13.360buyimg.com/cms/jfs/t7702/234/1295842185/175586/c7dc0e14/599be374N56a1cc77.jpg",
+            "ad_image_response_url":"//pro.m.jd.com/mall/active/4UZQxd455rgefwqba4mAhbxaqMqL/index.html",
+            "ad_image_status":"1",
+            "ad_image_start_time":"2017-09-04 15:51:34",
+            "ad_image_end_time":"2017-12-31 23:59:59",
+            "yn":"1",
+            "created":"2017-09-04 15:52:05",
+            "modified":"2017-09-07 18:32:37"
+        },
+        {
+            "id":"107",
+            "ad_image_desc":"京东超市周年庆",
+            "ad_image_channel":"2",
+            "ad_image_weight":"1",
+            "ad_image_url":"//img14.360buyimg.com/cms/jfs/t8740/2/672160194/103766/db4d88b8/59acc3f8N6cd8e722.jpg",
+            "ad_image_response_url":"//pro.m.jd.com/mall/active/22WnqnCBrRVECwpAnjzZrUD81e41/index.html",
+            "ad_image_status":"1",
+            "ad_image_start_time":"2017-09-04 15:52:28",
+            "ad_image_end_time":"2017-12-31 23:59:59",
+            "yn":"1",
+            "created":"2017-09-04 15:53:04",
+            "modified":"2017-09-07 18:32:23"
+        },
+        {
+            "id":"108",
+            "ad_image_desc":"京东家博会",
+            "ad_image_channel":"2",
+            "ad_image_weight":"1",
+            "ad_image_url":"//img14.360buyimg.com/cms/jfs/t7723/131/1396241896/107026/c70fe1d7/599cf216Nf0e68851.jpg",
+            "ad_image_response_url":"//pro.m.jd.com/mall/active/41Zp7ktcSRByY5Ygni3hoTNzSa9V/index.html",
+            "ad_image_status":"1",
+            "ad_image_start_time":"2017-09-07 13:56:03",
+            "ad_image_end_time":"2017-12-31 23:59:59",
+            "yn":"1",
+            "created":"2017-09-04 15:53:45",
+            "modified":"2017-09-07 18:32:05"
+        }
+    ]
+}

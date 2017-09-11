@@ -1,0 +1,1 @@
+insert into sequence_value (name, id ) values ('ADIMAGE_ID', '300' ), ('AUTHORITY_ID', '800' ), ('ORDER_ID', '364500' ), ('REFUND_ID', '5500' ), ('SMS_ID', '259100' ), ('TASK_ID', '1011600' ), ('YCT_CARD_ID', '188000' ), ('YCT_CONFIG', '1300' ), ('YCT_CPU_LOAD', '1002500' ), ('YCT_SWITCH', '800' ) ;

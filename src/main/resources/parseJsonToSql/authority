@@ -1,0 +1,45 @@
+{
+    "total":75,
+    "rows":[
+        {
+            "id":"1",
+            "user_code":"liyang112",
+            "operator_flag":"1",
+            "create_time":"2017-08-16 15:48:38",
+            "modify_time":"2017-08-16 15:48:38",
+            "yn":"1"
+        },
+        {
+            "id":"2",
+            "user_code":"zhanghaichao6",
+            "operator_flag":"1",
+            "create_time":"2017-08-16 15:48:38",
+            "modify_time":"2017-08-16 15:48:38",
+            "yn":"1"
+        },
+        {
+            "id":"3",
+            "user_code":"ranyanfei",
+            "operator_flag":"1",
+            "create_time":"2017-08-16 15:48:38",
+            "modify_time":"2017-08-16 15:48:38",
+            "yn":"1"
+        },
+        {
+            "id":"401",
+            "user_code":"zhanglong98",
+            "operator_flag":"1",
+            "create_time":"2017-08-16 16:12:47",
+            "modify_time":"2017-08-17 13:49:25",
+            "yn":"1"
+        },
+        {
+            "id":"501",
+            "user_code":"yanjinbao1",
+            "operator_flag":"1",
+            "create_time":"2017-08-17 14:43:53",
+            "modify_time":"2017-08-17 14:43:53",
+            "yn":"1"
+        }
+    ]
+}
