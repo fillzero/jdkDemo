@@ -12,6 +12,8 @@ import org.junit.Test;
  * font for better legibility)
  *
  * 根据输入数据打印一个倒立的 "之" 形
+ *
+ * fixme
  */
 public class ZigZag {
     public String convert(String s, int nums)
