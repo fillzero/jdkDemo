@@ -1,0 +1,56 @@
+2
+
+acfgi
+bdehj
+
+3
+
+a e i m q
+bdfhjlnpr
+c g k o s
+
+5
+
+a   i   q   y
+b  hj  pr  xz
+c g k o s w
+df  ln  tv
+e   m   u
+
+7
+
+a     m     y
+b    ln    xz
+c   k o   w
+d  j  p  v
+e i   q u
+fh    rt
+g     s
+
+[3*7][7] = [21][7]
+
+(0, 0)                               (0, 6)                             (0, 12)
+(1, 0)                        (1, 5) (1, 6)                      (1, 11)(1, 12)
+(2, 0)                  (2, 4)       (2, 6)               (2, 10)       (2, 12)
+(3, 0)            (3, 3)             (3, 6)          (3, 9)             (3, 12)
+(4, 0)      (4, 2)                   (4, 6)     (4, 8)                  (4, 12)
+(5, 0)(5, 1)                         (5, 6)(5, 7)                       (5, 12)
+(6, 0)                               (6, 6)                             (6, 12)
+
+char[21][7] targetCh
+
+ch[i][j]
+
+char[s.length()] ch = s.toCharArray();
+
+createIndexList(length)
+{
+}
+
+(0 0) 
+...
+(0,n)
+
+
+
+
