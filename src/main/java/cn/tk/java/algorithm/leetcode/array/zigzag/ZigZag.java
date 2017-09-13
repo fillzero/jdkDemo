@@ -28,20 +28,27 @@ public class ZigZag {
     public String convert(String s, int nums)
     {
         int length = s.length();
-        List<Integer> index_x = createIndex_X(length, nums);
-        List<Integer> index_y = createIndex_Y(length, nums);
-        char[][] resultCh = new char[length%nums * nums][nums];
-        for (int i=0; i<index_x.size(); i++)
+        List<Integer> xIndexList = createIndex_X(length, nums);
+        List<Integer> yIndexList = createIndex_Y(length, nums);
+        int xLength = nums;
+        int yLength = length % nums * nums + 1;
+        char[][] resultCh = new char[xLength][yLength];
+
+        for (int i=0; i<length; i++)
         {
-            for (int j=0; j<index_y.size(); j++)
-            {
-                resultCh[i][j] = s.charAt(i);
-            }
+            int xIndex = xIndexList.get(i);
+            int yIndex = yIndexList.get(i);
+            resultCh[xIndex][yIndex] = s.charAt(i);
         }
-        String resultStr = new String();
-        return resultStr;
+
+        String resultStr = getArray(xLength, yLength, resultCh);
+        String newStr = resultStr.replaceAll(" ", "");
+        return newStr;
     }
 
+    /**
+     * Description：创建二维数组的 x 下标
+     */
     public List<Integer> createIndex_X(int length, int bound)
     {
         boolean order = true;
@@ -62,6 +69,60 @@ public class ZigZag {
         return xIndexList;
     }
 
+    /**
+     * Description：创建二维数组的 y 下标
+     *
+     * 0 （0,0,0,0,0,0）（1,2,3,4,5,6）（6,6,6,6,6,6）（7,8,9,10,11,12）
+     *
+     *
+     */
+    public List<Integer> createIndex_Y(int length, int bound)
+    {
+        boolean stay = true;//stay 为 true 的时候数字不变，为 false 的时候每次递增
+        int yIndex = 0;
+        int counter = 1;
+        List<Integer> yIndexList = new ArrayList<>();
+        yIndexList.add(yIndex);
+        while (yIndexList.size() <= length) {
+            // 换位器
+            if (counter >= bound-1) {
+                stay = !stay;
+                counter = 0;
+            }
+
+            if (stay) {
+                counter++;
+                // 保持不变
+                yIndexList.add(yIndex);
+            } else {
+                // 主键递增
+                counter++;
+                yIndexList.add(yIndex++);
+            }
+        }
+        return yIndexList;
+    }
+
+    /**
+     * Description：返回二维数组逐行遍历的字符串
+     */
+    public String getArray(int xLength, int yLength, char[][] chars)
+    {
+        StringBuilder resultStr = new StringBuilder();
+        for (int i=0; i<xLength; i++)
+        {
+            for (int j=0; j<yLength; j++)
+            {
+                String charStr = String.valueOf(chars[i][j]);
+                if (charStr != null || charStr != "");
+                    resultStr.append(charStr);
+                System.out.print(charStr);
+            }
+            System.out.println();
+        }
+        return resultStr.toString();
+    }
+
     @Test
     public void testXIndex()
     {
@@ -71,36 +132,18 @@ public class ZigZag {
         System.out.println(index_y);
     }
 
-    public List<Integer> createIndex_Y(int length, int bound)
-    {
-        boolean order = true;
-        int counter = 0;
-        int yIndex = 0;
-        List<Integer> yIndexList = new ArrayList<>();
-        while (yIndexList.size() <= length) {
-            // 换位器
-            if (counter++ >= bound) {
-                order = !order;
-                counter = 0;
-            }
-
-            if (order) {
-                // 保持不变
-                yIndexList.add(yIndex);
-            } else {
-                // 主键递增
-                yIndexList.add(yIndex++);
-            }
-        }
-        return yIndexList;
-
-    }
-
     @Test
     public void testConvert()
     {
         String realStr = convert("PAYPALISHIRING", 3);
         String expectedStr = "PAHNAPLSIIGYIR";
         Assert.assertEquals(expectedStr, realStr);
+    }
+
+    public static void main(String[] args) {
+        String a = "P A H NAPLSIIGY I R  ";
+        System.out.println(a.replaceAll(" ", ""));
+        String s = a.replaceAll(" ", "");
+        System.out.println(s);
     }
 }
