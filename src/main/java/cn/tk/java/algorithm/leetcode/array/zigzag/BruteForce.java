@@ -15,8 +15,10 @@ import java.util.List;
  * font for better legibility)
  *
  * 根据输入数据打印一个倒立的 "之" 形
+ *
+ * Time Limit Exceeded：时间复杂度过高
  */
-public class ZigZag {
+public class BruteForce {
     /**
      * Description：输入字符串，转换成 ZigZag 模型，然后逐行读入数据
      * @param s 目标字符串
@@ -28,10 +30,19 @@ public class ZigZag {
     public String convert(String s, int nums)
     {
         int length = s.length();
+
+        // 没有办法进行折叠，直接打印，空字符串、只有一个字符的字符串
+        if (length == 0 || nums == 1)
+            return s;
+
+        if (length < nums) {
+            nums = length;
+        }
+
         List<Integer> xIndexList = createIndex_X(length, nums);
         List<Integer> yIndexList = createIndex_Y(length, nums);
-        int xLength = nums;
-        int yLength = length % nums * nums + 1;
+        int xLength = nums + 1;
+        int yLength = (length / nums) * nums;
         char[][] resultCh = new char[xLength][yLength];
 
         for (int i=0; i<length; i++)
@@ -130,5 +141,20 @@ public class ZigZag {
 
         String realStr1 = convert("abcdefghijklmnopqrstuvwxyz", 7);
         System.out.println(realStr1);
+
+        String realStr3 = convert("AB", 1);
+        System.out.println(realStr3);
+
+        String realStr4 = convert("A", 2);
+        System.out.println(realStr4);
+
+        String resultStr5 = convert("", 1);
+        System.out.println(resultStr5);
+
+        String resultStr6 = convert("ABC", 1);
+        System.out.println(resultStr6);
+
+        String resultStr7 = convert("kbwqztcbumuugonqlieaipjoekdoxrbhszzrsduprqjyfyosgssrjcfnmidlbettdunyyjnpayphxdzfyrwjvdxilcvohqimlxkl", 77);
+        System.out.println(resultStr7);
     }
 }
