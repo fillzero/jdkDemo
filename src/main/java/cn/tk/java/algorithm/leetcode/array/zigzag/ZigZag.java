@@ -41,9 +41,9 @@ public class ZigZag {
             resultCh[xIndex][yIndex] = s.charAt(i);
         }
 
-        String resultStr = getArray(xLength, yLength, resultCh);
-        String newStr = resultStr.replaceAll(" ", "");
-        return newStr;
+        // 注意 \u0000 与 空字符串是不相等的，需要特殊处理，替换的时候一定要注意
+        String resultStr = getArray(xLength, yLength, resultCh).replaceAll("\\u0000", "");
+        return resultStr;
     }
 
     /**
@@ -73,8 +73,6 @@ public class ZigZag {
      * Description：创建二维数组的 y 下标
      *
      * 0 （0,0,0,0,0,0）（1,2,3,4,5,6）（6,6,6,6,6,6）（7,8,9,10,11,12）
-     *
-     *
      */
     public List<Integer> createIndex_Y(int length, int bound)
     {
@@ -124,26 +122,13 @@ public class ZigZag {
     }
 
     @Test
-    public void testXIndex()
-    {
-        List<Integer> index_x = createIndex_X(30, 7);
-        System.out.println(index_x);
-        List<Integer> index_y = createIndex_Y(30, 7);
-        System.out.println(index_y);
-    }
-
-    @Test
     public void testConvert()
     {
         String realStr = convert("PAYPALISHIRING", 3);
         String expectedStr = "PAHNAPLSIIGYIR";
         Assert.assertEquals(expectedStr, realStr);
-    }
 
-    public static void main(String[] args) {
-        String a = "P A H NAPLSIIGY I R  ";
-        System.out.println(a.replaceAll(" ", ""));
-        String s = a.replaceAll(" ", "");
-        System.out.println(s);
+        String realStr1 = convert("abcdefghijklmnopqrstuvwxyz", 7);
+        System.out.println(realStr1);
     }
 }
