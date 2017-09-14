@@ -29,18 +29,23 @@ public class ZigZag {
 
         StringBuilder sb = new StringBuilder();
 
+        // 首位距离
         int step = 2 * (nums - 1);
         int count = 0;
 
         for (int i = 0; i < nums; i++){
+            // 中间间隔 2*(nums-1) - 2*i
             int interval = step - 2 * i;
 
+            // j 是竖杠上左边的数字
             for (int j = i; j < length; j += step){
                 sb.append(s.charAt(j));
                 count++;
                 if (interval > 0 && interval < step
                         && j + interval < length
                         && count <  length) {
+
+                    // j + interval 是竖杠中间的数字
                     sb.append(s.charAt(j + interval));
                     count++;
                 }
