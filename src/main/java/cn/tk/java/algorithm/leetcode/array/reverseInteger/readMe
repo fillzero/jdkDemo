@@ -1,0 +1,15 @@
+Reverse digits of an integer.
+
+Example1: x = 123, return 321
+Example2: x = -123, return -321
+
+click to show spoilers.
+
+Note:
+The input is assumed to be a 32-bit signed integer. Your function should return 0 when the reversed integer overflows.
+
+解题思路：
+    123（去掉符号） --> "123" --> ['1', '2', '3'] --> ['3', '2', '1'] --> "321" --> 321（加上符号）
+
+        把整型的逆序问题转换成字符数组的逆序问题，中间用字符串过渡，有符号数都转换成无符号数，开始去掉符号，最后加上符号，越界的
+    用异常捕获，全部返回 0。
