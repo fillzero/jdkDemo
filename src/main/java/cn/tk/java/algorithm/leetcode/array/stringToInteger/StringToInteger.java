@@ -20,17 +20,21 @@ public class StringToInteger {
      * （3）整型 --> 转换
      * （4）整型超出最大整型位数 --> 0
      * （5）负数单独处理
+     *
+     * "  -0012a42" --> -12 没有办法通过？？？
      */
     public int myAtoi(String str) {
         boolean negative = false;
+        str = str.trim();
 
         if (str == null || str.length() == 0 || str.trim().length() == 0)
             return 0;
 
-        if (str.startsWith("-"))
+        if (str.startsWith("-") || str.startsWith("+"))
         {
+            if (str.startsWith("-"))
+                negative = !negative;
             str = str.substring(1);
-            negative = !negative;
         }
 
         if (!isAllNumbers(str.toCharArray()))
@@ -71,5 +75,6 @@ public class StringToInteger {
         System.out.println(myAtoi("1390123898123123"));
         System.out.println(myAtoi("-100"));
         System.out.println(myAtoi("-1390123898123123"));
+        System.out.println(myAtoi("+1"));
     }
 }
