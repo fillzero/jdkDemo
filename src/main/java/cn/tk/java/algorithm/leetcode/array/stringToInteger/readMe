@@ -1,0 +1,12 @@
+1. null or empty string
+2. white spaces
+3. +/- sign
+4. calculate real value
+5. handle min & max
+
+
+1. 考虑字符串为 null 和 空字符串的问题
+2. 考虑字符串有空格的问题： "     012" --> 12
+3. +/- 符号问题：+ 号去掉， - 号不变
+4. 计算实数
+5. 处理 min 和 max
