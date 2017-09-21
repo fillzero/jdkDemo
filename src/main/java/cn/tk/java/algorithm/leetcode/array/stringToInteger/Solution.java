@@ -53,13 +53,13 @@ public class Solution {
     {
         System.out.println(myAtoi(null));
         System.out.println(myAtoi(""));
-        System.out.println(myAtoi("13B"));
-        System.out.println(myAtoi("13-"));
-        System.out.println(myAtoi("13"));
-        System.out.println(myAtoi("1390123898123123"));
+        System.out.println(myAtoi("13B"));//13
+        System.out.println(myAtoi("13-"));//13
+        System.out.println(myAtoi("13"));//13
+        System.out.println(myAtoi("1390123898123123"));//超过最大整型，返回最大整型
         System.out.println(myAtoi("-100"));
         System.out.println(myAtoi("-1390123898123123"));
         System.out.println(myAtoi("+1"));
-        System.out.println(myAtoi("  -0012a42"));
+        System.out.println(myAtoi("  -0012a42"));// a 前面如果是数字也可以转换，把后面的部分截取掉就可以了
     }
 }
