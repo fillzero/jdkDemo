@@ -55,12 +55,7 @@ public class SynAndLock {
             if (now.after(end)) {
                 break;
             }
-            threadPoolExecutor.execute(new Runnable() {
-                @Override
-                public void run() {
-                    synIncr();
-                }
-            });
+            threadPoolExecutor.execute(() -> synIncr());
         }
 
         System.out.println("counter: "+ counter);
@@ -82,12 +77,7 @@ public class SynAndLock {
             if (now.after(end)) {
                 break;
             }
-            threadPoolExecutor.execute(new Runnable() {
-                @Override
-                public void run() {
-                    lockIncr();
-                }
-            });
+            threadPoolExecutor.execute(() -> lockIncr());
         }
 
         System.out.println("counter: "+ counter);

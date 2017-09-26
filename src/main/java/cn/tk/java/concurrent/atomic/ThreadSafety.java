@@ -15,7 +15,8 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Description: 使用 atomic 包测试线程安全
  */
 public class ThreadSafety {
-    AtomicInteger counter = new AtomicInteger();
+    AtomicInteger atomicCounter = new AtomicInteger();
+    Integer intCounter = new Integer(0);
 
     private final int EXECUTE_COUNT = 10000;
 
@@ -24,7 +25,8 @@ public class ThreadSafety {
 
     public void incr()
     {
-        counter.getAndIncrement();
+        atomicCounter.getAndIncrement();
+        intCounter ++;
     }
 
     @Test
@@ -35,7 +37,8 @@ public class ThreadSafety {
         {
             executor.execute(() -> incr());
         }
-        TimeUnit.SECONDS.sleep(10);
-        System.out.println(counter);
+        TimeUnit.SECONDS.sleep(1);
+        System.out.println(atomicCounter);
+        System.out.println(intCounter);
     }
 }
