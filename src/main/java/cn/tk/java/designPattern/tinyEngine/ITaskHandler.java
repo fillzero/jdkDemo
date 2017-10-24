@@ -10,5 +10,5 @@ import com.alibaba.fastjson.JSONObject;
 * 
 */
 public interface ITaskHandler {
-    public void handle(JSONObject content);
+    void handle(JSONObject content);
 }

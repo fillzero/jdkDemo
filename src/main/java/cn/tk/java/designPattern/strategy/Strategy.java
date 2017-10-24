@@ -8,5 +8,5 @@ package cn.tk.java.designPattern.strategy;
  */
 public interface Strategy {
 
-    public void doBusiness();
+    void doBusiness();
 }
