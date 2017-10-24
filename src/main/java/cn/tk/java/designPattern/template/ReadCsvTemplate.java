@@ -6,7 +6,7 @@ package cn.tk.java.designPattern.template;
  * Date: 2017/10/24
  * Description:
  */
-public class ReadCsv extends AbstractReadTemplate {
+public class ReadCsvTemplate extends AbstractReadTemplate {
 
     @Override
     protected void downLoadDoc() {

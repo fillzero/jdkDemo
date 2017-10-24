@@ -12,10 +12,10 @@ public class Main {
     @Test
     public void testRead()
     {
-        ReadCsv readCsv = new ReadCsv();
+        ReadCsvTemplate readCsv = new ReadCsvTemplate();
         readCsv.read();
 
-        ReadExcel readExcel = new ReadExcel();
+        ReadExcelTemplate readExcel = new ReadExcelTemplate();
         readExcel.read();
     }
 }
