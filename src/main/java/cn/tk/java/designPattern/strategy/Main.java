@@ -1,5 +1,7 @@
 package cn.tk.java.designPattern.strategy;
 
+import org.junit.Test;
+
 /**
  * Author: lijinlong
  * Mail: lijinlong3@jd.com
@@ -19,6 +21,14 @@ public class Main {
         firstContext.algorithm();
         Context secondContext = new Context(secondStrategy);
         secondContext.algorithm();
+    }
+
+    @Test
+    public void testStrategyEnum()
+    {
+        Context context = new Context();
+        context.algorithm(StrategyEnum.FIRST);
+        context.algorithm(StrategyEnum.SECOND);
     }
 }
 
