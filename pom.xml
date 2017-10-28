@@ -32,6 +32,7 @@
 		<json-schema-validator>2.2.6</json-schema-validator>
 		<json-schema-core.version>1.2.5</json-schema-core.version>
 		<thumbnailator.version>0.4.8</thumbnailator.version>
+		<javassist.version>3.20.0-GA</javassist.version>
 	</properties>
 
 	<build>
@@ -213,5 +214,13 @@
 			<artifactId>commons-net</artifactId>
 			<version>3.6</version>
 		</dependency>
+
+		<!-- 字节码技术 javassist -->
+		<dependency>
+			<groupId>org.javassist</groupId>
+			<artifactId>javassist</artifactId>
+			<version>${javassist.version}</version>
+		</dependency>
+
 	</dependencies>
 </project>
