@@ -125,8 +125,7 @@ public abstract class RateLimiter {
      * LB：漏桶
      * FFTB：快速失败的令牌桶（通过抛异常快速失败）
      */
-    public static enum RateLimiterType {
-
+    public enum RateLimiterType {
         /**
          * token bucket
          */
@@ -144,6 +143,4 @@ public abstract class RateLimiter {
          */
         FFTB;
     }
-
-
 }
