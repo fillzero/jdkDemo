@@ -13,7 +13,7 @@ import java.util.stream.Stream;
  * Date: 2017/11/23
  * Description: Stream 各种操作
  */
-public class SteamDemoTest {
+public class StreamDemoTest {
 
     /**
      * Description：Stream 创建
@@ -102,15 +102,50 @@ public class SteamDemoTest {
                 .reduce((a, b) -> a + b);
         System.out.println(reduce.get());
 
-        Optional<LinkedList<String>> resultList = Stream.of("dog", "fish", "cat")
+        LinkedList list1 = new LinkedList();
+        list1.add("dog");
+        LinkedList list2 = new LinkedList();
+        list2.add("fish");
+        LinkedList list3 = new LinkedList();
+        list3.add("cat");
+        Optional<LinkedList> resultList = Stream.of(list1, list2, list3)
                 .collect(Collectors.toCollection(LinkedList::new))
                 .stream()
-                .reduce((LinkedList<String> a, LinkedList<String> b) -> {
+                .reduce((a, b) -> {
                     LinkedList<String> list = new LinkedList<>();
                     list.addAll(a);
                     list.addAll(b);
                     return list;
                 });
         System.out.println(resultList.get());
+    }
+
+    @Test
+    public void testParallel()
+    {
+        long startTime = System.currentTimeMillis();
+        OptionalInt reduce = IntStream.range(1, 1000000)
+                .parallel()
+                .reduce((a, b) -> a + b);
+        System.out.println(reduce);
+        long endTime = System.currentTimeMillis();
+        System.out.println(endTime - startTime + "ms");
+
+        long startTime1 = System.currentTimeMillis();
+        OptionalInt reduce1 = IntStream.range(1, 1000000)
+                .reduce((a, b) -> a + b);
+        System.out.println(reduce1);
+        long endTime1 = System.currentTimeMillis();
+        System.out.println(endTime1 - startTime1 + "ms");
+
+        long startTime2 = System.currentTimeMillis();
+        int sum = 0;
+        for (int i=0; i<1000000; i++)
+        {
+            sum += i;
+        }
+        System.out.println(sum);
+        long endTime2 = System.currentTimeMillis();
+        System.out.println(endTime2 - startTime2 + "ms");
     }
 }
