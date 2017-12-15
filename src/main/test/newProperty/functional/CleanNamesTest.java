@@ -33,7 +33,7 @@ public class CleanNamesTest {
 
     @Test
     public void capitalize() throws Exception {
-        assertEquals("Lijinlong", instance.capitalize("lijinlong"));
+        assertEquals("Bird", instance.capitalize("lijinlong"));
         assertNotEquals("lijinlong", instance.capitalize("lijinlong"));
     }
 }

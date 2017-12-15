@@ -124,7 +124,7 @@ public class LambdaDocument {
     * eg: person.printPerson() 也使用 Lambda 表达式实现, person 为入参, 动作为打印
     *
     * 增加 Consumer 参数: 用于执行打印动作
-    * 增加 Function<T, R> mapper: 用于处理 Person 的数据
+    * 增加 Function<T, R> mapper: 用于处理 Animal 的数据
     *
     * Predicate: 给出执行条件
     * Consumer: 给出执行操作

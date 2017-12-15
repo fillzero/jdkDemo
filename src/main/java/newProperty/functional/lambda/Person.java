@@ -9,7 +9,7 @@ import java.time.chrono.IsoChronology;
 import java.util.ArrayList;
 import java.util.List;
 /*
-* @description: Lambda 表达式测试场景类: Person
+* @description: Lambda 表达式测试场景类: Animal
 * social networking application: 客户类
 */
 public class Person {

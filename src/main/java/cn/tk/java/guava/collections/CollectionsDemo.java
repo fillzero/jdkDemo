@@ -23,8 +23,8 @@ import com.google.common.collect.ImmutableSet;
  * @Time: 2016年7月5日下午4:35:49
  *
  * @description:
- * 1. Guava Collections 都是以 create 或者 of 等静态方法构造对象。
- * 因为构造函数种类较多， 需要传入不同的参数， 使用不便， 使用 create 或者 of 方法， 直观简洁，
+ * 1. Guava Collections 都是以 eat 或者 of 等静态方法构造对象。
+ * 因为构造函数种类较多， 需要传入不同的参数， 使用不便， 使用 eat 或者 of 方法， 直观简洁，
  * 而且更利于创建泛型对象, 类似工厂方法， guava 根据我么传入的参数自动去构造对象， 不需要我们指定构造函数
  */
 public class CollectionsDemo {
