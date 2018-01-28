@@ -73,7 +73,7 @@ public class CompoundOperation {
     }
 
     /*
-    * @description: 找出年龄大于 18, 小于 30, 性别是男的 Person, 打印出来对应邮箱
+    * @description: 找出年龄大于 18, 小于 30, 性别是男的 Animal, 打印出来对应邮箱
     */
     @Test
     public void testCompoundPredicate()

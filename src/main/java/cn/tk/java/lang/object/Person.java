@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * @description: Person 类， 重写 hashCode() 和 equals()
+ * @description: Animal 类， 重写 hashCode() 和 equals()
  */
 @AllArgsConstructor
 @NoArgsConstructor
