@@ -80,6 +80,23 @@ public class ParameterizedTypeDemo {
         }
     }
 
+    @Test
+    public void testGenericDeclaration()
+    {
+        // 获取带参数化信息的父类 BaseDao<User>
+        final Type genericSuperclass = UserDao.class.getGenericSuperclass();
+        ParameterizedType parameterizedType = (ParameterizedType)genericSuperclass;
+
+        // 获取声明此参数化类型的类
+        final Type rawType = parameterizedType.getRawType();
+
+        // 获取声明此参数化类型的类的参数
+        final Type[] actualTypeArguments = parameterizedType.getActualTypeArguments();
+
+        System.out.println(rawType);
+        System.out.println(actualTypeArguments);
+    }
+
     /*
     * @description: 打印所有实例化的泛型参数
     */
