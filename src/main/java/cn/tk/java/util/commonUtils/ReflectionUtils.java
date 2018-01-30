@@ -1,15 +1,11 @@
 package cn.tk.java.util.commonUtils;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
+import lombok.extern.slf4j.Slf4j;
+
+import java.lang.reflect.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * Description
@@ -18,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 public class ReflectionUtils {
 	/**
 	 * 获取父类的方法类型
-	 * 
+	 *
 	 * @param clazz
 	 *            类
 	 * @param index
@@ -27,8 +23,8 @@ public class ReflectionUtils {
 	 */
 
 	@SuppressWarnings("rawtypes")
-	public static Class getSuperClassGenricType(final Class clazz,
-			final int index)
+	public static Class getSuperClassGenericType(final Class clazz,
+												 final int index)
 	{
 		Type genType = clazz.getGenericSuperclass();
 		if (!(genType instanceof ParameterizedType)) {
@@ -55,8 +51,8 @@ public class ReflectionUtils {
 	 * @return
 	 */
 	@SuppressWarnings("rawtypes")
-	public static Class getSuperClassGenricType(final Class clazz) {
-		return getSuperClassGenricType(clazz, 0);
+	public static Class getSuperClassGenericType(final Class clazz) {
+		return getSuperClassGenericType(clazz, 0);
 	}
 
 	/**
@@ -361,5 +357,52 @@ public class ReflectionUtils {
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	public static Type getParameterUpperBound(int index, ParameterizedType type) {
+		Type[] types = type.getActualTypeArguments();
+		if (index < 0 || index >= types.length) {
+			throw new IllegalArgumentException(
+					"Index " + index + " not in range [0," + types.length + ") for " + type);
+		}
+		Type paramType = types[index];
+		if (paramType instanceof WildcardType) {
+			return ((WildcardType) paramType).getUpperBounds()[0];
+		}
+		return paramType;
+	}
+
+	/**
+	 * Description：获取声明此参数化类型的类
+	 */
+	public static Class<?> getRawType(Type type) {
+		if (type instanceof Class<?>) {
+			// Type is a normal class.
+			return (Class<?>) type;
+		}
+		if (type instanceof ParameterizedType) {
+			ParameterizedType parameterizedType = (ParameterizedType) type;
+
+			// I'm not exactly sure why getRawType() returns Type instead of Class. Neal isn't either but
+			// suspects some pathological case related to nested classes exists.
+			Type rawType = parameterizedType.getRawType();
+			if (!(rawType instanceof Class)) throw new IllegalArgumentException();
+			return (Class<?>) rawType;
+		}
+		if (type instanceof GenericArrayType) {
+			Type componentType = ((GenericArrayType) type).getGenericComponentType();
+			return Array.newInstance(getRawType(componentType), 0).getClass();
+		}
+		if (type instanceof TypeVariable) {
+			// We could use the variable's bounds, but that won't work if there are multiple. Having a raw
+			// type that's more general than necessary is okay.
+			return Object.class;
+		}
+		if (type instanceof WildcardType) {
+			return getRawType(((WildcardType) type).getUpperBounds()[0]);
+		}
+
+		throw new IllegalArgumentException("Expected a Class, ParameterizedType, or "
+				+ "GenericArrayType, but <" + type + "> is of type " + type.getClass().getName());
 	}
 }

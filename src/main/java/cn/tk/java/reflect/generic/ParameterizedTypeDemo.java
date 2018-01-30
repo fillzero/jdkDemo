@@ -16,6 +16,7 @@ import java.lang.reflect.Type;
  */
 public class ParameterizedTypeDemo {
 
+    // 泛型定义通用的工具
     @NoArgsConstructor
     public class BaseDao<T>
     {
@@ -32,12 +33,20 @@ public class ParameterizedTypeDemo {
         private int age;
     }
 
+    // 实例化工具（参数化泛型）
     public class UserDao extends BaseDao<User>{
 
     }
 
+    // 实例化工具（未参数化泛型）
     public class ProductDao extends BaseDao{
 
+    }
+
+    public void test()
+    {
+        UserDao userDao = new UserDao();
+        User user = userDao.get();
     }
 
     /*
@@ -45,7 +54,8 @@ public class ParameterizedTypeDemo {
      */
     @Test
     public void testUserDao(){
-        // 获取带参数化信息的父类 BaseDao<User>
+        // 获取带参数化信息的父类 BaseDao<User>（UserDao 等价于 BaseDao<User>）
+        // 这一步定义完成了实例化，通过反射可以获取到 BaseDao 的实例化参数
         final Type genericSuperclass = UserDao.class.getGenericSuperclass();
 
         // 获取父类 BaseDao
@@ -87,7 +97,7 @@ public class ParameterizedTypeDemo {
         final Type genericSuperclass = UserDao.class.getGenericSuperclass();
         ParameterizedType parameterizedType = (ParameterizedType)genericSuperclass;
 
-        // 获取声明此参数化类型的类
+        // 获取声明此参数化类型的类（父类）
         final Type rawType = parameterizedType.getRawType();
 
         // 获取声明此参数化类型的类的参数
