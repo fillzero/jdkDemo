@@ -1,0 +1,4 @@
+Function 函数聚合，将多个小函数聚合成一个执行
+compose、andThen
+
+执行顺序：compose(before) > apply > andThen(after)
